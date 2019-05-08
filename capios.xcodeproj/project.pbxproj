@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82749C0E71AAECB06973907A /* Pods_capios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD83CEE5D5C46BA486885A9 /* Pods_capios.framework */; };
 		B9448FAD2283463B00E342DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9448FAC2283463B00E342DE /* AppDelegate.swift */; };
 		B9448FAF2283463B00E342DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9448FAE2283463B00E342DE /* ViewController.swift */; };
 		B9448FB22283463B00E342DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9448FB02283463B00E342DE /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4FD83CEE5D5C46BA486885A9 /* Pods_capios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_capios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		789E4BD072E152FE6FC98FE4 /* Pods-capios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capios.release.xcconfig"; path = "Pods/Target Support Files/Pods-capios/Pods-capios.release.xcconfig"; sourceTree = "<group>"; };
+		9BFBB34AD15AFBE4983FFB1E /* Pods-capios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-capios/Pods-capios.debug.xcconfig"; sourceTree = "<group>"; };
 		B9448FA92283463B00E342DE /* capios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = capios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9448FAC2283463B00E342DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9448FAE2283463B00E342DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82749C0E71AAECB06973907A /* Pods_capios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B25FC2B4E8A99618B8147A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9BFBB34AD15AFBE4983FFB1E /* Pods-capios.debug.xcconfig */,
+				789E4BD072E152FE6FC98FE4 /* Pods-capios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8556A75E734E8F664C46A283 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FD83CEE5D5C46BA486885A9 /* Pods_capios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B9448FA02283463B00E342DE = {
 			isa = PBXGroup;
 			children = (
 				B9448FAB2283463B00E342DE /* capios */,
 				B9448FAA2283463B00E342DE /* Products */,
+				1B25FC2B4E8A99618B8147A9 /* Pods */,
+				8556A75E734E8F664C46A283 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9448FBB2283463D00E342DE /* Build configuration list for PBXNativeTarget "capios" */;
 			buildPhases = (
+				CE8AB08E73D394E35BEE9B8F /* [CP] Check Pods Manifest.lock */,
 				B9448FA52283463B00E342DE /* Sources */,
 				B9448FA62283463B00E342DE /* Frameworks */,
 				B9448FA72283463B00E342DE /* Resources */,
+				7A9C9960CAB261201761156F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7A9C9960CAB261201761156F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-capios/Pods-capios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-capios/Pods-capios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE8AB08E73D394E35BEE9B8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-capios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B9448FA52283463B00E342DE /* Sources */ = {
@@ -280,6 +355,7 @@
 		};
 		B9448FBC2283463D00E342DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BFBB34AD15AFBE4983FFB1E /* Pods-capios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +374,7 @@
 		};
 		B9448FBD2283463D00E342DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 789E4BD072E152FE6FC98FE4 /* Pods-capios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
