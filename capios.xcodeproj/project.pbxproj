@@ -13,6 +13,7 @@
 		B9448FB22283463B00E342DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9448FB02283463B00E342DE /* Main.storyboard */; };
 		B9448FB42283463D00E342DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9448FB32283463D00E342DE /* Assets.xcassets */; };
 		B9448FB72283463D00E342DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9448FB52283463D00E342DE /* LaunchScreen.storyboard */; };
+		B9F72F5A22834FED000BA70B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F72F5922834FED000BA70B /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B9448FB32283463D00E342DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9448FB62283463D00E342DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9448FB82283463D00E342DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9F72F5922834FED000BA70B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				B9448FB32283463D00E342DE /* Assets.xcassets */,
 				B9448FB52283463D00E342DE /* LaunchScreen.storyboard */,
 				B9448FB82283463D00E342DE /* Info.plist */,
+				B9F72F5922834FED000BA70B /* R.generated.swift */,
 			);
 			path = capios;
 			sourceTree = "<group>";
@@ -96,6 +99,7 @@
 			buildConfigurationList = B9448FBB2283463D00E342DE /* Build configuration list for PBXNativeTarget "capios" */;
 			buildPhases = (
 				CE8AB08E73D394E35BEE9B8F /* [CP] Check Pods Manifest.lock */,
+				B9F72F5822834E9E000BA70B /* Rswift */,
 				B9448FA52283463B00E342DE /* Sources */,
 				B9448FA62283463B00E342DE /* Frameworks */,
 				B9448FA72283463B00E342DE /* Resources */,
@@ -166,6 +170,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-capios/Pods-capios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
@@ -173,6 +178,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -180,6 +186,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-capios/Pods-capios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B9F72F5822834E9E000BA70B /* Rswift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = Rswift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/capios/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/capios/R.generated.swift\"\n";
 		};
 		CE8AB08E73D394E35BEE9B8F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -212,6 +238,7 @@
 			files = (
 				B9448FAF2283463B00E342DE /* ViewController.swift in Sources */,
 				B9448FAD2283463B00E342DE /* AppDelegate.swift in Sources */,
+				B9F72F5A22834FED000BA70B /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

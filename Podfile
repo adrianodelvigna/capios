@@ -6,6 +6,7 @@ target 'capios' do
   use_frameworks!
 
   # Pods for capios
-  pod 'RxSwift',    '~> 4.0'
-  pod 'RxCocoa',    '~> 4.0'
+  pod 'RxSwift', '~> 4.0'
+  pod 'RxCocoa', '~> 4.0'
+  pod 'R.swift', '~> 5.0'
 end
