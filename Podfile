@@ -9,4 +9,20 @@ target 'capios' do
   pod 'RxSwift', '~> 4.0'
   pod 'RxCocoa', '~> 4.0'
   pod 'R.swift', '~> 5.0'
+  pod 'SwiftyJSON', '~> 4.0'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '4.0'
+      # enable tracing resources
+      if target.name == 'RxSwift'
+        if config.name == 'Debug'
+          config.build_settings['OTHER_SWIFT_FLAGS'] ||= ['-D',
+                                                          'TRACE_RESOURCES']
+        end
+      end
+    end
+  end
 end
