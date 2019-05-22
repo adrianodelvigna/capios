@@ -7,6 +7,7 @@ Transição de tela: R.swift
 - Adicionar uma imagem no projeto e usar.
 - Criar dois ou mais arquivo de strings.
 - Consumir dados do arquivo de strings.
+- Usar uma string com variável imbutida.
 
 RxSwift
 * Compreender conceitos de Observables e Drivers
