@@ -84,6 +84,6 @@ class RxOperatorsExerciseViewController: UIViewController {
     }
     
     // MARK: - Scheduler
-    func Operator_Scheduler() {
+    func Operator_Scheduler() {        
     }
 }
