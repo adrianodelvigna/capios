@@ -115,6 +115,7 @@
 				B9448FA62283463B00E342DE /* Frameworks */,
 				B9448FA72283463B00E342DE /* Resources */,
 				7A9C9960CAB261201761156F /* [CP] Embed Pods Frameworks */,
+				50018505229562710074B6AD /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -172,6 +173,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		50018505229562710074B6AD /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\n# Run SwiftLint\nSTART_DATE=$(date +\"%s\")\n\nSWIFT_LINT=/usr/local/bin/swiftlint\n\n# Run SwiftLint for given filename\nrun_swiftlint() {\nlocal filename=\"${1}\"\nif [[ \"${filename##*.}\" == \"swift\" ]]; then\n${SWIFT_LINT} autocorrect --path \"${filename}\"\n${SWIFT_LINT} lint --path \"${filename}\"\nfi\n}\n\nif [[ -e \"${SWIFT_LINT}\" ]]; then\necho \"SwiftLint version: $(${SWIFT_LINT} version)\"\n# Run for both staged and unstaged files\ngit diff --name-only | while read filename; do run_swiftlint \"${filename}\"; done\ngit diff --cached --name-only | while read filename; do run_swiftlint \"${filename}\"; done\nelse\necho \"${SWIFT_LINT} is not installed.\"\nexit 0\nfi\n\nEND_DATE=$(date +\"%s\")\n\nDIFF=$(($END_DATE - $START_DATE))\necho \"SwiftLint took $(($DIFF / 60)) minutes and $(($DIFF % 60)) seconds to complete.\"\n";
+		};
 		7A9C9960CAB261201761156F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -23,4 +23,3 @@ class ViewController: UIViewController {
         }).disposed(by: self.disposeBag)
     }
 }
-

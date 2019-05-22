@@ -40,7 +40,7 @@ class RxOperatorsExerciseViewController: UIViewController {
         Operator_Filter()
     }
     
-    // MARK: -  Demostração do uso do operador 'Map'.
+    // MARK: - Demostração do uso do operador 'Map'.
     func Operator_Map() {
         //Multiplicação de todos os elementos de um array por 2
         print(regularArray)
@@ -77,16 +77,13 @@ class RxOperatorsExerciseViewController: UIViewController {
     
     // MARK: - Debounce
     func Operator_Debounce() {
-        
     }
     
     // MARK: - CombineLatest
     func Operator_CombineLatest() {
-        
     }
     
     // MARK: - Scheduler
     func Operator_Scheduler() {
-        
     }
 }

@@ -10,6 +10,7 @@ target 'capios' do
   pod 'RxCocoa', '~> 4.0'
   pod 'R.swift', '~> 5.0'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'SwiftLint'
 end
 
 post_install do |installer|
