@@ -43,7 +43,7 @@ whitelist_rules:
   - vertical_whitespace_closing_braces # +999 warnings/errors + run auto correct + run success Evalute
   - vertical_whitespace_opening_braces # 2606 warnings/erros + run auto correct + run success Evalute
   - vertical_whitespace # +999 errors + run auto correct + run success Teste max 2 linhas
-  - custom_rules
+  #- custom_rules
   - force_unwrapping
   - force_cast
   
