@@ -1,33 +1,41 @@
 PODS:
   - R.swift (5.0.3):
     - R.swift.Library (~> 5.0.0)
-  - R.swift.Library (5.0.1)
-  - RxCocoa (4.5.0):
+  - R.swift.Library (5.0.0)
+  - RxAtomic (4.4.2)
+  - RxCocoa (4.4.2):
     - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxSwift (4.5.0)
-  - SwiftyJSON (4.3.0)
+  - RxSwift (4.4.2):
+    - RxAtomic (>= 4.4.2, ~> 4.4)
+  - SwiftLint (0.31.0)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - R.swift (~> 5.0)
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
+  - SwiftLint
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - R.swift
     - R.swift.Library
+    - RxAtomic
     - RxCocoa
     - RxSwift
+    - SwiftLint
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
-  R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
-  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
-  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
+  RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
+  RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
+  RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 9ad2c75f92b210a0081fd433c8b66c386b205175
+PODFILE CHECKSUM: 1981950de7acfb2134aacc14d6d9502a8e9c2cc3
 
 COCOAPODS: 1.5.3

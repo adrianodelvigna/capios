@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var rxStudyButton: UIButton!
+    let disposeBag: DisposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        rxStudyButton.rx.tap.subscribe(onNext: {
+            if let vc = R.storyboard.main.rxOperatorsExerciseViewController() {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }).disposed(by: self.disposeBag)
     }
-
-
 }
-

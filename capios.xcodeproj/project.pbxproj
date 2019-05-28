@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50EFF9872292EEA200A650FE /* RxOperatorsExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */; };
 		82749C0E71AAECB06973907A /* Pods_capios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD83CEE5D5C46BA486885A9 /* Pods_capios.framework */; };
 		B9448FAD2283463B00E342DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9448FAC2283463B00E342DE /* AppDelegate.swift */; };
 		B9448FAF2283463B00E342DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9448FAE2283463B00E342DE /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		4FD83CEE5D5C46BA486885A9 /* Pods_capios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_capios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxOperatorsExerciseViewController.swift; sourceTree = "<group>"; };
 		789E4BD072E152FE6FC98FE4 /* Pods-capios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capios.release.xcconfig"; path = "Pods/Target Support Files/Pods-capios/Pods-capios.release.xcconfig"; sourceTree = "<group>"; };
 		9BFBB34AD15AFBE4983FFB1E /* Pods-capios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-capios/Pods-capios.debug.xcconfig"; sourceTree = "<group>"; };
 		B9448FA92283463B00E342DE /* capios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = capios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +53,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		50E4055322844714009AF077 /* RxStudy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RxStudy;
+			sourceTree = "<group>";
+		};
 		8556A75E734E8F664C46A283 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,8 +89,10 @@
 		B9448FAB2283463B00E342DE /* capios */ = {
 			isa = PBXGroup;
 			children = (
+				50E4055322844714009AF077 /* RxStudy */,
 				B9448FAC2283463B00E342DE /* AppDelegate.swift */,
 				B9448FAE2283463B00E342DE /* ViewController.swift */,
+				50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */,
 				B9448FB02283463B00E342DE /* Main.storyboard */,
 				B9448FB32283463D00E342DE /* Assets.xcassets */,
 				B9448FB52283463D00E342DE /* LaunchScreen.storyboard */,
@@ -104,6 +115,7 @@
 				B9448FA62283463B00E342DE /* Frameworks */,
 				B9448FA72283463B00E342DE /* Resources */,
 				7A9C9960CAB261201761156F /* [CP] Embed Pods Frameworks */,
+				50018505229562710074B6AD /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -161,6 +173,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		50018505229562710074B6AD /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\n#Ativar a parte abaixo caso deseje que o swiftlint funcione apenas em classes que tiveram alteração no Git.\n#Não esquecer de comentar a primeira linha caso vá utilizar a configuração abaixo.\n#A compilação fica um pouco mais lenta com esse processo.\n# Run SwiftLint\n#START_DATE=$(date +\"%s\")\n\n#SWIFT_LINT=/usr/local/bin/swiftlint\n\n# Run SwiftLint for given filename\n#run_swiftlint() {\n#local filename=\"${1}\"\n#if [[ \"${filename##*.}\" == \"swift\" ]]; then\n#${SWIFT_LINT} autocorrect --path \"${filename}\"\n#${SWIFT_LINT} lint --path \"${filename}\"\n#fi\n#}\n\n#if [[ -e \"${SWIFT_LINT}\" ]]; then\n#echo \"SwiftLint version: $(${SWIFT_LINT} version)\"\n# Run for both staged and unstaged files\n#git diff --name-only | while read filename; do run_swiftlint \"${filename}\"; done\n#git diff --cached --name-only | while read filename; do run_swiftlint \"${filename}\"; done\n#else\n#echo \"${SWIFT_LINT} is not installed.\"\n#exit 0\n#fi\n\n#END_DATE=$(date +\"%s\")\n\n#DIFF=$(($END_DATE - $START_DATE))\n#echo \"SwiftLint took $(($DIFF / 60)) minutes and $(($DIFF % 60)) seconds to complete.\"\n";
+		};
 		7A9C9960CAB261201761156F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -171,6 +201,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-capios/Pods-capios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -180,6 +211,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -203,7 +235,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/capios/R.generated.swift",
+				$SRCROOT/capios/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -238,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50EFF9872292EEA200A650FE /* RxOperatorsExerciseViewController.swift in Sources */,
 				B9448FAF2283463B00E342DE /* ViewController.swift in Sources */,
 				B9448FAD2283463B00E342DE /* AppDelegate.swift in Sources */,
 				B9F72F5A22834FED000BA70B /* R.generated.swift in Sources */,
