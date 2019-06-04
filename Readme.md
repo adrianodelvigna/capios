@@ -248,7 +248,6 @@ Isso. Alguém ja enfrentou todo esse problema antes, e criou algo chamado **RxSw
 
 
 ### Modelagem das atividades
-
 Para as atividades iniciais (de aprendizagem), será solicitado que os estudantes façam modificações em seus próprios projetos de conclusão:
 Ex: 
 * Usar Keychain para o sistema de login do app.
@@ -269,3 +268,6 @@ Nesse caso, eu sugiro que a última atividade, seja o desenvolvimento de um app 
 Nós elaboramos o conceito e a EF para o desenvolvimento do app e eles, como equipe, deverão dividir e distribuir (com nosso acompanhamento) as tarefas, organizar os conflitos, merges e abrir os PRs ao fim de cada nova funcionalidade do app que for desenvolvida.
 
 Nos dias de aula, durante o Projeto Final, pensei em realizarmos daily meetings, pra tirar dúvidas e acompanhar o andamento do projeto, como jornadeiros.
+
+### Site com APIs gratis para consumo e testes, pode trazer criatividade para as atividades
+https://rapidapi.com/collection/list-of-free-apis?utm_source=google&utm_medium=cpc&utm_campaign=1757574668_67679208454&utm_term=free%20api%20for%20testing_b&utm_content=1t1&gclid=Cj0KCQjwrdjnBRDXARIsAEcE5Yl_8Rlg1BP3IO_VXjslf14ChGjxHJ0SiVZXWSKCJddLhPyuVacTQ_MaAi-3EALw_wcB
