@@ -11,7 +11,7 @@ A não aderência aos regulamentos estabelecidos pelo Banco Central, podem levar
 Dentre as funcionalidades mais usadas, e talvez a mais simples de acessibilidade no iOS, está o VoiceOver: um leitor de tela que permite aos usuários navegar pela interface, sem vê-la.
 
 Referências:
-- https://developer.apple.com/accessibility/ios/
+- [Acessibilidade iOS](https://developer.apple.com/accessibility/ios/)
 
 ## Toolchain
 
@@ -26,11 +26,11 @@ Porém, caso você não possa atualizar o seu Xcode, tanto por questões de comp
 Muito importante enfatizar que usando um *toolchain* diferente (para versões diferentes do Swift daquelas embutidas no Xcode) não necessariamente te permitirá explorar versões diferentes do SDK<sup>1</sup> iOS.
 
 Referências:
-- https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/AlternativeToolchains.html
+- [Resumo do Xcode, toolchains alternativos](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/AlternativeToolchains.html)
 
 
 <sup>
-<sup>1</sup> SDK, ou <i>software development kit</i> é o conjunto de ferramentas que você usa para desenvoler apps para o iOS, ou o Mac, ou qualquer outra plataforma na verdade. Quando você pensa em SDK no contexto iOS, pense também na versão do iOS que você pode referenciar, iOS 10, 11, 12, 13...
+<sup><b>1</b></sup> SDK, ou <i>software development kit</i> é o conjunto de ferramentas que você usa para desenvoler apps para o iOS, ou o Mac, ou qualquer outra plataforma na verdade. Quando você pensa em SDK no contexto iOS, pense também na versão do iOS que você pode referenciar, iOS 10, 11, 12, 13...
 </sup>
 
 
@@ -45,7 +45,7 @@ Com o Keychain, você pode armazenar senhas, chaves criptográficas, certificado
 O iPhone é referência no mercado, por ser o estado da arte, quando estamos falando de armazenamento totalmente seguro e privacidade, para *smartphones*.
 
 Referências:
-- https://developer.apple.com/documentation/security/keychain_services
+- [Serviço de Keychain](https://developer.apple.com/documentation/security/keychain_services)
 
 ## Programação funcional reativa
 
@@ -110,7 +110,7 @@ Qual dessas duas opções, a síncrona e a assíncrona, você acredita possuir a
 
 Com esse modelo, **assíncrono**, agora você pode responder àquela mensagem de Whatsapp enquanto é feito o download do seu podcast. Uepaaa! Devolta às maravilhas da modernidade!
 
-### Observer Pattern
+## Observer Pattern
 
 > OK então. Eu já sei como tornar a experiência do usuário do meu app mais agradável e produtiva! Bingo! É o modelo assíncrono, certo?! O app se torna capaz de fazer mais de uma coisa ao mesmo tempo, entendi certo, certo!?
 
@@ -183,20 +183,24 @@ Uma estrutura **observável** | `Observable`
 Uma estrutura **observadora** | `Observer`
 Uma estrutura usada para **responder** à eventos | `Function` ou `closure` ou `block of code`
 
-Espera aí, você quer dizer então que seria possível então eu programar algo como o código abaixo, em Swift?
+Espera aí, você quer dizer então que seria possível eu programar algo como o código abaixo, em Swift?
 
 ``` swift
-func observableTask() -> result { // here we define an observable task that returns a result
+// here we define an observable task that returns a result
+func observableTask() -> result {
     /* ... code for the task to run assynchronously ... */
     return result
 }
 
-ObserveCompletionOf(observableTask) // here we start the task, and wait for its completion
+ // here we start the task, and wait for its completion
+ObserveCompletionOf(observableTask)
     .whenDone { result in // once the task is complete, we take its result
         /* ... code to be run after 'task' completion ... */
         /* ... eventually use 'result' from 'task' ... */
     }
-    .afterDoneReleaseUsedResourcesPlease() // after we're done, we release any resource not longer necessary. In a polite fashion.
+    .afterDoneReleaseUsedResourcesPlease() 
+    // after we're done, we release any resource not longer necessary.
+    // In a polite fashion.
 ```
 
 > Huh... Que massa... Mas eu ainda tenho que escrever uma tarefa observável. Viu ali em cima? Problemas... Problemas! Problemas! De problemas eu já estou cheio! Traga-me soluções!
@@ -212,7 +216,8 @@ Você foi ver o Facebook, né? Não? Então pode continuar, você passou no meu 
 Que tal então se fizéssemos algo como:
 
 ``` swift
-func task() -> Observable<result> { // here we define a task that returns an observable result
+// Here we define a task that returns an observable result
+func task() -> Observable<result> {
     /* ... code for the task to run assynchronously ... */
     return observable.next(result)
 }
@@ -222,7 +227,9 @@ ObserveCompletionOf(task) // here we start the task, and wait for its completion
         /* ... code to be run after 'task' completion ... */
         /* ... eventually use 'result' from 'task' ... */
     }
-    .afterDoneReleaseUsedResourcesPlease() // after we're done, we release any resource not longer necessary. In a polite fashion.
+    .afterDoneReleaseUsedResourcesPlease() 
+    // after we're done, we release any resource not longer necessary.
+    // In a polite fashion.
 ```
 
 Daí eu uso o código que eu já tenho? Só dou uma "mexidinha" na tarefa para retornar algo que possa ser usado por essa coisa de programação funcional reativa toda?
@@ -232,19 +239,19 @@ Isso. Alguém ja enfrentou todo esse problema antes, e criou algo chamado **RxSw
 ⚠️ **IMPORTANTE**: o *design pattern observer* pode ser implementado de mais de uma forma, ou fazer uso de outros frameworks. Essa não é a única, e nem necessariamente a melhor forma de implementação. Se você tiver alguma sugestão ou alternativa, abra um bug aqui no Github que vamos avaliar se colocamos essa sugestão aqui.
 
 <sup>
-<sup>2</sup>O padrão <i>observer</i> pode ser usado para outras circunstâncias também, como a alteração de uma variável, por exemplo. Uma estrutura observa qualquer alteração em dada variável e quando modificada, outro trecho de código é executado em resposta a essa modificação.<br>
+<sup><b>2</b></sup> O padrão <i>observer</i> pode ser usado para outras circunstâncias também, como a alteração de uma variável, por exemplo. Uma estrutura observa qualquer alteração em dada variável e quando modificada, outro trecho de código é executado em resposta a essa modificação.<br>
 </sup>
 
 <sup>
-<sup>3</sup>Fale sobre isso com qualquer pessoa não ligada à informática. Com certeza essa pessoa vai te achar um hacker! Muito inteligente! Ou como forma alternativa de renda. Fale sobre isso com pessoas aleatórias enquanto você aguarda pelo ônibus, ou no cruzamento de semáforos. Essa pessoa aleatória certamente te dará todo o dinheiro na carteira para se livrar de você o mais rápido possível! <b>ATENÇÃO:</b> múltiplas evidências apontam (não me pergunte como) que esse tipo de assunto não é efetivo como: quebra gelo em festas, conversa em primeiro encontro. A não ser que você seja o único na festa. Ou levou um bolo no encontro do Tinder. Daí pode ser divertido (me pergunte como).<br>
+<sup><b>3</b></sup> Fale sobre isso com qualquer pessoa não ligada à informática. Com certeza essa pessoa vai te achar um hacker! Muito inteligente! Ou como forma alternativa de renda. Fale sobre isso com pessoas aleatórias enquanto você aguarda pelo ônibus, ou no cruzamento de semáforos. Essa pessoa aleatória certamente te dará todo o dinheiro na carteira para se livrar de você o mais rápido possível! <b>ATENÇÃO:</b> múltiplas evidências apontam (não me pergunte como) que esse tipo de assunto não é efetivo como: quebra gelo em festas, conversa em primeiro encontro. A não ser que você seja o único na festa. Ou levou um bolo no encontro do Tinder. Daí pode ser divertido (me pergunte como).<br>
 </sup>
 
 <sup>
-<sup>4</sup>Existem outros frameworks para a programação funcional reativa para o iOS/Mac. O <a href="https://github.com/ReactiveCocoa/ReactiveCocoa">ReactiveCocoa</a> é também muito conhecido e utilizado. <a href="https://github.com/DeclarativeHub/Bond">Bond</a> é mais uma opção.
+<sup><b>4</b></sup> Existem outros frameworks para a programação funcional reativa para o iOS/Mac. O <a href="https://github.com/ReactiveCocoa/ReactiveCocoa">ReactiveCocoa</a> é também muito conhecido e utilizado. <a href="https://github.com/DeclarativeHub/Bond">Bond</a> é mais uma opção.
 </sup>
 
 
-### RxSwift
+## RxSwift
 
 ⚠️ **IMPORTANTE**: **RxSwift** não é a única, e nem necessariamente a melhor, forma de implementação/framework para o *design pattern observer*. Se você tiver alguma sugestão ou alternativa, abra um bug aqui no Github que vamos avaliar se colocamos essa sugestão aqui.
 
@@ -252,7 +259,7 @@ O [RxSwift](https://github.com/ReactiveX/RxSwift) é uma biblioteca para a compo
 
 A ideia por trás do RxSwift tem sua [origem no ambiente .NET](https://github.com/dotnet/reactive) (e mais [aqui](http://introtorx.com/)), porém com conceitos adaptados para uma integração mais agradável e idiomática no ambiente iOS/Mac.
 
-Além do paradigma de *observáveis*, e *programação reativa* o RxSwift ainda incorpora um conjunto grande de operadores do que agora é definido como comunidade [Rx](http://reactivex.io/).
+Além do paradigma de *observáveis*, e *programação reativa*, o RxSwift ainda incorpora um conjunto grande de operadores do que agora é definido como comunidade [Rx](http://reactivex.io/).
 
 Tais operadores (funções na verdade) tem um poder enorme em facilitar a implementação de tarefas complexas, por exemplo:
 
@@ -293,19 +300,19 @@ for (int i = 0; i < 4; i++)
 
 *Continua... no próximo commit.*
 
-### Operadores + RxMarbles
+## Como ler código RxSwift
 
-### Como ler código RxSwift
+## Como escrever código RxSwift
 
-### Como escrever código RxSwift
+## +Operadores +RxMarbles
 
-### MVVM com RxSwift
+## MVVM com RxSwift
 
-### Como ler perguntas e respostas no Stackoverflow!
+## Como ler perguntas e respostas no Stackoverflow!
 
 
 
-### Modelagem das atividades
+## Modelagem das atividades
 Para as atividades iniciais (de aprendizagem), será solicitado que os estudantes façam modificações em seus próprios projetos de conclusão:
 Ex: 
 * Usar Keychain para o sistema de login do app.
