@@ -21,7 +21,7 @@ No mundo iOS, Xcode, Mac... o termo *toolchain* está ligado ao conjunto de ferr
 
 Quando você instala o Xcode no seu Mac, o Xcode já inclui um *toolchain* compatível com a versão do Xcode que você acabou de instalar. (*É por isso que você tem que, geralmente, atualizar o Xcode se você quiser desenvolver apps para as versões mais recentes do iOS, ou usar novas versões do Swift*)
 
-Porém, caso você não possa atualizar o seu Xcode, tanto por questões de compatibilidade, ou por alguma outra limitação (como falta de permissão para tanto), você pode configurar o seu Xcode atual para usar um *toolchain* diferente, e experimentar versões diferentes do Swift, tanto mais atual, ou ainda mais antigo, caso seja necessário.
+Porém, caso você não possa atualizar o seu Xcode, tanto por questões de compatibilidade, ou por alguma outra limitação (como falta de permissão), você pode configurar o seu Xcode atual para usar um *toolchain* diferente, e experimentar versões diferentes do Swift, tanto mais atual, ou ainda mais antigo, caso seja necessário.
 
 Muito importante enfatizar que usando um *toolchain* diferente (para versões diferentes do Swift daquelas embutidas no Xcode) não necessariamente te permitirá explorar versões diferentes do SDK<sup>1</sup> iOS.
 
@@ -38,7 +38,7 @@ Chaveiro talvez não faça justiça do real poder dessa funcionalidade. Talvez a
 
 Com o Keychain, você pode armazenar senhas, chaves criptográficas, certificados e dados de forma totalmente segura.
 
-Com efeito, o iPhone é referência no mercado, por ser o estado da arte no armazenamento totalmente seguro em *smartphones*.
+O iPhone é referência no mercado, por ser o estado da arte, quando estamos falando de armazenamento totalmente seguro e privacidade, para *smartphones*.
 
 Referências:
 - https://developer.apple.com/documentation/security/keychain_services
@@ -51,7 +51,7 @@ Vamos quebrar o título dessa seção, em partes:
 - Funcional: você, programando, usando funções específicas...
 - Reativa: você, programando, usando funções específicas, para **reagir**!
 
-Mas... reagir a o que?
+Mas... reagir a que?
 
 ### Eventos síncronos
 
@@ -102,7 +102,7 @@ Ciente dessa mensagem (via uma notificação no seu desktop), você pegaria esse
 
 A opção pela escolha número (1.) seria um exemplo de evento síncrono. Onde você, ficaria aguardando a resposta do seu colega. Possivelmente você quem ficaria navegando no UOL enquanto aguarda a resposta :-)
 
-Qual dessas opções duas, a síncrona e a assíncrona, você acredita possuir a propriedade de aproveitar melhor os recursos disponíveis? <sup>*shh, dica, são os exemplos assíncronos!*</sup>
+Qual dessas duas opções, a síncrona e a assíncrona, você acredita possuir a propriedade de aproveitar melhor os recursos disponíveis? <sup>*shh, dica, são os exemplos assíncronos!*</sup>
 
 Com esse modelo, **assíncrono**, agora você pode responder àquela mensagem de Whatsapp enquanto é feito o download do seu podcast. Uepaaa! Devolta às maravilhas da modernidade!
 
@@ -120,7 +120,7 @@ Com esse modelo, **assíncrono**, agora você pode responder àquela mensagem de
 
 *Abruptamente seu pensamento é interrompido. Ploft! Você observa descrente o cursor piscando na tela, impassível, absolutamente resoluto em sua tarefa de piscar. O Xcode está aberto. Pacientemente aguardando por aquelas linhas de código mágicas, que farão tudo acontecer da forma que você imagina. Você então começa a vislumbrar o infinito e o além.*
 
-Você não sabe por onde começar... Isso deve ser difícil para cara-amba! Programar o seu app para fazer mais de uma coisa ao mesmo tempo!
+Você não sabe por onde começar... Isso deve ser difícil para caramba! Programar o seu app para fazer mais de uma coisa ao mesmo tempo!
 
 Primeiro, eu tenho que fazer um ou mais trechos do meu código rodarem de alguma forma paralela. Depois, quando uma ou mais dessas atividades paralelas concluírem, eu preciso coletar o resultado dessas atividades. E além do mais meu app tem que ser bonito e responsivo! Impossível para o prazo que eu tenho!
 
@@ -153,3 +153,28 @@ Eu quero dizer:
 ### MVVM com RxSwift
 
 ### Como ler perguntas e respostas no Stackoverflow!
+
+
+
+### Modelagem das atividades
+
+Para as atividades iniciais (de aprendizagem), será solicitado que os estudantes façam modificações em seus próprios projetos de conclusão:
+Ex: 
+* Usar Keychain para o sistema de login do app.
+* Substituir taps de botões, por funções Rx.
+* Apps devem usar pesquisa com API usando throttle na searchbar.
+* Fazer transições de tela usando Rswift.
+* Criar arquivos de internacionalização para strings.
+**** APENAS COMO SUGESTÃO **** Inserir as regras padrões de SwiftLint usados aqui, nos projetos individuais, para que se habituem e tenham uma menor resistência quando entrarem aqui. Sem contar que lint é extremamente usado por diversas empresas, então acredito agregar valor. 
+
+Dessa forma, os alunos terão pouco tempo desperdiçado, sem necessidade de desenvolver um app completo para apenas uma atividade ou outra e poderão focar o aprendizado aonde é realmente necessário.
+
+Pra isso funcionar, será necessário que tenhamos acesso aos projetos, para que possamos analisar e inserir uma boas atividades para os projetos.
+
+Para o "Projeto Final" ainda mantém a ideia de criar um novo app para que todos manipulem em diferentes funcionalidades.
+Talvez o ideal aqui seja fazer uma simulação completa de um fluxo de trabalho. Eu entendo que nesse momento estamos analisando a capacidade de trabalhar em equipe e também resoluções de gitFlow e não mais questão de capacidade técnica.
+
+Nesse caso, eu sugiro que a última atividade, seja o desenvolvimento de um app completo, que deverá ser feita em uma única entrega por toda a equipe.
+Nós elaboramos o conceito e a EF para o desenvolvimento do app e eles, como equipe, deverão dividir e distribuir (com nosso acompanhamento) as tarefas, organizar os conflitos, merges e abrir os PRs ao fim de cada nova funcionalidade do app que for desenvolvida.
+
+Nos dias de aula, durante o Projeto Final, pensei em realizarmos daily meetings, pra tirar dúvidas e acompanhar o andamento do projeto, como jornadeiros.
