@@ -25,10 +25,14 @@ Porém, caso você não possa atualizar o seu Xcode, tanto por questões de comp
 
 Muito importante enfatizar que usando um *toolchain* diferente (para versões diferentes do Swift daquelas embutidas no Xcode) não necessariamente te permitirá explorar versões diferentes do SDK<sup>1</sup> iOS.
 
-<sup>1</sup> SDK, ou *software development kit* é o conjunto de ferramentas que você usa para desenvoler apps para o iOS, ou o Mac, ou qualquer outra plataforma na verdade. Quando você pensa em SDK no contexto iOS, pense também na versão do iOS que você pode referenciar, iOS 10, 11, 12, 13...
-
 Referências:
 - https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/AlternativeToolchains.html
+
+
+<small>
+<sup>1</sup> SDK, ou <i>software development kit</i> é o conjunto de ferramentas que você usa para desenvoler apps para o iOS, ou o Mac, ou qualquer outra plataforma na verdade. Quando você pensa em SDK no contexto iOS, pense também na versão do iOS que você pode referenciar, iOS 10, 11, 12, 13...
+</small>
+
 
 ## Keychain
 
@@ -159,7 +163,7 @@ No pseudo-código acima acabamos definindo pelo menos três estruturas important
 1. uma segunda estrutura, que observe a conclusão dessa tarefa;
 1. o código que queremos que seja executado, quando a tarefa for concluída;
 
-<sub>E de quebra, também queremos ser eficientes, que todos os recursos não mais utilizados sejam liberados para o uso em outras partes do app. Embora vitalmente importante, esse gerenciamento de recursos não é o foco no momento.</sub>
+<small>E de quebra, também queremos ser eficientes, que todos os recursos não mais utilizados sejam liberados para o uso em outras partes do app. Embora vitalmente importante, esse gerenciamento de recursos não é o foco no momento.</small>
 
 Com o pseudo-código acima acabamos definindo, muito simplificadamente e para um uso específico, o padrão *Observer* para trechos de código assíncrono<sup>2</sup>:
 
@@ -225,13 +229,19 @@ Daí eu uso o código que eu já tenho? Só dou uma "mexidinha" na tarefa para r
 
 Isso. Alguém ja enfrentou todo esse problema antes, e criou algo chamado **RxSwift**, para ser usado na programação funcional reativa do iOS<sup>4</sup>.
 
-<sup>2</sup>O padrão *observer* pode ser usado para outras circunstâncias também, como a alteração de uma variável, por exemplo. Uma estrutura observa qualquer alteração em dada variável e quando modificada, outro trecho de código é executado em resposta a essa modificação.
+⚠️ **IMPORTANTE**: o *design pattern observer* pode ser implementado de mais de uma forma, ou fazer uso de outros frameworks. Essa não é a única, e nem necessariamente a melhor forma de implementação. Se você tiver alguma sugestão ou alternativa, abra um bug aqui no Github que vamos avaliar se colocamos essa sugestão aqui.
 
-<sup>3</sup>Fale sobre isso com qualquer pessoa não ligada à informática. Com certeza essa pessoa vai te achar um hacker! Muito inteligente! Ou como forma alternativa de renda. Fale sobre isso com pessoas aleatórias enquanto você aguarda pelo ônibus, ou no cruzamento de semáforos. Essa pessoa aleatória certamente te dará todo o dinheiro na carteira para se livrar de você o mais rápido possível! **ATENÇÃO:** múltiplas evidências apontam (não me pergunte como) que esse tipo de assunto não é efetivo como: quebra gelo em festas, conversa em primeiro encontro. A não ser que você seja o único na festa. Ou levou um bolo no encontro do Tinder. Daí pode ser divertido (me pergunte como).
+<small>
+<sup>2</sup>O padrão <i>observer</i> pode ser usado para outras circunstâncias também, como a alteração de uma variável, por exemplo. Uma estrutura observa qualquer alteração em dada variável e quando modificada, outro trecho de código é executado em resposta a essa modificação.
+
+<sup>3</sup>Fale sobre isso com qualquer pessoa não ligada à informática. Com certeza essa pessoa vai te achar um hacker! Muito inteligente! Ou como forma alternativa de renda. Fale sobre isso com pessoas aleatórias enquanto você aguarda pelo ônibus, ou no cruzamento de semáforos. Essa pessoa aleatória certamente te dará todo o dinheiro na carteira para se livrar de você o mais rápido possível! <b>ATENÇÃO:</b> múltiplas evidências apontam (não me pergunte como) que esse tipo de assunto não é efetivo como: quebra gelo em festas, conversa em primeiro encontro. A não ser que você seja o único na festa. Ou levou um bolo no encontro do Tinder. Daí pode ser divertido (me pergunte como).
 
 <sup>4</sup>Existem outros frameworks para a programação funcional reativa para o iOS/Mac. O [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa) é também muito conhecido e utilizado. [Bond](https://github.com/DeclarativeHub/Bond) é mais uma opção.
+</small>
 
 ### RxSwift
+
+⚠️ **IMPORTANTE**: **RxSwift** não é a única, e nem necessariamente a melhor, forma de implementação/framework para o *design pattern observer*. Se você tiver alguma sugestão ou alternativa, abra um bug aqui no Github que vamos avaliar se colocamos essa sugestão aqui.
 
 *Continua... no próximo commit.*
 
