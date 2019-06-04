@@ -232,11 +232,15 @@ Isso. Alguém ja enfrentou todo esse problema antes, e criou algo chamado **RxSw
 ⚠️ **IMPORTANTE**: o *design pattern observer* pode ser implementado de mais de uma forma, ou fazer uso de outros frameworks. Essa não é a única, e nem necessariamente a melhor forma de implementação. Se você tiver alguma sugestão ou alternativa, abra um bug aqui no Github que vamos avaliar se colocamos essa sugestão aqui.
 
 <sup>
-<sup>2</sup>O padrão <i>observer</i> pode ser usado para outras circunstâncias também, como a alteração de uma variável, por exemplo. Uma estrutura observa qualquer alteração em dada variável e quando modificada, outro trecho de código é executado em resposta a essa modificação.
+<sup>2</sup>O padrão <i>observer</i> pode ser usado para outras circunstâncias também, como a alteração de uma variável, por exemplo. Uma estrutura observa qualquer alteração em dada variável e quando modificada, outro trecho de código é executado em resposta a essa modificação.<br>
+</sup>
 
-<sup>3</sup>Fale sobre isso com qualquer pessoa não ligada à informática. Com certeza essa pessoa vai te achar um hacker! Muito inteligente! Ou como forma alternativa de renda. Fale sobre isso com pessoas aleatórias enquanto você aguarda pelo ônibus, ou no cruzamento de semáforos. Essa pessoa aleatória certamente te dará todo o dinheiro na carteira para se livrar de você o mais rápido possível! <b>ATENÇÃO:</b> múltiplas evidências apontam (não me pergunte como) que esse tipo de assunto não é efetivo como: quebra gelo em festas, conversa em primeiro encontro. A não ser que você seja o único na festa. Ou levou um bolo no encontro do Tinder. Daí pode ser divertido (me pergunte como).
+<sup>
+<sup>3</sup>Fale sobre isso com qualquer pessoa não ligada à informática. Com certeza essa pessoa vai te achar um hacker! Muito inteligente! Ou como forma alternativa de renda. Fale sobre isso com pessoas aleatórias enquanto você aguarda pelo ônibus, ou no cruzamento de semáforos. Essa pessoa aleatória certamente te dará todo o dinheiro na carteira para se livrar de você o mais rápido possível! <b>ATENÇÃO:</b> múltiplas evidências apontam (não me pergunte como) que esse tipo de assunto não é efetivo como: quebra gelo em festas, conversa em primeiro encontro. A não ser que você seja o único na festa. Ou levou um bolo no encontro do Tinder. Daí pode ser divertido (me pergunte como).<br>
+</sup>
 
-<sup>4</sup>Existem outros frameworks para a programação funcional reativa para o iOS/Mac. O [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa) é também muito conhecido e utilizado. [Bond](https://github.com/DeclarativeHub/Bond) é mais uma opção.
+<sup>
+<sup>4</sup>Existem outros frameworks para a programação funcional reativa para o iOS/Mac. O <a href="https://github.com/ReactiveCocoa/ReactiveCocoa">ReactiveCocoa</a> é também muito conhecido e utilizado. <a href="https://github.com/DeclarativeHub/Bond">Bond</a> é mais uma opção.
 </sup>
 
 
