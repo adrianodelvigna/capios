@@ -176,7 +176,7 @@ Então podemos ter:
 Em língua de gente normal | Em língua de programador FRP (hacker<sup>3</sup>)
 -- | --
 Uma estrutura **observável** | `Observable`
-Uma estrutura **observadora** | `Observable`
+Uma estrutura **observadora** | `Observer`
 Uma estrutura usada para **responder** à eventos | `Function` ou `closure` ou `block of code`
 
 Espera aí, você quer dizer então que seria possível então eu programar algo como o código abaixo, em Swift?
