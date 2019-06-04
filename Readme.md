@@ -243,9 +243,51 @@ Isso. Alguém ja enfrentou todo esse problema antes, e criou algo chamado **RxSw
 
 ⚠️ **IMPORTANTE**: **RxSwift** não é a única, e nem necessariamente a melhor, forma de implementação/framework para o *design pattern observer*. Se você tiver alguma sugestão ou alternativa, abra um bug aqui no Github que vamos avaliar se colocamos essa sugestão aqui.
 
+O [RxSwift](https://github.com/ReactiveX/RxSwift) é uma biblioteca para a composição de eventos assíncronos usando o pattern de *observáveis*.
+
+A ideia por trás do RxSwift tem sua [origem no ambiente .NET](https://github.com/dotnet/reactive) (e mais [aqui](http://introtorx.com/)), porém com conceitos adaptados para uma integração mais agradável e idiomática no ambiente iOS/Mac.
+
+Além do paradigma de *observáveis*, e *programação reativa* o RxSwift ainda incorpora um conjunto grande de operadores do que agora é definido como comunidade [Rx](http://reactivex.io/).
+
+Tais operadores (funções na verdade) tem um poder enorme em facilitar a implementação de tarefas complexas, por exemplo:
+
+- quer esperar por dois eventos assíncronos, executando em paralelo, para só então tomar uma ação? Use o operador `combineLatest`, ou `zip`;
+- quer alterar a resposta de um evento? Use o operador `map`;
+- quer que dois ou mais eventos aconteçam um depois do outro? Use o operador `flatMap`;
+
+E muito mais. São [dezenas de operadores](http://reactivex.io/documentation/operators.html) que nos permitem dizer ao app *o que fazer*, e não *como fazer*. Essa forma de programação é muitas vezes chamada de programação **declarativa**, em contraste com a programação **imperativa**, na qual dizemos **como** um programa deve realizar uma tarefa.
+
+Programação declarativa | Programação imperativa
+:--: | :--:
+O que fazer | Como fazer
+Itere por cada elemento do meu `arrayExistente`, execute a função `f(elementoArray)` e me retorne um `arrayNovo` com o resultado. | Aloque um `arrayNovo`. Pegue o primeiro item do `arrayExistente` cujo index `i` tenha valor `1`. Enquanto o valor desse index seja menor que o tamanho do `array`, para cada elemento do `array[i]` execute a função `f(elementoArray)` e adicione o resultado ao `arrayVazio`. Incremente o index `i` em `1`, sempre observando o tamanho do `arrayExistente`. Quando `i` for maior que o tamanho do `arrayExistente`, pare.
+
+**Exemplo** de programação declarativa (usando Swift):
+``` swift
+// Here, we just declare what should be done
+let arrayNovo = [1, 2, 3, 4].map { item in item + 1 }
+// arrayNovo = [2, 3, 4, 5]
+```
+
+**Exemplo** de programação imperativa (usando C):
+``` C
+// Here, we declare how to allocate the new array
+// How to iterate trough the existing array
+// And how to apply the calculated value to the new array
+int arrayExistente[4] = {1, 2, 3, 4};
+int arrayNovo[4];
+
+for (int i = 0; i < 4; i++)
+{
+    arrayNovo[i] = arrayExistente[i] + 1;
+}
+```
+
+<small>Apenas deixando claro que ambas as formas de programação são compatíveis com as linguagens C e Swift - limitados às restrições de sintaxe de cada linguagem. Os exemplos acima foram usados apenas para evidenciar o ponto da programação declarativa <i>versus</i> a imperativa.</small>
+
 *Continua... no próximo commit.*
 
-### RxMarbles + Operadores
+### Operadores + RxMarbles
 
 ### Como ler código RxSwift
 
