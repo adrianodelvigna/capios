@@ -17,10 +17,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var accessibilityButton: UIButton!
     
-    let disposeBag: DisposeBag = DisposeBag()
+    var disposeBag: DisposeBag = DisposeBag()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        disposeBag = DisposeBag()
         
         rxStudyButton.rx.tap.subscribe(onNext: {
             if let vc = R.storyboard.main.rxOperatorsExerciseViewController() {
