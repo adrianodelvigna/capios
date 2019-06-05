@@ -128,7 +128,7 @@ Você não sabe por onde começar... Isso deve ser difícil para caramba! Progra
 
 Primeiro, eu tenho que fazer um ou mais trechos do meu código rodarem de alguma forma paralela. Depois, quando uma ou mais dessas atividades paralelas concluírem, eu preciso coletar o resultado dessas atividades. E além do mais meu app tem que ser bonito e responsivo! Impossível para o prazo que eu tenho!
 
-> Eu deveria mudar minha carreira. Abandonar toda essa porcaria inútil. Talvez estudar letras. Deve ser mais tranquilo, certo? Me tornar escritor? Com meu conhecimento técnico eu poderia escrever alguns artigos, certo? Talvez colocá-los no Github... Hmmmm.
+> Eu deveria mudar minha carreira. Abandonar toda essa porcaria inútil. Talvez estudar letras. Deve ser mais tranquilo, certo? Me tornar escritor? Com meu conhecimento técnico eu poderia escrever alguns artigos, certo? Talvez colocá-los no Github, Medium... Hmmmm.
 
 *Passa rapidamente por sua mente...*
 
@@ -205,7 +205,7 @@ ObserveCompletionOf(observableTask)
 
 > Huh... Que massa... Mas eu ainda tenho que escrever uma tarefa observável. Viu ali em cima? Problemas... Problemas! Problemas! De problemas eu já estou cheio! Traga-me soluções!
 
-*Você pensa, enquanto ardilosa e secretamente pensa em uma justificativa para mudar de aba no navegador... Sua inquetação para ver as últimas atualizações no Facebook só aumenta...*
+*Você pensa, enquanto ardilosa e secretamente procura uma justificativa para mudar de aba no navegador... Sua inquetação para ver as últimas atualizações no Facebook só aumenta...*
 
 Você foi ver o Facebook, né? Não? Então pode continuar, você passou no meu teste. Viu o Facebook? Hah! Acho melhor você reler os parágrafos acima, até que você possa conscientemente se livrar desse loop <sub>maligno.</sub>
 
@@ -236,7 +236,9 @@ Daí eu uso o código que eu já tenho? Só dou uma "mexidinha" na tarefa para r
 
 Isso. Alguém ja enfrentou todo esse problema antes, e criou algo chamado **RxSwift**, para ser usado na programação funcional reativa do iOS<sup>4</sup>.
 
+___
 ⚠️ **IMPORTANTE**: o *design pattern observer* pode ser implementado de mais de uma forma, ou fazer uso de outros frameworks. Essa não é a única, e nem necessariamente a melhor forma de implementação. Se você tiver alguma sugestão ou alternativa, abra um bug aqui no Github que vamos avaliar se colocamos essa sugestão aqui.
+___
 
 <sup>
 <sup><b>2</b></sup> O padrão <i>observer</i> pode ser usado para outras circunstâncias também, como a alteração de uma variável, por exemplo. Uma estrutura observa qualquer alteração em dada variável e quando modificada, outro trecho de código é executado em resposta a essa modificação.<br>
@@ -252,8 +254,9 @@ Isso. Alguém ja enfrentou todo esse problema antes, e criou algo chamado **RxSw
 
 
 ## RxSwift
-
+___
 ⚠️ **IMPORTANTE**: **RxSwift** não é a única, e nem necessariamente a melhor, forma de implementação/framework para o *design pattern observer*. Se você tiver alguma sugestão ou alternativa, abra um bug aqui no Github que vamos avaliar se colocamos essa sugestão aqui.
+___
 
 O [RxSwift](https://github.com/ReactiveX/RxSwift) é uma biblioteca para a composição de eventos assíncronos usando o pattern de *observáveis*.
 
@@ -263,7 +266,7 @@ Além do paradigma de *observáveis*, e *programação reativa*, o RxSwift ainda
 
 Tais operadores (funções na verdade) tem um poder enorme em facilitar a implementação de tarefas complexas, por exemplo:
 
-- quer esperar por dois eventos assíncronos, executando em paralelo, para só então tomar uma ação? Use o operador `combineLatest`, ou `zip`;
+- quer esperar por dois eventos assíncronos, executando em paralelo, para só então tomar uma ação? Use o operador `combineLatest` ou `zip`;
 - quer alterar a resposta de um evento? Use o operador `map`;
 - quer que dois ou mais eventos aconteçam um depois do outro? Use o operador `flatMap`;
 
@@ -297,12 +300,93 @@ for (int i = 0; i < 4; i++)
 
 <sup>Apenas deixando claro que ambas as formas de programação são compatíveis com as linguagens C e Swift - limitados às restrições de sintaxe de cada linguagem. Os exemplos acima foram usados apenas para evidenciar o ponto da programação declarativa <i>versus</i> a imperativa.</sup>
 
+### OK! Tudo mundo junto agora!
 
-*Continua... no próximo commit.*
+Todos esses conceitos, programação funcional reativa, o *pattern observer*, e a adaptação à sintaxe da linguagem Swift, permitem que escrevamos esse tipo de código:
+
+```swift
+Observable.combineLatest(firstName.rx.text, lastName.rx.text) { $0 + " " + $1 }
+    .map { "Greetings, \($0)" }
+    .bind(to: greetingLabel.rx.text)
+```
+
+Onde combinamos os valores mais atuais de dois elementos de entrada de texto, criamos uma nova string concatenando os dois textos, criamos uma string de saudação, e finalmente conectamos tudo isso a uma label. Três linhas de código!
+
+Agora, imagine a implementação dos métodos do [protocolo UITextFieldDelegate](https://developer.apple.com/documentation/uikit/uitextfielddelegate), o controle para sabermos qual entrada de texto foi alterada para concatenarmos a string corretamente, criarmos uma string de saudação, para só então atualizarmos uma label. É um bocado de coisa para pensar. Num situação relativamente simples.
+
+Se conseguirmos aprender os termos usados pelo **RxSwift**, podemos abstrair (até certo ponto) como realizar algumas das atividades "mecânicas", ou repetitivas, do nosso app. Nos permitindo aplicar um foco ainda maior no propósito para que o app está sendo desenvolvido - ou focarmos nas regras do negócio, como também é mencionado.
+
+Imagina poder conectar um *array* de elementos, diretamente com uma table view, de tal modo que quando esse *array* de elementos seja modificado/atualizado a table view seja atualizada automaticamente? Você já imaginou isso?
+
+O **RxSwift** pode te ajudar a fazer tudo isso! Observe<sup>5</sup>!
+
+```swift
+viewModel
+    .rows
+    .bind(to: resultsTableView.rx.items(cellIdentifier: "WikipediaSearchCell", cellType: WikipediaSearchCell.self)) { (_, viewModel, cell) in
+        cell.title = viewModel.title
+        cell.url = viewModel.url
+    }
+    .disposed(by: disposeBag)
+```
+
+<sup>\<*Locução super-empolgada*></sup>
+<br>E não é só isso! Aderindo agora ao **RxSwift** você também leva:
+
+- Uma forma fácil de dizer ao código para continuar tentando uma operação em caso de erros, de forma simples e fácil!
+- Uma alternativa (possivelmente mais simples) para o uso de *delegates*!
+- Seu aplicativo quebra/*"crasheia"* pelo uso de KVOs? **RxSwift** tem uma alternativa para você!
+- Você quer mandar uma requisição a um endpoint somente depois de passado um determinado tempo depois de um último evento? **RxSwift** tem uma solução!
+
+Aumente sua potência como programador(a) sem precisar de Ginseng ou GranSênior!
+
+Tudo isso trazido para você pela Polishop!
+
+Veja alguns testemunhos!
+<br><sub>\<*/Locução super-empolgada*></sub>
+
+<sub>\<*dublagem fora sincronia<sup>6</sup> com os movimentos labiais*></sub>
+
+> Desde que eu comecei a usar o **RxSwift**, eu não quero mais olhar para trás. Eu uso o **RxSwift** para tudo!
+
+> Eu uso o **RxSwift** para tudo agora. Validação de formulários. Requisições de APIs. Atualizar minha interface. É uma maravilha! E o melhor de tudo? Eu consigo integrar meu código existente com um esforço bem pequeno! Eu aprovo!
+
+> O **RxSwift** se mostrou crucial na nossa busca pela forma perfeita de implementação do MVVM. Sem o **RxSwift**, isso não seria possível.
+
+> MVVM? MVC? MVP? VIPER? Com **RxSwift** eu consigo migrar para a arquitetura de app da semana, facilmente! Sem suar!
+
+<sup>\<*/dublagem fora sincronia com os movimentos labiais*></sup>
+
+Faça o checkout, configure seu *Podfile*, e confira os resultados você mesmo!
+
+Da mesma forma que os preços dos produtos da Polishop, o **RxSwift** pode apresentar um "preço de aprendizado" inicial alto<sup>7</sup>, porém, os ganhos a longo prazo podem ser bastante recompensadores, mesmo que em um uso restrito a algumas funcionalidades do seu app.
+
+Numa analogia, pense em aprimorar seu vocabulário em inglês, adicionando novas palavras ao seu repertório. Mas nesse caso estaremos aprendendo um punhado de novos conceitos, e algumas dezenas de novas palavras (ou operadores/funções). E você já estará com seu *mindset* na direção certa.
+
+É também consenso entre os programadores **Rx**, **RxSwift** que praticamente a totalidade do entendimento e fluência no paradigma e bibliotecas vêm da experimentação, do uso contínuo, principalmente. 10% vêm do estudo, e 90% vêm da prática. Então tenha **sempre** isso em mente.
+
+### Referências
+
+- [Why Rx[Swift]](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Why.md)
+
+<sup>
+<sup><b>5</b></sup> Pun intended.<br>
+</sup>
+<sup>
+<sup><b>6</b></sup> Seriam as dublagens fora de sincronia, <i>assíncronas</i>? Seriam as novelas mexicanas então, candidatas ao uso do <b>RxSwift</b>?
+</sup>
+<sup>
+<br>
+<sup><b>7</b></sup> Os sintomas incluem, mas não estão limitados a, perda de cabelo, esbranquecimento dos fios de cabelo restantes, indigestão, azia, úlcera, insônia, pesadelos com <b>RxSwift</b> quando você conseguir dormir, vontade de chorar e arrependimento. A persistirem os sintomas, continue tentando.<br>
+</sup>
 
 ## Como ler código RxSwift
 
+*Continua... no próximo commit.*
+
 ## Como escrever código RxSwift
+
+🎗Para aprender o **RxSwift** você não necessariamente precisa se restringir às fontes (artigos, livros, vídeos, cursos) do **RxSwift**. Por ser quase um padrão (**ReactiveX**) outras bibliotecas como o RxJS, RxJava, Rx .Net podem servir como mais uma referência, especialmente no uso de operadores. Até mesmo bibliotecas como as supra-citadas <a href="https://github.com/ReactiveCocoa/ReactiveCocoa">ReactiveCocoa</a> e <a href="https://github.com/DeclarativeHub/Bond">Bond</a> (que não necessariamente implementam o padrão **ReactiveX**) possuem documentação que podem complementar o entendimento dos conceitos mais básicos.
 
 ## +Operadores +RxMarbles
 
