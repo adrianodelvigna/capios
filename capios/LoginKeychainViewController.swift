@@ -37,6 +37,7 @@ class LoginKeychainViewController: UIViewController {
     //Você também tem a opção de criar um valet que gerencie a segurança com o uso de biometria. Dessa forma, sempre que você desejar acessar um valor que esteja salvo no Valet, será solicitado ao usuário que confirme a presença com o uso da biometria (faceId, TouchId ou usando o passCode do device).
     //Usar o SecureEnclaveValet é a forma mais segura de armazenar dados no iOS, tvOS, watchOS e macOS.
     //Atenção: O SecureEnclaveValet não pode ser usado em devices que não suportem Secure Enclave. Nesse caso você deverá usar o Valet padrão.
+    //Não esqueça de adicionar ao info.plist a requisição de autorização para uso da biometria: Privacy - Face ID Usage Description (NSFaceIDUsageDescription), ou touchId...
     let valetWithBiometrics: SecureEnclaveValet = SecureEnclaveValet.valet(with: Identifier(nonEmpty: "ValetUniqueId")!,
                                                                            accessControl: .userPresence)
     //Para controle de acesso Biométrico, você também pode usar o SinglePromptSecureEnclaveValet, que terá o mesmo comportamento que o SecureEnclaveValet, mas ao invés de chamar a confirmação biométrica a cada request, irá chamar apenas na primeira vez que um dado do Keychain for solicitado.

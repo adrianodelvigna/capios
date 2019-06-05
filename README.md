@@ -10,8 +10,50 @@ A não aderência aos regulamentos estabelecidos pelo Banco Central, podem levar
 
 Dentre as funcionalidades mais usadas, e talvez a mais simples de acessibilidade no iOS, está o VoiceOver: um leitor de tela que permite aos usuários navegar pela interface, sem vê-la.
 
+Por padrão, o sistema operacional iOS, já faz pra você alguns passos da acessibilidade. Para testar essa experiência em seu app, basta ir até as configurações: Ajustes -> Geral -> Acessibilidade -> VoiceOver e então ativar a opção VoiceOver.
+
+A partir desse momento, seu app começar a narrar suas interações e também dará algumas dicas de interação.
+
+> Nossa! Que fantástico! Então não preciso fazer nada?! Praia e água fresca?!
+
+Ahhmmmm, não. Isso só vai trazer as funcionalidades básicas da sua aplicação. Para fornecer uma real experiência ao seu usuário, você deve adicionar descrições e o máximo de informação possível, para que seu app fica entendível, para quem não enxerga. 
+
+> Ahh! Para né.... Dá pra entender tudo que ta acontecendo só com o VoiceOver.
+
+Será mesmo? Faça o seguinte desafio. Ative o VoiceOver do seu device, lá na opção de Ajustes. Depois abra sua aplicação e "feche as cortinas".
+Para fechar as cortinas do seu app, basta você tocar na tela, com 3 dedos, 3 vezes. Se por acaso não funcionar, de o tap na tela com 3 dedos, 4 vezes. 
+
+> MEU CANECO! SUMIU TUDO?!
+
+Pois é amigo, agora sim você está no mesmo nível que seu usuário com deficiência visual. Tente navegar no seu app e veja se é tão fácil navegar nele quanto você achou que era. Um pouco diferente né. 
+Calma, sem pânico, pra voltar pro estado original, é só repetir a ação que você usou pra fechar as cortinas (3 ou 4 taps na tela usando 3 dedos) 
+
+Agora sim você sabe como é a experiência e o que você TEM que ajustar para que seus usuários entendam e consigam usar sua aplicação.
+
+### Existem 5 atributos propriedades para usar na acessibilidade:
+
+#### * Label: 
+Um jeito simples e objetivo para descrever um controle ou uma view: "Botão voltar", "imagem de patos"
+
+#### * Traits:
+Descreve um estado do elemento, comportamento ou uso. Um trait para um checkbox por exemplo: "marcador selecionado" 
+
+#### * Hint:
+Descreve qual ação um elemento faz. Por exemplo: "Mostra os detalhes da receita"
+
+#### * Frame:
+Não muito usado, o frame irá descrever para o usuário o format CGRect do frame. O VoiceOver nesse caso irá apenas informar os valores de x, y, width e height do frame.
+
+#### * Value:
+O valor de um elemento. Mais usado para descrever valores de elementos, por exemplo um slider
+
+Como dito anteriormente, para maioria dos elementos, já existe um valor atribuído, você deve apenas aprimorar essa informação para trazer uma melhor experiência para seu usuário.
+
+Amanhã, um tchan a mais falando sobre o Accessibility Inspector!!!
+
 Referências:
 - [Acessibilidade iOS](https://developer.apple.com/accessibility/ios/)
+- [Tutorial - Primeiros passos](https://www.raywenderlich.com/845-ios-accessibility-tutorial-getting-started)
 
 ## Toolchain
 
