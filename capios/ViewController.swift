@@ -12,12 +12,30 @@ import RxCocoa
 
 class ViewController: UIViewController {
     @IBOutlet weak var rxStudyButton: UIButton!
+    
+    @IBOutlet weak var keyChainButton: UIButton!
+    
+    @IBOutlet weak var accessibilityButton: UIButton!
+    
     let disposeBag: DisposeBag = DisposeBag()
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         rxStudyButton.rx.tap.subscribe(onNext: {
             if let vc = R.storyboard.main.rxOperatorsExerciseViewController() {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }).disposed(by: self.disposeBag)
+        
+        keyChainButton.rx.tap.subscribe(onNext: {
+            if let vc = R.storyboard.main.loginKeychainViewController() {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }).disposed(by: self.disposeBag)
+        
+        accessibilityButton.rx.tap.subscribe(onNext: {
+            if let vc = R.storyboard.main.accessibilityViewController() {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }).disposed(by: self.disposeBag)

@@ -44,9 +44,7 @@ whitelist_rules:
   - vertical_whitespace_opening_braces # 2606 warnings/erros + run auto correct + run success Evalute
   - vertical_whitespace # +999 errors + run auto correct + run success Teste max 2 linhas
   #- custom_rules
-  - force_unwrapping
-  - force_cast
-  
+  #- force_unwrapping
 
 # configurations
 vertical_whitespace_between_cases:
@@ -105,32 +103,32 @@ force_cast: error
 # Use "xcode" so that when you build, the result will be shown in Xcode
 reporter: "xcode"
 
-custom_rules:
-  no_string_allowed: # rule identifier
-    name: "Boas Praticas - 2D" # rule name. optional.
-    regex: "[=,= ]\".*\"$|\"(.*)\"" # matching pattern
-    match_kinds: string
-    message: "Criar todas as strings necessárias, nos arquivos de internacionalização \".strings\" do \"Next-Assets\"." # violation message. optional.
-    severity: error # violation severity. optional.
+# custom_rules:
+#   no_string_allowed: # rule identifier
+#     name: "Boas Praticas - 2D" # rule name. optional.
+#     regex: "[=,= ]\".*\"$|\"(.*)\"" # matching pattern
+#     match_kinds: string
+#     message: "Criar todas as strings necessárias, nos arquivos de internacionalização \".strings\" do \"Next-Assets\"." # violation message. optional.
+#     severity: error # violation severity. optional.
 
-  no_print_allowed: # rule identifier
-    name: "Boas Praticas - 5E" # rule name. optional.
-    regex: "print((.*))" # matching pattern
-    message: "Prints poluem o console e dificultam debugs. Antes de fazer o PR, remover prints." # violation message. optional.
-    severity: warning # violation severity. optional.
+#   no_print_allowed: # rule identifier
+#     name: "Boas Praticas - 5E" # rule name. optional.
+#     regex: "print((.*))" # matching pattern
+#     message: "Prints poluem o console e dificultam debugs. Antes de fazer o PR, remover prints." # violation message. optional.
+#     severity: warning # violation severity. optional.
   
-  no_comments_allowed: # rule identifier
-    name: "Boas Praticas - 5J" # rule name. optional.
-    regex: "\/\/" # matching pattern
-    message: "Códigos comentados que não serão mais utilizados, devem ser removidos do projeto a fins de CleanCode" # violation message. optional.
-    severity: warning # violation severity. optional.
+#   no_comments_allowed: # rule identifier
+#     name: "Boas Praticas - 5J" # rule name. optional.
+#     regex: "\/\/" # matching pattern
+#     message: "Códigos comentados que não serão mais utilizados, devem ser removidos do projeto a fins de CleanCode" # violation message. optional.
+#     severity: warning # violation severity. optional.
   
-  weak_self_on_closures: # rule identifier
-    name: "Teste Closures" # rule name. optional.
-    regex: "{(.*)}" # matching pattern
-    match_kinds: string
-    message: "Criar todas as strings necessárias, nos arquivos de internacionalização \".strings\" do \"Next-Assets\"." # violation message. optional.
-    severity: error # violation severity. optional.
+#   weak_self_on_closures: # rule identifier
+#     name: "Teste Closures" # rule name. optional.
+#     regex: "{(.*)}" # matching pattern
+#     match_kinds: string
+#     message: "Criar todas as strings necessárias, nos arquivos de internacionalização \".strings\" do \"Next-Assets\"." # violation message. optional.
+#     severity: error # violation severity. optional.
 
 
 # Disable default
