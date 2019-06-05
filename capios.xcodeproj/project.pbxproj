@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		500078CA22A812D200C525DF /* AccessibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500078C922A812D200C525DF /* AccessibilityViewController.swift */; };
 		50959C4022A15E9E009B4FA0 /* LoginKeychainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50959C3F22A15E9E009B4FA0 /* LoginKeychainViewController.swift */; };
-		50959C4222A167E1009B4FA0 /* KeychainWraperCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50959C4122A167E1009B4FA0 /* KeychainWraperCap.swift */; };
 		50EFF9872292EEA200A650FE /* RxOperatorsExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */; };
 		B9448FAD2283463B00E342DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9448FAC2283463B00E342DE /* AppDelegate.swift */; };
 		B9448FAF2283463B00E342DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9448FAE2283463B00E342DE /* ViewController.swift */; };
@@ -24,7 +23,6 @@
 		0081E4D27F24336D340AE041 /* Pods-capios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capios.release.xcconfig"; path = "Pods/Target Support Files/Pods-capios/Pods-capios.release.xcconfig"; sourceTree = "<group>"; };
 		500078C922A812D200C525DF /* AccessibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityViewController.swift; sourceTree = "<group>"; };
 		50959C3F22A15E9E009B4FA0 /* LoginKeychainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginKeychainViewController.swift; sourceTree = "<group>"; };
-		50959C4122A167E1009B4FA0 /* KeychainWraperCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWraperCap.swift; sourceTree = "<group>"; };
 		50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxOperatorsExerciseViewController.swift; sourceTree = "<group>"; };
 		B1421A86D0998F566BC0701F /* Pods_capios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_capios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9448FA92283463B00E342DE /* capios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = capios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +100,6 @@
 				50959C3F22A15E9E009B4FA0 /* LoginKeychainViewController.swift */,
 				500078C922A812D200C525DF /* AccessibilityViewController.swift */,
 				B9448FB02283463B00E342DE /* Main.storyboard */,
-				50959C4122A167E1009B4FA0 /* KeychainWraperCap.swift */,
 				B9448FB32283463D00E342DE /* Assets.xcassets */,
 				B9448FB52283463D00E342DE /* LaunchScreen.storyboard */,
 				B9448FB82283463D00E342DE /* Info.plist */,
@@ -283,7 +280,6 @@
 			files = (
 				500078CA22A812D200C525DF /* AccessibilityViewController.swift in Sources */,
 				50EFF9872292EEA200A650FE /* RxOperatorsExerciseViewController.swift in Sources */,
-				50959C4222A167E1009B4FA0 /* KeychainWraperCap.swift in Sources */,
 				50959C4022A15E9E009B4FA0 /* LoginKeychainViewController.swift in Sources */,
 				B9448FAF2283463B00E342DE /* ViewController.swift in Sources */,
 				B9448FAD2283463B00E342DE /* AppDelegate.swift in Sources */,
