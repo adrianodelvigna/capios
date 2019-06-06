@@ -471,8 +471,11 @@ Numa analogia, pense em aprimorar seu vocabulário em inglês, adicionando novas
 
 ## +Operadores +RxMarbles
 
+TBC
+
 ## MVVM com RxSwift
 
+TBC
 
 ### Referências
 
@@ -480,59 +483,70 @@ Numa analogia, pense em aprimorar seu vocabulário em inglês, adicionando novas
 
 ## Como ler perguntas e respostas no Stackoverflow!
 
+TBC
 
 
-## Modelagem das atividades
+## Modelagem das atividades de classe/extra-classe
 Para as atividades iniciais (de aprendizagem), será solicitado que os estudantes façam modificações em seus próprios projetos de conclusão:
 Ex: 
-* Usar Keychain para o sistema de login do app.
-* Substituir taps de botões, por funções Rx.
-* Apps devem usar pesquisa com API usando throttle na searchbar.
-* Fazer transições de tela usando Rswift.
-* Criar arquivos de internacionalização para strings.
-**** APENAS COMO SUGESTÃO **** Inserir as regras padrões de SwiftLint usados aqui, nos projetos individuais, para que se habituem e tenham uma menor resistência quando entrarem aqui. Sem contar que lint é extremamente usado por diversas empresas, então acredito agregar valor. 
+- [ ] Usar Keychain para o sistema de login do app.
+- [ ]  Substituir taps de botões, por funções Rx.
+- [ ]  Apps devem usar pesquisa com API usando throttle na searchbar.
+- [ ]  Fazer transições de tela usando Rswift.
+- [ ]  Criar arquivos de internacionalização para strings.
+
+**SUGESTÃO:** Inserir regras segundo [**SwiftLint**](https://github.com/realm/SwiftLint) nos projetos individuais, para que se habituem. Sem contar que lint é extremamente usado por diversas empresas, então acredito agregar valor. 
 
 Dessa forma, os alunos terão pouco tempo desperdiçado, sem necessidade de desenvolver um app completo para apenas uma atividade ou outra e poderão focar o aprendizado aonde é realmente necessário.
 
 Pra isso funcionar, será necessário que tenhamos acesso aos projetos, para que possamos analisar e inserir uma boas atividades para os projetos.
 
-Para o "Projeto Final" ainda mantém a ideia de criar um novo app para que todos manipulem em diferentes funcionalidades.
+Para o "*Projeto Final*" ainda mantém a ideia de criar um novo app para que todos manipulem em diferentes funcionalidades.
 Talvez o ideal aqui seja fazer uma simulação completa de um fluxo de trabalho. Eu entendo que nesse momento estamos analisando a capacidade de trabalhar em equipe e também resoluções de gitFlow e não mais questão de capacidade técnica.
 
 Nesse caso, eu sugiro que a última atividade, seja o desenvolvimento de um app completo, que deverá ser feita em uma única entrega por toda a equipe.
-Nós elaboramos o conceito e a EF para o desenvolvimento do app e eles, como equipe, deverão dividir e distribuir (com nosso acompanhamento) as tarefas, organizar os conflitos, merges e abrir os PRs ao fim de cada nova funcionalidade do app que for desenvolvida.
+Nós elaboramos o conceito e a especificação funcional para o desenvolvimento do app e eles, como equipe, deverão dividir e distribuir (com nosso acompanhamento) as tarefas, organizar os conflitos, merges e abrir os PRs ao fim de cada nova funcionalidade do app que for desenvolvida.
 
-Nos dias de aula, durante o Projeto Final, pensei em realizarmos daily meetings, pra tirar dúvidas e acompanhar o andamento do projeto, como jornadeiros.
+Nos dias de aula, durante o *Projeto Final*, pensei em realizarmos daily meetings, pra tirar dúvidas e acompanhar o andamento do projeto, como jornadeiros.
 
-### Site com APIs gratis para consumo e testes, pode trazer criatividade para as atividades
-https://rapidapi.com/collection/list-of-free-apis?utm_source=google&utm_medium=cpc&utm_campaign=1757574668_67679208454&utm_term=free%20api%20for%20testing_b&utm_content=1t1&gclid=Cj0KCQjwrdjnBRDXARIsAEcE5Yl_8Rlg1BP3IO_VXjslf14ChGjxHJ0SiVZXWSKCJddLhPyuVacTQ_MaAi-3EALw_wcB
+### APIs Gratuitas
 
+- [Índice de APIs gratuitas](https://rapidapi.com/collection/list-of-free-apis?utm_source=google&utm_medium=cpc&utm_campaign=1757574668_67679208454&utm_term=free%20api%20for%20testing_b&utm_content=1t1&gclid=Cj0KCQjwrdjnBRDXARIsAEcE5Yl_8Rlg1BP3IO_VXjslf14ChGjxHJ0SiVZXWSKCJddLhPyuVacTQ_MaAi-3EALw_wcB)
+ - [public-apis/public-apis
+](https://github.com/public-apis/public-apis): A collective list of free APIs for use in software and web development.
 
 
 
 # Plano de Aula
 
-## 07/06 19:00h - 22:00h:
-* Toolchain - 19:00h: pincelada sobre. Pra que serve; O que ele faz?; Como e onde baixar; como substituir o toolchain atual pelo toolchain baixado;
-* Keychain - 19:30h: O que é; O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra); Como salvar e acessar o Keychain usando Valet; Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet; Quais os construtores o Valet tem e qual a diferença entre eles?;
-* Acessibilidade - 20:30h: 
-Fim da aula, propor atividade onde os alunos devem adicionar Keychain para o login de seus apps, armazenando o login e senha no keychain e a partir desse momento, usar o SecureEnclaveValet para consultar as chaves salvas no keychain, usando apenas a biometria ou código do device, para logar no app.
-Também deverão adicionar acessibilidade em pelo menos uma tela do app, que deve ficar 100% funcional para trabalhar com as "cortinas fechadas"
+## 07/06 (6ª feira) 19:00h - 22:00h:
 
-* 22:00h - Liberar o restante da aula para a resolução do exercício e tirar dúvidas.
-
-Vou começar a criar um projeto ou target no projeto capios, com o modelo de atividade para que eles sigam em sala 
-
-Ref: [Valet](https://github.com/square/Valet)
-
-## 10/06 19:00h - 22:00h:
+Hora Aprox. | Tópico | Detalhes
+--- | --- | ---
+19h00 | Toolchain | Pincelada sobre o assunto. Pra que serve?; O que ele faz?; Onde ele vive? Do que se alimenta? Como se reproduz? Como e onde baixar; como substituir o toolchain atual pelo toolchain baixado;
+19h30 | Keychain | O que é; O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra); Como salvar e acessar o Keychain usando Valet; Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet; Quais os construtores o Valet tem e qual a diferença entre eles?;
+20h30 | Acessibilidade | Fim do conteúdo teórico para o dia, propor atividade onde os alunos devem adicionar Keychain para o login de seus apps, armazenando o login e senha no keychain e a partir desse momento, usar o SecureEnclaveValet para consultar as chaves salvas no keychain, usando apenas a biometria ou código do device, para logar no app. Também deverão adicionar acessibilidade em pelo menos uma tela do app, que deve ficar 100% funcional para trabalhar com as "cortinas fechadas"
+21h00 | Exercícios / Hora livre | Liberar o restante da aula para a resolução do exercício e tirar dúvidas.
 
 
-## 12/06 19:00h - 22:00h:
+- [ ] criar um projeto ou target no projeto capios, com o modelo de atividade para que os alunos sigam em sala 
 
+### Referências 
+- [Valet](https://github.com/square/Valet)
 
-## 14/06 19:00h - 22:00h:
+## 10/06 (2ª feira) 19:00h - 22:00h:
 
+- TBD
 
-## 17/06 19:00h - 22:00h:
+## 12/06 (4ª feira) 19:00h - 22:00h:
 
+- TBD
+
+## 14/06 (6ª feira) 19:00h - 22:00h:
+
+- TBD
+
+## 17/06 (2ª feira) 19:00h - 22:00h:
+
+- TBD
+- \+ considerações finais
