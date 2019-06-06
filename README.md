@@ -546,15 +546,15 @@ Ref:
     1. Ativar funcionalidade "fechar cortinas"
 
 
-## <b>1:</b> 07/06 (6ª feira) 19:00h - 22:00h
+## <b>1:</b> 07/06/2019 (6ª feira) 19:00h - 22:00h
 
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
 19h00<br>19h30 | Toolchain<br><sup>Adriano</sup> | Pincelada sobre o assunto. Pra que serve?; O que ele faz?; Onde ele vive? Do que se alimenta? Como se reproduz? Como e onde baixar; como substituir o toolchain atual pelo toolchain baixado;
 19h30<br>20h20 | Keychain<br><sup>Chico</sup> | O que é; O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra); Como salvar e acessar o Keychain usando Valet; Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet; Quais os construtores o Valet tem e qual a diferença entre eles?;
 20h20<br>20h30 | Intervalo | 💩
-20h30<br>21h00 | Acessibilidade<br><sup>Chico</sup> | Fim do conteúdo teórico para o dia, propor atividade onde os alunos devem adicionar Keychain para o login de seus apps, armazenando o login e senha no keychain e a partir desse momento, usar o SecureEnclaveValet para consultar as chaves salvas no keychain, usando apenas a biometria ou código do device, para logar no app. Também deverão adicionar acessibilidade em pelo menos uma tela do app, que deve ficar 100% funcional para trabalhar com as "cortinas fechadas"
-21h00<br>22:00 | Exercícios / Hora livre | Liberar o restante da aula para a resolução do exercício e tirar dúvidas.
+20h30<br>21h00 | Acessibilidade<br><sup>Chico</sup> | Apresentação das funcionalidades e atributos de acessibilidade;
+21h00<br>22h00 | Exercícios / Hora livre | Liberar o restante da aula para a resolução do exercício e tirar dúvidas;
 
 - [x] criar um projeto ou target no projeto capios, com o modelo de atividade para que os alunos sigam em sala 
 
@@ -574,11 +574,11 @@ Hora Aprox. | Tópico | Detalhes
 ### Referências 
 - [Valet](https://github.com/square/Valet)
 
-## <b>2:</b> 10/06 (2ª feira) 19:00h - 22:00h
+## <b>2:</b> 10/06/2019 (2ª feira) 19:00h - 22:00h
 
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
-19h00<br>20h20 | RxSwift | Exposição do RxSwift
+19h00<br>20h20 | RxSwift<br><sup>Adriano</sup> | Exposição do RxSwift
 20h20<br>20h30 | Intervalo | 🍫🥤🥪
 20h30<br>22h00 | Refatorar os exercício<br>do dia anterior | Usando os conceitos de *RxSwift* e *binding*
 
@@ -593,13 +593,13 @@ Hora Aprox. | Tópico | Detalhes
             - **falha:** mostrar mensagem de falha
 
 
-## <b>3:</b> 12/06 (4ª feira) 19:00h - 22:00h
+## <b>3:</b> 12/06/2019 (4ª feira) 19:00h - 22:00h
 
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
-19h00<br>20h20 | RxSwift | • Continuação do RxSwift.<br>• Mostrar o uso do `map` e do `flatMap`<br>• Uso de JSON + Swagger
+19h00<br>20h20 | RxSwift<br><sup>Adriano</sup> | • Continuação do RxSwift.<br>• Mostrar o uso do `map` e do `flatMap`<br>• Uso de JSON + Swagger
 20h20<br>20h30 | Intervalo | 🍕🍕🍕 + 🥤 + 🍦 = 💩
-20h30<br>22h00 | RxSwift | Cenários de chamadas de endpoints consecutivas e formatar uma *model*
+20h30<br>22h00 | RxSwift<br><sup>Allan & Chico</sup> | Cenários de chamadas de endpoints consecutivas e formatar uma *model*
 
 ### App de Exercício
 
@@ -609,11 +609,11 @@ Hora Aprox. | Tópico | Detalhes
 - Bonus points:
     - Activity indicator para chamadas de serviços
 
-## <b>4</b>: 14/06 (6ª feira) 19:00h - 22:00h
+## <b>4</b>: 14/06/2019 (6ª feira) 19:00h - 22:00h
 
 - TBD de acordo com o progresso da turma
 
-## <b>5</b>: 17/06 (2ª feira) 19:00h - 22:00h
+## <b>5</b>: 17/06/2019 (2ª feira) 19:00h - 22:00h
 
 - TBD de acordo com o progresso da turma
 - \+ considerações finais
