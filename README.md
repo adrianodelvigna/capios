@@ -32,20 +32,13 @@ Agora sim você sabe como é a experiência e o que você TEM que ajustar para q
 
 ### Existem 5 atributos propriedades para usar na acessibilidade:
 
-#### * Label: 
-Um jeito simples e objetivo para descrever um controle ou uma view: "Botão voltar", "imagem de patos"
-
-#### * Traits:
-Descreve um estado do elemento, comportamento ou uso. Um trait é um enum acessado através de 'UIAccessibilityTrait'. Para uma imagem por exemplo use UIAccessibilityTraitImage 
-
-#### * Hint:
-Descreve qual ação um elemento faz. Por exemplo: "Mostra os detalhes da receita"
-
-#### * Frame:
-Não muito usado, o frame irá descrever para o usuário o format CGRect do frame. O VoiceOver nesse caso irá apenas informar os valores de x, y, width e height do frame.
-
-#### * Value:
-O valor de um elemento. Mais usado para descrever valores de elementos, por exemplo um slider
+Atributo | Descrição
+|:-:|:--|
+Label | Um jeito simples e objetivo para descrever um controle ou uma view: "Botão voltar", "imagem de patos"
+Traits | Descreve um estado do elemento, comportamento ou uso. Um trait é um enum acessado através de 'UIAccessibilityTrait'. Para uma imagem por exemplo use UIAccessibilityTraitImage 
+Hint | Descreve qual ação um elemento faz. Por exemplo: "Mostra os detalhes da receita"
+Frame | Não muito usado, o frame irá descrever para o usuário o format CGRect do frame. O VoiceOver nesse caso irá apenas informar os valores de x, y, width e height do frame.
+Value | O valor de um elemento. Mais usado para descrever valores de elementos, por exemplo um slider
 
 Como dito anteriormente, para maioria dos elementos, já existe um valor atribuído, você deve apenas aprimorar essa informação para trazer uma melhor experiência para seu usuário.
 
