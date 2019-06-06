@@ -387,7 +387,7 @@ Observable.combineLatest(firstName.rx.text, lastName.rx.text) { $0 + " " + $1 }
 
 Onde combinamos os valores mais atuais de dois elementos de entrada de texto, criamos uma nova string concatenando os dois textos, criamos uma string de saudação, e finalmente conectamos tudo isso a uma label. Três linhas de código!
 
-Agora, imagine a implementação dos métodos do [protocolo UITextFieldDelegate](https://developer.apple.com/documentation/uikit/uitextfielddelegate), o controle para sabermos qual entrada de texto foi alterada para concatenarmos a string corretamente, criarmos uma string de saudação, para só então atualizarmos uma label. É um bocado de coisa para pensar. Num situação relativamente simples.
+Agora, imagine a implementação dos métodos do [protocolo UITextFieldDelegate](https://developer.apple.com/documentation/uikit/uitextfielddelegate), o controle para sabermos qual entrada de texto foi alterada para concatenarmos a string corretamente, criarmos uma string de saudação, para só então atualizarmos uma label. É um bocado de coisa para pensar. Numa situação relativamente simples.
 
 Se conseguirmos aprender os termos usados pelo **RxSwift**, podemos abstrair (até certo ponto) como realizar algumas das atividades "mecânicas", ou repetitivas, do nosso app. Nos permitindo aplicar um foco ainda maior no propósito para que o app está sendo desenvolvido - ou focarmos nas regras do negócio, como também é mencionado.
 
@@ -420,7 +420,7 @@ Tudo isso trazido para você pela Polishop!
 Veja alguns testemunhos!
 <br><sub>\<*/Locução super-empolgada*></sub>
 
-<sub>\<*dublagem fora sincronia<sup>6</sup> com os movimentos labiais*></sub>
+<sub>\<*dublagem fora de sincronia<sup>6</sup> com os movimentos labiais*></sub>
 
 > Desde que eu comecei a usar o **RxSwift**, eu não quero mais olhar para trás. Eu uso o **RxSwift** para tudo!
 
@@ -430,7 +430,7 @@ Veja alguns testemunhos!
 
 > MVVM? MVC? MVP? VIPER? Com **RxSwift** eu consigo migrar para a arquitetura de app da semana, facilmente! Sem suar!
 
-<sup>\<*/dublagem fora sincronia com os movimentos labiais*></sup>
+<sup>\<*/dublagem fora de sincronia com os movimentos labiais*></sup>
 
 Faça o checkout, configure seu *Podfile*, e confira os resultados você mesmo!
 
@@ -438,7 +438,7 @@ Da mesma forma que os preços dos produtos da Polishop, o **RxSwift** pode apres
 
 Numa analogia, pense em aprimorar seu vocabulário em inglês, adicionando novas palavras ao seu repertório. Mas nesse caso estaremos aprendendo um punhado de novos conceitos, e algumas dezenas de novas palavras (ou operadores/funções). E você já estará com seu *mindset* na direção certa.
 
-É também consenso entre os programadores **Rx**, **RxSwift** que praticamente a totalidade do entendimento e fluência no paradigma e bibliotecas vêm da experimentação, do uso contínuo, principalmente. 10% vêm do estudo, e 90% vêm da prática. Então tenha **sempre** isso em mente.
+É também consenso entre os programadores **Rx**, **RxSwift** que praticamente a totalidade do entendimento e a fluência no paradigma e bibliotecas vêm da experimentação, do uso contínuo principalmente. 10% vêm do estudo, e 90% vêm da prática. Então tenha **sempre** isso em mente.
 
 ### Referências
 
@@ -502,7 +502,17 @@ https://rapidapi.com/collection/list-of-free-apis?utm_source=google&utm_medium=c
 # Plano de Aula
 
 ## 07/06 19:00h - 23:00h:
-* 
+* Toolchain - 19:00h: pincelada sobre. Pra que serve; O que ele faz?; Como e onde baixar; como substituir o toolchain atual pelo toolchain baixado;
+* Keychain - 19:30h: O que é; O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra); Como salvar e acessar o Keychain usando Valet; Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet; Quais os construtores o Valet tem e qual a diferença entre eles?;
+* Acessibilidade - 20:30h: 
+Fim da aula, propor atividade onde os alunos devem adicionar Keychain para o login de seus apps, armazenando o login e senha no keychain e a partir desse momento, usar o SecureEnclaveValet para consultar as chaves salvas no keychain, usando apenas a biometria ou código do device, para logar no app.
+Também deverão adicionar acessibilidade em pelo menos uma tela do app, que deve ficar 100% funcional para trabalhar com as "cortinas fechadas"
+
+* 22:00h - Liberar o restante da aula para a resolução do exercício e tirar dúvidas.
+
+Vou começar a criar um projeto ou target no projeto capios, com o modelo de atividade para que eles sigam em sala 
+
+Ref: [Valet](https://github.com/square/Valet)
 
 ## 10/06 19:00h - 23:00h:
 
