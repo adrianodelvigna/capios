@@ -9,6 +9,7 @@ PODS:
     - RxAtomic (>= 4.4.2, ~> 4.4)
   - SwiftLint (0.31.0)
   - SwiftyJSON (4.2.0)
+  - Valet (3.2.5)
 
 DEPENDENCIES:
   - R.swift (~> 5.0)
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - RxSwift (~> 4.0)
   - SwiftLint
   - SwiftyJSON (~> 4.0)
+  - Valet
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -26,6 +28,7 @@ SPEC REPOS:
     - RxSwift
     - SwiftLint
     - SwiftyJSON
+    - Valet
 
 SPEC CHECKSUMS:
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
@@ -35,7 +38,8 @@ SPEC CHECKSUMS:
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  Valet: 41882ffa9ed80c5358584837bcf762dfd1888818
 
-PODFILE CHECKSUM: 1981950de7acfb2134aacc14d6d9502a8e9c2cc3
+PODFILE CHECKSUM: ea50fa20a79b89391c1fefc66087465473b1c58d
 
 COCOAPODS: 1.5.3

@@ -70,20 +70,7 @@ class RxOperatorsExerciseViewController: UIViewController {
         print(newProductArray)
     }
     
-    // MARK: - Throttle
-    func Operator_Throttle() -> Observable<String> {
-        return Observable.just("Chamando função com operator Throttle")
-    }
-    
-    // MARK: - Debounce
-    func Operator_Debounce() {
-    }
-    
     // MARK: - CombineLatest
     func Operator_CombineLatest() {
-    }
-    
-    // MARK: - Scheduler
-    func Operator_Scheduler() {        
     }
 }
