@@ -509,6 +509,7 @@ Nós elaboramos o conceito e a especificação funcional para o desenvolvimento 
 
 Nos dias de aula, durante o *Projeto Final*, pensei em realizarmos daily meetings, pra tirar dúvidas e acompanhar o andamento do projeto, como jornadeiros.
 
+
 ### APIs Gratuitas
 
 - [Índice de APIs gratuitas](https://rapidapi.com/collection/list-of-free-apis?utm_source=google&utm_medium=cpc&utm_campaign=1757574668_67679208454&utm_term=free%20api%20for%20testing_b&utm_content=1t1&gclid=Cj0KCQjwrdjnBRDXARIsAEcE5Yl_8Rlg1BP3IO_VXjslf14ChGjxHJ0SiVZXWSKCJddLhPyuVacTQ_MaAi-3EALw_wcB)
@@ -519,34 +520,74 @@ Nos dias de aula, durante o *Projeto Final*, pensei em realizarmos daily meeting
 
 # Plano de Aula
 
-## 07/06 (6ª feira) 19:00h - 22:00h:
+## <b>1:</b> 07/06 (6ª feira) 19:00h - 22:00h
 
 Hora Aprox. | Tópico | Detalhes
---- | --- | ---
-19h00 | Toolchain | Pincelada sobre o assunto. Pra que serve?; O que ele faz?; Onde ele vive? Do que se alimenta? Como se reproduz? Como e onde baixar; como substituir o toolchain atual pelo toolchain baixado;
-19h30 | Keychain | O que é; O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra); Como salvar e acessar o Keychain usando Valet; Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet; Quais os construtores o Valet tem e qual a diferença entre eles?;
-20h30 | Acessibilidade | Fim do conteúdo teórico para o dia, propor atividade onde os alunos devem adicionar Keychain para o login de seus apps, armazenando o login e senha no keychain e a partir desse momento, usar o SecureEnclaveValet para consultar as chaves salvas no keychain, usando apenas a biometria ou código do device, para logar no app. Também deverão adicionar acessibilidade em pelo menos uma tela do app, que deve ficar 100% funcional para trabalhar com as "cortinas fechadas"
-21h00 | Exercícios / Hora livre | Liberar o restante da aula para a resolução do exercício e tirar dúvidas.
+--- | :-: | ---
+19h00<br>19h30 | Toolchain<br><sup>Adriano</sup> | Pincelada sobre o assunto. Pra que serve?; O que ele faz?; Onde ele vive? Do que se alimenta? Como se reproduz? Como e onde baixar; como substituir o toolchain atual pelo toolchain baixado;
+19h30<br>20h20 | Keychain<br><sup>Chico</sup> | O que é; O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra); Como salvar e acessar o Keychain usando Valet; Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet; Quais os construtores o Valet tem e qual a diferença entre eles?;
+20h20<br>20h30 | Intervalo | 💩
+20h30<br>21h00 | Acessibilidade<br><sup>Chico</sup> | Fim do conteúdo teórico para o dia, propor atividade onde os alunos devem adicionar Keychain para o login de seus apps, armazenando o login e senha no keychain e a partir desse momento, usar o SecureEnclaveValet para consultar as chaves salvas no keychain, usando apenas a biometria ou código do device, para logar no app. Também deverão adicionar acessibilidade em pelo menos uma tela do app, que deve ficar 100% funcional para trabalhar com as "cortinas fechadas"
+21h00<br>22:00 | Exercícios / Hora livre | Liberar o restante da aula para a resolução do exercício e tirar dúvidas.
 
+- [x] criar um projeto ou target no projeto capios, com o modelo de atividade para que os alunos sigam em sala 
 
-- [ ] criar um projeto ou target no projeto capios, com o modelo de atividade para que os alunos sigam em sala 
+### App de Exercício
+
+1. App simples com:
+    1. tela para criação de conta de usuário
+        1. Simular um endpoint pelo armazenamento/leitura na *Keychain*
+            - Usar o secure enclave keychain (biometria)
+        1. *bind* simples de exemplo para validação na hora de criar a conta (Allan e Chico)
+    1. criar do zero a tela de login para exercitar o uso do *Keychain* (Alunos+instrutores)
+        1. Sugerir a validação dos campos sendo feita com **UITextField** *delegates*, como usual
+    1. adicionar propriedades de acessibilidade para todas as telas existentes no projeto
+
+- Lição de casa terminar as telas caso necessário.
 
 ### Referências 
 - [Valet](https://github.com/square/Valet)
 
-## 10/06 (2ª feira) 19:00h - 22:00h:
+## <b>2:</b> 10/06 (2ª feira) 19:00h - 22:00h
 
-- TBD
+Hora Aprox. | Tópico | Detalhes
+--- | :-: | ---
+19h00<br>20h20 | RxSwift | Exposição do RxSwift
+20h20<br>20h30 | Intervalo | 🍫🥤🥪
+20h30<br>22h00 | Refatorar os exercício<br>do dia anterior | Usando os conceitos de *RxSwift* e *binding*
 
-## 12/06 (4ª feira) 19:00h - 22:00h:
+### App de Exercício
 
-- TBD
+1. App com:
+    1. Refatorar as telas usando *RxCocoa + Binding*
+    1. Regras:
+        - O botão "Login" só fica habilitado se os campos de usuário e senha têm mais de 6 caracteres usando Rx.
+        - Ao clicar no botão "Login" validar o usuário e a senha com o que está na  *Keychain*
+            - **sucesso:** mostrar mensagem de sucesso
+            - **falha:** mostrar mensagem de falha
 
-## 14/06 (6ª feira) 19:00h - 22:00h:
 
-- TBD
+## <b>3:</b> 12/06 (4ª feira) 19:00h - 22:00h
 
-## 17/06 (2ª feira) 19:00h - 22:00h:
+Hora Aprox. | Tópico | Detalhes
+--- | :-: | ---
+19h00<br>20h20 | RxSwift | • Continuação do RxSwift.<br>• Mostrar o uso do `map` e do `flatMap`<br>• Uso de JSON + Swagger
+20h20<br>20h30 | Intervalo | 🍕🍕🍕 + 🥤 + 🍦 = 💩
+20h30<br>22h00 | RxSwift | Cenários de chamadas de endpoints consecutivas e formatar uma *model*
 
-- TBD
+### App de Exercício
+
+- App que faça 2 ou mais chamadas de endpoints (serviços) e retorne um array de objetos e exibir esse array de objetos na janela de inspector.
+     - Tratamento de erros para as repostas do endpoint via Rx.
+
+- Bonus points:
+    - Activity indicator para chamadas de serviços
+
+## <b>4</b>: 14/06 (6ª feira) 19:00h - 22:00h
+
+- TBD de acordo com o progresso da turma
+
+## <b>5</b>: 17/06 (2ª feira) 19:00h - 22:00h
+
+- TBD de acordo com o progresso da turma
 - \+ considerações finais
