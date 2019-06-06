@@ -36,7 +36,7 @@ Agora sim você sabe como é a experiência e o que você TEM que ajustar para q
 Um jeito simples e objetivo para descrever um controle ou uma view: "Botão voltar", "imagem de patos"
 
 #### * Traits:
-Descreve um estado do elemento, comportamento ou uso. Um trait para um checkbox por exemplo: "marcador selecionado" 
+Descreve um estado do elemento, comportamento ou uso. Um trait é um enum acessado através de 'UIAccessibilityTrait'. Para uma imagem por exemplo use UIAccessibilityTraitImage 
 
 #### * Hint:
 Descreve qual ação um elemento faz. Por exemplo: "Mostra os detalhes da receita"
@@ -49,7 +49,40 @@ O valor de um elemento. Mais usado para descrever valores de elementos, por exem
 
 Como dito anteriormente, para maioria dos elementos, já existe um valor atribuído, você deve apenas aprimorar essa informação para trazer uma melhor experiência para seu usuário.
 
-Amanhã, um tchan a mais falando sobre o Accessibility Inspector!!!
+> Beleza! Agora entendi. Mas putz... Toda que vez que eu for testar ou for fazer uma alteração, eu vou ter que navegar no app no modo VoiceOver ativo?! Meio chato hein...
+
+Caaaaaalma, é óbvio que a Apple não ia te deixar na mão nesse momento né. Pensando nisso, a Apple adicionou ao Xcode, a partir da versão 8, o Accessibility Inspector!
+
+### Accessibility Inspector
+
+Você pode usar o Accessibility Inspector, para simular as interações do VoiceOver com os elementos de acessibilidade e ver quais informações eles estão provendo.
+
+Esse inspector permite que você faça as seguintes tarefas:
+
+* Permite você rodar seu app e identificar erros comuns de acessibilidade.
+* Deixa você analisar o atributo de acessibilidade de um elemento UI no modo 'Inspection'
+* Você também pode pré-visualizar todos os elementos de acessibilidade sem sair do seu app.
+* Tem suporte para todas as plataformas Apple. (macOS, iOS, watchOS, tvOS e provavelmente, mas não mencionado ainda, também funcionará para o novo iPadOS)
+
+> Aí sim hein! Bem mais legal e bem mais interessante. Agora sim eu sinto que vou conseguir adequar meu app da melhor forma. Então como que eu faço pra começar a usar ele?!
+
+Simples! Basta acessar o menu do seu Xcode e navegar até: Xcode -> Open Developer Tool -> Accessibility Inspector.
+Você vai perceber que seu Xcode instanciou uma nova janela chamada 'Accessibility Inspector'.
+
+Nesse inspector você vai encontrar 5 possíveis ações para tomar. 
+* Target Chooser: Permiti que você escolha pra qual device você vai testar. 
+* Inspection Pointer: Com ele selecionado, basta você navegar no simulador e você vai ver que o inspector já começará a exibir informações de acessibilidade sobre os elementos que o mouse passa por cima.
+* Inspection Detail: Traz todas as informações de acessibilidade do elemento que você está interagindo: Basic, Actions, Element e Hierarchy
+* Audit: Irá analisar a tela atual que está sendo exibida no simulador (como se fosse auditar o processo de acessibilidade do seu app). 
+* Settings: Essa opção serve pra vc testar outras deficiências sem que você tenha que sair do app, ir nas configurações do dispositivo e manualmente habilitar essas opções. Aqui você encontra algumas opções, como inverção das cores, redução da transparência, redução de movimento e mudança de fonte. Provavelmente, mais opções serão adicionadas futuramente. 
+
+> Uhmmm, ok. Mas não tem nada?! Ta marcando meu Mac como target?! Não era pra usar o simulador?! Que que tá acontecendo?!
+
+Calma. Pra ligar o inspector para seu simulador, primeiro você precisa abrir o simulador. Então rode sua aplicação no simulador e após ele ativo, vai lá no 'Accessibility Inspector' que você vai ver que agora o simulador irá aparecer lá no seus Targets. 
+
+Agora basta analisar a tela com o 'Inspection Pointer' e o 'Audit' do 'Accessibility Inspector', para ver quais pontos da sua aplicação aprensenta falhas de acessibilidade. 
+
+Ahh! E não esquece que pra testar realmente se está funcional ou não sua acessibilidade, é ideal que você faça testes no seu app com as "cortinas fechadas"!
 
 Referências:
 - [Acessibilidade iOS](https://developer.apple.com/accessibility/ios/)
@@ -462,3 +495,23 @@ Nos dias de aula, durante o Projeto Final, pensei em realizarmos daily meetings,
 
 ### Site com APIs gratis para consumo e testes, pode trazer criatividade para as atividades
 https://rapidapi.com/collection/list-of-free-apis?utm_source=google&utm_medium=cpc&utm_campaign=1757574668_67679208454&utm_term=free%20api%20for%20testing_b&utm_content=1t1&gclid=Cj0KCQjwrdjnBRDXARIsAEcE5Yl_8Rlg1BP3IO_VXjslf14ChGjxHJ0SiVZXWSKCJddLhPyuVacTQ_MaAi-3EALw_wcB
+
+
+
+
+# Plano de Aula
+
+## 07/06 19:00h - 23:00h:
+* 
+
+## 10/06 19:00h - 23:00h:
+
+
+## 12/06 19:00h - 23:00h:
+
+
+## 14/06 19:00h - 23:00h:
+
+
+## 17/06 19:00h - 23:00h:
+

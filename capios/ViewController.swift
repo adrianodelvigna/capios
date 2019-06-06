@@ -11,19 +11,9 @@ import RxSwift
 import RxCocoa
 
 class ViewController: UIViewController {
-    @IBOutlet weak var rxStudyButton: UIButton! {
-        didSet{
-            rxStudyButton.isAccessibilityElement = true
-            rxStudyButton.accessibilityHint = "Estudo de operadores RxSwift"
-        }
-    }
+    @IBOutlet weak var rxStudyButton: UIButton!
     
-    @IBOutlet weak var keyChainButton: UIButton! {
-        didSet{
-            keyChainButton.isAccessibilityElement = true
-            keyChainButton.accessibilityHint = "Exercícios de Keychain"
-        }
-    }
+    @IBOutlet weak var keyChainButton: UIButton!
     
     @IBOutlet weak var accessibilityButton: UIButton!
     
