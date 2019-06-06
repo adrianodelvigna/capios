@@ -368,6 +368,12 @@ Numa analogia, pense em aprimorar seu vocabulário em inglês, adicionando novas
 ### Referências
 
 - [Why Rx[Swift]](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/Why.md)
+- [Getting Started With RxSwift and RxCocoa](https://www.raywenderlich.com/1228891-getting-started-with-rxswift-and-rxcocoa)
+- [RxSwift For Dummies 🐣 Part 1](http://web.archive.org/web/20181004041223/http://swiftpearls.com/RxSwift-for-dummies-1-Observables.html)
+- [RxSwift For Dummies 🐥 Part 2](http://web.archive.org/web/20180926004433/http://swiftpearls.com/RxSwift-for-dummies-2-Operators.html)
+- [RxSwift For Dummies 🐤 Part 3](http://web.archive.org/web/20180922083311/http://swiftpearls.com/RxSwift-for-dummies-3-Subjects.html)
+- [RxSwift Safety Manual 📚](http://web.archive.org/web/20181010143132/http://swiftpearls.com/RxSwift-Safety-Manual.html)
+
 
 <sup>
 <sup><b>5</b></sup> Pun intended.<br>
@@ -384,6 +390,13 @@ Numa analogia, pense em aprimorar seu vocabulário em inglês, adicionando novas
 
 *Continua... no próximo commit.*
 
+
+### Referências
+
+- [RxSwift For Dummies 🐣 Part 1](http://web.archive.org/web/20181004041223/http://swiftpearls.com/RxSwift-for-dummies-1-Observables.html)
+- [RxSwift For Dummies 🐥 Part 2](http://web.archive.org/web/20180926004433/http://swiftpearls.com/RxSwift-for-dummies-2-Operators.html)
+
+
 ## Como escrever código RxSwift
 
 🎗Para aprender o **RxSwift** você não necessariamente precisa se restringir às fontes (artigos, livros, vídeos, cursos) do **RxSwift**. Por ser quase um padrão (**ReactiveX**) outras bibliotecas como o RxJS, RxJava, Rx .Net podem servir como mais uma referência, especialmente no uso de operadores. Até mesmo bibliotecas como as supra-citadas <a href="https://github.com/ReactiveCocoa/ReactiveCocoa">ReactiveCocoa</a> e <a href="https://github.com/DeclarativeHub/Bond">Bond</a> (que não necessariamente implementam o padrão **ReactiveX**) possuem documentação que podem complementar o entendimento dos conceitos mais básicos.
@@ -391,6 +404,11 @@ Numa analogia, pense em aprimorar seu vocabulário em inglês, adicionando novas
 ## +Operadores +RxMarbles
 
 ## MVVM com RxSwift
+
+
+### Referências
+
+- [RxSwift MVVM API Manual 📃](http://web.archive.org/web/20180728071049/http://swiftpearls.com/mvvm-state-manage.html)
 
 ## Como ler perguntas e respostas no Stackoverflow!
 
