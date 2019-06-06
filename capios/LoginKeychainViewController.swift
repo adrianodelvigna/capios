@@ -34,14 +34,18 @@ class LoginKeychainViewController: UIViewController {
     let valet: Valet = Valet.valet(with: Identifier(nonEmpty: "ValetUniqueId")!,
                                    accessibility: .whenUnlocked)
     
-    //Você também tem a opção de criar um valet que gerencie a segurança com o uso de biometria. Dessa forma, sempre que você desejar acessar um valor que esteja salvo no Valet, será solicitado ao usuário que confirme a presença com o uso da biometria (faceId, TouchId ou usando o passCode do device).
-    //Usar o SecureEnclaveValet é a forma mais segura de armazenar dados no iOS, tvOS, watchOS e macOS.
-    //Atenção: O SecureEnclaveValet não pode ser usado em devices que não suportem Secure Enclave. Nesse caso você deverá usar o Valet padrão.
-    //Não esqueça de adicionar ao info.plist a requisição de autorização para uso da biometria: Privacy - Face ID Usage Description (NSFaceIDUsageDescription), ou touchId...
-    let valetWithBiometrics: SecureEnclaveValet = SecureEnclaveValet.valet(with: Identifier(nonEmpty: "ValetUniqueId")!,
-                                                                           accessControl: .userPresence)
-    //Para controle de acesso Biométrico, você também pode usar o SinglePromptSecureEnclaveValet, que terá o mesmo comportamento que o SecureEnclaveValet, mas ao invés de chamar a confirmação biométrica a cada request, irá chamar apenas na primeira vez que um dado do Keychain for solicitado.
-    // Ahh mas daí só vai chamar uma vez e nunca mais?! Isso mesmo, mas você pode forçar para que seja solicitada a confirmação biométrica, caso ache necessário chamar mais uma vez. Para isso, basta chamar o método requirePromptOnNextAccess(). Ex: valet.requirePromptOnNextAccess()
+    /*
+    Você também tem a opção de criar um valet que gerencie a segurança com o uso de biometria. Dessa forma, sempre que você desejar acessar um valor que esteja salvo no Valet, será solicitado ao usuário que confirme a presença com o uso da biometria (faceId, TouchId ou usando o passCode do device).
+    Usar o SecureEnclaveValet é a forma mais segura de armazenar dados no iOS, tvOS, watchOS e macOS.
+    Atenção: O SecureEnclaveValet não pode ser usado em devices que não suportem Secure Enclave. Nesse caso você deverá usar o Valet padrão.
+    Não esqueça de adicionar ao info.plist a requisição de autorização para uso da biometria: Privacy - Face ID Usage Description (NSFaceIDUsageDescription), ou touchId...
+    ATENÇÃO! SecureEnclaveValet não funciona para simulador, apenas devices.
+    Para controle de acesso Biométrico, você também pode usar o SinglePromptSecureEnclaveValet, que terá o mesmo comportamento que o SecureEnclaveValet, mas ao invés de chamar a confirmação biométrica a cada request, irá chamar apenas na primeira vez que um dado do Keychain for solicitado.
+    Ahh mas daí só vai chamar uma vez e nunca mais?! Isso mesmo, mas você pode forçar para que seja solicitada a confirmação biométrica, caso ache necessário chamar mais uma vez. Para isso, basta chamar o método requirePromptOnNextAccess(). Ex: valet.requirePromptOnNextAccess()
+    
+     Nesse exemplo, nós usaremos o SinglePromptSecureEnclaveValet, pq com base no que nós iremos fazer, esse é o que traz uma melhor experiência para o usuário.
+     */
+    let valetWithBiometrics: SinglePromptSecureEnclaveValet = SinglePromptSecureEnclaveValet.valet(with: Identifier(nonEmpty: "ValetUniqueId")!, accessControl: .biometricAny)
     /*
      Escolhendo o melhor Identifier:
      O identifier escolhido para seu Valet, irá criar um 'sandbox' para os dados que seu Valet irá salvar no Keychain. Por exemplo:
@@ -69,6 +73,63 @@ class LoginKeychainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    func checkEnclaveSecurity() -> Bool {
+        /*
+         Aqui nós temos a implementação do SecureEnclave, que solicita um touchId/FaceId, para todas as vezes que você desejar acessar um campo salvo no Keychain.
+         
+         É interessante testar fazer essa chamada substituindo o SinglePromptSecureEnclaveValet, pelo SecureEnclaveValet, para você ver como ele não traz uma experiência boa para o usuário, já que em um único request ele pede 3 vezes para o usuário realizar o touchId.
+         */
+        
+        if !valetWithBiometrics.canAccessKeychain() {
+            //Tem Secure Enclave disponível
+            return false
+        }
+        if valetWithBiometrics.containsObject(forKey: "username") &&
+            valetWithBiometrics.containsObject(forKey: "password") &&
+            valetWithBiometrics.containsObject(forKey: "User") {
+            textView.text += "Dados recuperados com TouchID/FaceID:\n\n"
+            
+            /*
+             Ao chamar a chave username através do Security Enclave, o retorno não é uma string, mas sim um SecureEnclave.Result<String>. Nesse SecureEnclave.Result<String>, é retornado um estado: success, userCancelled, itemNotFound. Para ter acesso a informação, você vai precisar realizar um switch, do resultado da chamada e adicionar um atributo let para o case 'success', que trará para você o valor que está armazenado na chave requerida.
+             */
+            switch valetWithBiometrics.string(forKey: "username", withPrompt: "Use seu Touch ID apple para acessar os dados") {
+            case let .success(username):
+                textView.text += "username: \(username)\n"
+                
+            case .userCancelled:
+                textView.text += "usuário cancelou o acesso ao username"
+                
+            case .itemNotFound:
+                textView.text += "campo username não encontrado"
+            }
+            
+            switch valetWithBiometrics.string(forKey: "password", withPrompt: "Use seu Touch ID apple para acessar os dados") {
+            case let .success(password):
+                textView.text += "password: \(password)\n"
+                
+            case .userCancelled:
+                textView.text += "usuário cancelou o acesso ao password"
+                
+            case .itemNotFound:
+                textView.text += "campo password não encontrado"
+            }
+            
+            switch valetWithBiometrics.object(forKey: "User", withPrompt: "use seu Touch ID para acessar seu usuários") {
+            case let .success(user):
+                textView.text += "User: \(User.retriveUser(data: user))\n"
+                
+            case .userCancelled:
+                textView.text += "usuário cancelou o acesso ao password"
+                
+            case .itemNotFound:
+                textView.text += "campo password não encontrado"
+            }
+            return true
+        }
+        
+        return false
     }
     
     @IBAction func logIn(_ sender: UIButton) {
@@ -130,13 +191,23 @@ class LoginKeychainViewController: UIViewController {
             let otherUserInstance = User.retriveUser(data: valetData)
             textView.text += "User recuperado do valet e convertido em User novamente: \(otherUserInstance)"
         }
+        
+        //Nós também devemos salvar as informações no SinglePromptSecureEnclaveValet, afinal de contas, ele usa uma sandBox diferente, por ter um outro construtor.
+        valetWithBiometrics.set(string: username, forKey: "username")
+        valetWithBiometrics.set(string: password, forKey: "password")
+        valetWithBiometrics.set(object: user.retrieveData(), forKey: "User")
+    
         //Thread 1: Fatal error: A 'Missing Entitlements' error occurred. This is likely due to an Apple Keychain bug. As a workaround try running on a device that is not attached to a debugger.
         //More information: https://forums.developer.apple.com/thread/4743
         //valetForSharingBetweenApps.set(object: user.retrieveData(), forKey: "User")
     }
     
-    @IBAction func retrieveDataFromOtherApp(_ sender: Any) {
+    @IBAction func retrieveDataFromSecureEnclave(_ sender: Any) {
         //self.retrieveSecretsSharedAmongMultipleApps()
+        textView.text = ""
+        DispatchQueue.main.async {
+            if self.checkEnclaveSecurity() { return }
+        }
     }
     
     func retrieveSecretsSharedAmongMultipleApps() {

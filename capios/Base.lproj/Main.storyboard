@@ -134,10 +134,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1a6-KV-psf"/>
                                 </constraints>
-                                <state key="normal" title="Recuperar dados do outro app"/>
+                                <state key="normal" title="Recuperar dados Secure Enclave"/>
                                 <connections>
-                                    <action selector="logIn:" destination="3YF-Ec-Ezx" eventType="touchUpInside" id="CEM-tn-93M"/>
-                                    <action selector="retrieveDataFromOtherApp:" destination="3YF-Ec-Ezx" eventType="touchUpInside" id="mDp-gi-kdH"/>
+                                    <action selector="retrieveDataFromSecureEnclave:" destination="3YF-Ec-Ezx" eventType="touchUpInside" id="yZl-Zb-Vmd"/>
                                 </connections>
                             </button>
                         </subviews>

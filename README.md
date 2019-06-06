@@ -501,7 +501,7 @@ https://rapidapi.com/collection/list-of-free-apis?utm_source=google&utm_medium=c
 
 # Plano de Aula
 
-## 07/06 19:00h - 23:00h:
+## 07/06 19:00h - 22:00h:
 * Toolchain - 19:00h: pincelada sobre. Pra que serve; O que ele faz?; Como e onde baixar; como substituir o toolchain atual pelo toolchain baixado;
 * Keychain - 19:30h: O que é; O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra); Como salvar e acessar o Keychain usando Valet; Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet; Quais os construtores o Valet tem e qual a diferença entre eles?;
 * Acessibilidade - 20:30h: 
@@ -514,14 +514,14 @@ Vou começar a criar um projeto ou target no projeto capios, com o modelo de ati
 
 Ref: [Valet](https://github.com/square/Valet)
 
-## 10/06 19:00h - 23:00h:
+## 10/06 19:00h - 22:00h:
 
 
-## 12/06 19:00h - 23:00h:
+## 12/06 19:00h - 22:00h:
 
 
-## 14/06 19:00h - 23:00h:
+## 14/06 19:00h - 22:00h:
 
 
-## 17/06 19:00h - 23:00h:
+## 17/06 19:00h - 22:00h:
 
