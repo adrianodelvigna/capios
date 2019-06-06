@@ -512,10 +512,11 @@ pincelada sobre:
 
 * Keychain:  
 1. O que é
-2. O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra) 
-3. Como salvar e acessar o Keychain usando Valet
-4. Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet 
-5. Quais os construtores o Valet tem e qual a diferença entre eles?
+2. O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra)
+3. Adicionando a Lib ao projeto
+4. Como salvar e acessar o Keychain usando Valet
+5. Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet 
+6. Quais os construtores o Valet tem e qual a diferença entre eles?
 
 * Acessibilidade: 
 - Falar sobre o VoiceOver: 
@@ -532,7 +533,9 @@ Liberar o restante da aula para a resolução do exercício e tirar dúvidas.
 
 Vou começar a criar um projeto ou target no projeto capios, com o modelo de atividade para que eles sigam em sala 
 
-Ref: [Valet](https://github.com/square/Valet)
+Ref: 
+[Valet](https://github.com/square/Valet)
+[Implementação Manual Wrapper Keychain](https://medium.com/ios-os-x-development/securing-user-data-with-keychain-for-ios-e720e0f9a8e2)
 
 ## 10/06 19:00h - 22:00h:
 
