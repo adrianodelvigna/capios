@@ -500,15 +500,35 @@ https://rapidapi.com/collection/list-of-free-apis?utm_source=google&utm_medium=c
 
 
 # Plano de Aula
+Durante a aula, nós fazemos uma nova aplicação, implementando todos os tópicos da aula e como exercício, no final do dia, eles devem adicionar os elementos que aprenderam em sala, nos projetos finais deles e entregar até a próxima aula. 
 
 ## 07/06 19:00h - 22:00h:
-* Toolchain - 19:00h: pincelada sobre. Pra que serve; O que ele faz?; Como e onde baixar; como substituir o toolchain atual pelo toolchain baixado;
-* Keychain - 19:30h: O que é; O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra); Como salvar e acessar o Keychain usando Valet; Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet; Quais os construtores o Valet tem e qual a diferença entre eles?;
-* Acessibilidade - 20:30h: 
-Fim da aula, propor atividade onde os alunos devem adicionar Keychain para o login de seus apps, armazenando o login e senha no keychain e a partir desse momento, usar o SecureEnclaveValet para consultar as chaves salvas no keychain, usando apenas a biometria ou código do device, para logar no app.
+* Toolchain: 
+pincelada sobre: 
+1. Pra que serve
+2. O que ele faz?
+3. Como e onde baixar
+4. como substituir o toolchain atual pelo toolchain baixado
+
+* Keychain:  
+1. O que é
+2. O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra) 
+3. Como salvar e acessar o Keychain usando Valet
+4. Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet 
+5. Quais os construtores o Valet tem e qual a diferença entre eles?
+
+* Acessibilidade: 
+- Falar sobre o VoiceOver: 
+    1. Como ativar
+    2. Falar sobre as funcionalidades básicas e o que geralmente não é abrangido pelo VoiceOver nativamente
+    3. Falar rapidamente sobre os 5 atributos existentes (label, traits, hint, frame, value)
+    4. Como testar acessibilidade com o simulador (Accessibility Inspector)
+    5. Ativar funcionalidade "fechar cortinas"
+    
+* Fim da aula, propor atividade onde os alunos devem adicionar Keychain para o login de seus apps, armazenando o login e senha no keychain e a partir desse momento, usar o SecureEnclaveValet para consultar as chaves salvas no keychain, usando apenas a biometria ou código do device, para logar no app.
 Também deverão adicionar acessibilidade em pelo menos uma tela do app, que deve ficar 100% funcional para trabalhar com as "cortinas fechadas"
 
-* 22:00h - Liberar o restante da aula para a resolução do exercício e tirar dúvidas.
+Liberar o restante da aula para a resolução do exercício e tirar dúvidas.
 
 Vou começar a criar um projeto ou target no projeto capios, com o modelo de atividade para que eles sigam em sala 
 
