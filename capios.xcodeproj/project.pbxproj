@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500078CA22A812D200C525DF /* AccessibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500078C922A812D200C525DF /* AccessibilityViewController.swift */; };
+		50959C4022A15E9E009B4FA0 /* LoginKeychainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50959C3F22A15E9E009B4FA0 /* LoginKeychainViewController.swift */; };
 		50EFF9872292EEA200A650FE /* RxOperatorsExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */; };
-		82749C0E71AAECB06973907A /* Pods_capios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD83CEE5D5C46BA486885A9 /* Pods_capios.framework */; };
 		B9448FAD2283463B00E342DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9448FAC2283463B00E342DE /* AppDelegate.swift */; };
 		B9448FAF2283463B00E342DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9448FAE2283463B00E342DE /* ViewController.swift */; };
 		B9448FB22283463B00E342DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9448FB02283463B00E342DE /* Main.storyboard */; };
 		B9448FB42283463D00E342DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9448FB32283463D00E342DE /* Assets.xcassets */; };
 		B9448FB72283463D00E342DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9448FB52283463D00E342DE /* LaunchScreen.storyboard */; };
 		B9F72F5A22834FED000BA70B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F72F5922834FED000BA70B /* R.generated.swift */; };
+		D497A20DBAE981C744D3A880 /* Pods_capios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1421A86D0998F566BC0701F /* Pods_capios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4FD83CEE5D5C46BA486885A9 /* Pods_capios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_capios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0081E4D27F24336D340AE041 /* Pods-capios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capios.release.xcconfig"; path = "Pods/Target Support Files/Pods-capios/Pods-capios.release.xcconfig"; sourceTree = "<group>"; };
+		3BC93BD6ED1640E1B59EE001 /* Pods-AulaKeychain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AulaKeychain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AulaKeychain/Pods-AulaKeychain.debug.xcconfig"; sourceTree = "<group>"; };
+		4B1BFEB53C34226A2E36511F /* Pods-AulaKeychain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AulaKeychain.release.xcconfig"; path = "Pods/Target Support Files/Pods-AulaKeychain/Pods-AulaKeychain.release.xcconfig"; sourceTree = "<group>"; };
+		500078C922A812D200C525DF /* AccessibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityViewController.swift; sourceTree = "<group>"; };
+		50959C3F22A15E9E009B4FA0 /* LoginKeychainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginKeychainViewController.swift; sourceTree = "<group>"; };
 		50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxOperatorsExerciseViewController.swift; sourceTree = "<group>"; };
-		789E4BD072E152FE6FC98FE4 /* Pods-capios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capios.release.xcconfig"; path = "Pods/Target Support Files/Pods-capios/Pods-capios.release.xcconfig"; sourceTree = "<group>"; };
-		9BFBB34AD15AFBE4983FFB1E /* Pods-capios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-capios/Pods-capios.debug.xcconfig"; sourceTree = "<group>"; };
+		88D2DA43DAC0458579B892BA /* Pods_AulaKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AulaKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1421A86D0998F566BC0701F /* Pods_capios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_capios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9448FA92283463B00E342DE /* capios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = capios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9448FAC2283463B00E342DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9448FAE2283463B00E342DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +36,7 @@
 		B9448FB62283463D00E342DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9448FB82283463D00E342DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9F72F5922834FED000BA70B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		F9F87EB2C313D6CA8A43E173 /* Pods-capios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-capios/Pods-capios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,22 +44,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82749C0E71AAECB06973907A /* Pods_capios.framework in Frameworks */,
+				D497A20DBAE981C744D3A880 /* Pods_capios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B25FC2B4E8A99618B8147A9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9BFBB34AD15AFBE4983FFB1E /* Pods-capios.debug.xcconfig */,
-				789E4BD072E152FE6FC98FE4 /* Pods-capios.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		50E4055322844714009AF077 /* RxStudy */ = {
 			isa = PBXGroup;
 			children = (
@@ -60,10 +58,22 @@
 			path = RxStudy;
 			sourceTree = "<group>";
 		};
-		8556A75E734E8F664C46A283 /* Frameworks */ = {
+		600FB054FEBF595E3B9C0EA2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4FD83CEE5D5C46BA486885A9 /* Pods_capios.framework */,
+				F9F87EB2C313D6CA8A43E173 /* Pods-capios.debug.xcconfig */,
+				0081E4D27F24336D340AE041 /* Pods-capios.release.xcconfig */,
+				3BC93BD6ED1640E1B59EE001 /* Pods-AulaKeychain.debug.xcconfig */,
+				4B1BFEB53C34226A2E36511F /* Pods-AulaKeychain.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AF1E7B27269EF0B85651B755 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1421A86D0998F566BC0701F /* Pods_capios.framework */,
+				88D2DA43DAC0458579B892BA /* Pods_AulaKeychain.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -73,8 +83,8 @@
 			children = (
 				B9448FAB2283463B00E342DE /* capios */,
 				B9448FAA2283463B00E342DE /* Products */,
-				1B25FC2B4E8A99618B8147A9 /* Pods */,
-				8556A75E734E8F664C46A283 /* Frameworks */,
+				600FB054FEBF595E3B9C0EA2 /* Pods */,
+				AF1E7B27269EF0B85651B755 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +103,8 @@
 				B9448FAC2283463B00E342DE /* AppDelegate.swift */,
 				B9448FAE2283463B00E342DE /* ViewController.swift */,
 				50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */,
+				50959C3F22A15E9E009B4FA0 /* LoginKeychainViewController.swift */,
+				500078C922A812D200C525DF /* AccessibilityViewController.swift */,
 				B9448FB02283463B00E342DE /* Main.storyboard */,
 				B9448FB32283463D00E342DE /* Assets.xcassets */,
 				B9448FB52283463D00E342DE /* LaunchScreen.storyboard */,
@@ -109,13 +121,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9448FBB2283463D00E342DE /* Build configuration list for PBXNativeTarget "capios" */;
 			buildPhases = (
-				CE8AB08E73D394E35BEE9B8F /* [CP] Check Pods Manifest.lock */,
+				ED4C0704CB9B895BCB6558E7 /* [CP] Check Pods Manifest.lock */,
 				B9F72F5822834E9E000BA70B /* Rswift */,
 				B9448FA52283463B00E342DE /* Sources */,
 				B9448FA62283463B00E342DE /* Frameworks */,
 				B9448FA72283463B00E342DE /* Resources */,
-				7A9C9960CAB261201761156F /* [CP] Embed Pods Frameworks */,
 				50018505229562710074B6AD /* SwiftLint */,
+				A5BE9C5633C83D53ADBD643F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,7 +144,7 @@
 		B9448FA12283463B00E342DE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Adriano;
 				TargetAttributes = {
@@ -191,21 +203,36 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\n#Ativar a parte abaixo caso deseje que o swiftlint funcione apenas em classes que tiveram alteração no Git.\n#Não esquecer de comentar a primeira linha caso vá utilizar a configuração abaixo.\n#A compilação fica um pouco mais lenta com esse processo.\n# Run SwiftLint\n#START_DATE=$(date +\"%s\")\n\n#SWIFT_LINT=/usr/local/bin/swiftlint\n\n# Run SwiftLint for given filename\n#run_swiftlint() {\n#local filename=\"${1}\"\n#if [[ \"${filename##*.}\" == \"swift\" ]]; then\n#${SWIFT_LINT} autocorrect --path \"${filename}\"\n#${SWIFT_LINT} lint --path \"${filename}\"\n#fi\n#}\n\n#if [[ -e \"${SWIFT_LINT}\" ]]; then\n#echo \"SwiftLint version: $(${SWIFT_LINT} version)\"\n# Run for both staged and unstaged files\n#git diff --name-only | while read filename; do run_swiftlint \"${filename}\"; done\n#git diff --cached --name-only | while read filename; do run_swiftlint \"${filename}\"; done\n#else\n#echo \"${SWIFT_LINT} is not installed.\"\n#exit 0\n#fi\n\n#END_DATE=$(date +\"%s\")\n\n#DIFF=$(($END_DATE - $START_DATE))\n#echo \"SwiftLint took $(($DIFF / 60)) minutes and $(($DIFF % 60)) seconds to complete.\"\n";
 		};
-		7A9C9960CAB261201761156F /* [CP] Embed Pods Frameworks */ = {
+		A5BE9C5633C83D53ADBD643F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-capios/Pods-capios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-capios/Pods-capios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-capios/Pods-capios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-capios/Pods-capios-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-capios/Pods-capios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B9F72F5822834E9E000BA70B /* Rswift */ = {
@@ -222,13 +249,13 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/capios/R.generated.swift",
+				$SRCROOT/capios/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/capios/R.generated.swift\"\n";
 		};
-		CE8AB08E73D394E35BEE9B8F /* [CP] Check Pods Manifest.lock */ = {
+		ED4C0704CB9B895BCB6558E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -257,7 +284,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500078CA22A812D200C525DF /* AccessibilityViewController.swift in Sources */,
 				50EFF9872292EEA200A650FE /* RxOperatorsExerciseViewController.swift in Sources */,
+				50959C4022A15E9E009B4FA0 /* LoginKeychainViewController.swift in Sources */,
 				B9448FAF2283463B00E342DE /* ViewController.swift in Sources */,
 				B9448FAD2283463B00E342DE /* AppDelegate.swift in Sources */,
 				B9F72F5A22834FED000BA70B /* R.generated.swift in Sources */,
@@ -404,17 +433,18 @@
 		};
 		B9448FBC2283463D00E342DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9BFBB34AD15AFBE4983FFB1E /* Pods-capios.debug.xcconfig */;
+			baseConfigurationReference = F9F87EB2C313D6CA8A43E173 /* Pods-capios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7M6QRD884M;
+				DEVELOPMENT_TEAM = 5EUJQUFBHT;
 				INFOPLIST_FILE = capios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.adriano.capios;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.francisco.capios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -423,17 +453,18 @@
 		};
 		B9448FBD2283463D00E342DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 789E4BD072E152FE6FC98FE4 /* Pods-capios.release.xcconfig */;
+			baseConfigurationReference = 0081E4D27F24336D340AE041 /* Pods-capios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7M6QRD884M;
+				DEVELOPMENT_TEAM = 5EUJQUFBHT;
 				INFOPLIST_FILE = capios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.adriano.capios;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.francisco.capios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

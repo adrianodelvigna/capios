@@ -10,8 +10,83 @@ A não aderência aos regulamentos estabelecidos pelo Banco Central, podem levar
 
 Dentre as funcionalidades mais usadas, e talvez a mais simples de acessibilidade no iOS, está o VoiceOver: um leitor de tela que permite aos usuários navegar pela interface, sem vê-la.
 
+Por padrão, o sistema operacional iOS, já faz pra você alguns passos da acessibilidade. Para testar essa experiência em seu app, basta ir até as configurações: Ajustes -> Geral -> Acessibilidade -> VoiceOver e então ativar a opção VoiceOver.
+
+A partir desse momento, seu app começar a narrar suas interações e também dará algumas dicas de interação.
+
+> Nossa! Que fantástico! Então não preciso fazer nada?! Praia e água fresca?!
+
+Ahhmmmm, não. Isso só vai trazer as funcionalidades básicas da sua aplicação. Para fornecer uma real experiência ao seu usuário, você deve adicionar descrições e o máximo de informação possível, para que seu app fica entendível, para quem não enxerga. 
+
+> Ahh! Para né.... Dá pra entender tudo que ta acontecendo só com o VoiceOver.
+
+Será mesmo? Faça o seguinte desafio. Ative o VoiceOver do seu device, lá na opção de Ajustes. Depois abra sua aplicação e "feche as cortinas".
+Para fechar as cortinas do seu app, basta você tocar na tela, com 3 dedos, 3 vezes. Se por acaso não funcionar, de o tap na tela com 3 dedos, 4 vezes. 
+
+> MEU CANECO! SUMIU TUDO?!
+
+Pois é amigo, agora sim você está no mesmo nível que seu usuário com deficiência visual. Tente navegar no seu app e veja se é tão fácil navegar nele quanto você achou que era. Um pouco diferente né. 
+Calma, sem pânico, pra voltar pro estado original, é só repetir a ação que você usou pra fechar as cortinas (3 ou 4 taps na tela usando 3 dedos) 
+
+Agora sim você sabe como é a experiência e o que você TEM que ajustar para que seus usuários entendam e consigam usar sua aplicação.
+
+### Existem 5 atributos propriedades para usar na acessibilidade:
+
+#### * Label: 
+Um jeito simples e objetivo para descrever um controle ou uma view: "Botão voltar", "imagem de patos"
+
+#### * Traits:
+Descreve um estado do elemento, comportamento ou uso. Um trait é um enum acessado através de 'UIAccessibilityTrait'. Para uma imagem por exemplo use UIAccessibilityTraitImage 
+
+#### * Hint:
+Descreve qual ação um elemento faz. Por exemplo: "Mostra os detalhes da receita"
+
+#### * Frame:
+Não muito usado, o frame irá descrever para o usuário o format CGRect do frame. O VoiceOver nesse caso irá apenas informar os valores de x, y, width e height do frame.
+
+#### * Value:
+O valor de um elemento. Mais usado para descrever valores de elementos, por exemplo um slider
+
+Como dito anteriormente, para maioria dos elementos, já existe um valor atribuído, você deve apenas aprimorar essa informação para trazer uma melhor experiência para seu usuário.
+
+> Beleza! Agora entendi. Mas putz... Toda que vez que eu for testar ou for fazer uma alteração, eu vou ter que navegar no app no modo VoiceOver ativo?! Meio chato hein...
+
+Caaaaaalma, é óbvio que a Apple não ia te deixar na mão nesse momento né. Pensando nisso, a Apple adicionou ao Xcode, a partir da versão 8, o Accessibility Inspector!
+
+### Accessibility Inspector
+
+Você pode usar o Accessibility Inspector, para simular as interações do VoiceOver com os elementos de acessibilidade e ver quais informações eles estão provendo.
+
+Esse inspector permite que você faça as seguintes tarefas:
+
+* Permite você rodar seu app e identificar erros comuns de acessibilidade.
+* Deixa você analisar o atributo de acessibilidade de um elemento UI no modo 'Inspection'
+* Você também pode pré-visualizar todos os elementos de acessibilidade sem sair do seu app.
+* Tem suporte para todas as plataformas Apple. (macOS, iOS, watchOS, tvOS e provavelmente, mas não mencionado ainda, também funcionará para o novo iPadOS)
+
+> Aí sim hein! Bem mais legal e bem mais interessante. Agora sim eu sinto que vou conseguir adequar meu app da melhor forma. Então como que eu faço pra começar a usar ele?!
+
+Simples! Basta acessar o menu do seu Xcode e navegar até: Xcode -> Open Developer Tool -> Accessibility Inspector.
+Você vai perceber que seu Xcode instanciou uma nova janela chamada 'Accessibility Inspector'.
+
+Nesse inspector você vai encontrar 5 possíveis ações para tomar. 
+* Target Chooser: Permiti que você escolha pra qual device você vai testar. 
+* Inspection Pointer: Com ele selecionado, basta você navegar no simulador e você vai ver que o inspector já começará a exibir informações de acessibilidade sobre os elementos que o mouse passa por cima.
+* Inspection Detail: Traz todas as informações de acessibilidade do elemento que você está interagindo: Basic, Actions, Element e Hierarchy
+* Audit: Irá analisar a tela atual que está sendo exibida no simulador (como se fosse auditar o processo de acessibilidade do seu app). 
+* Settings: Essa opção serve pra vc testar outras deficiências sem que você tenha que sair do app, ir nas configurações do dispositivo e manualmente habilitar essas opções. Aqui você encontra algumas opções, como inverção das cores, redução da transparência, redução de movimento e mudança de fonte. Provavelmente, mais opções serão adicionadas futuramente. 
+
+> Uhmmm, ok. Mas não tem nada?! Ta marcando meu Mac como target?! Não era pra usar o simulador?! Que que tá acontecendo?!
+
+Calma. Pra ligar o inspector para seu simulador, primeiro você precisa abrir o simulador. Então rode sua aplicação no simulador e após ele ativo, vai lá no 'Accessibility Inspector' que você vai ver que agora o simulador irá aparecer lá no seus Targets. 
+
+Agora basta analisar a tela com o 'Inspection Pointer' e o 'Audit' do 'Accessibility Inspector', para ver quais pontos da sua aplicação aprensenta falhas de acessibilidade. 
+
+Ahh! E não esquece que pra testar realmente se está funcional ou não sua acessibilidade, é ideal que você faça testes no seu app com as "cortinas fechadas"!
+
 Referências:
 - [Acessibilidade iOS](https://developer.apple.com/accessibility/ios/)
+- [Tutorial - Primeiros passos](https://www.raywenderlich.com/845-ios-accessibility-tutorial-getting-started)
 
 ## Toolchain
 
@@ -312,7 +387,7 @@ Observable.combineLatest(firstName.rx.text, lastName.rx.text) { $0 + " " + $1 }
 
 Onde combinamos os valores mais atuais de dois elementos de entrada de texto, criamos uma nova string concatenando os dois textos, criamos uma string de saudação, e finalmente conectamos tudo isso a uma label. Três linhas de código!
 
-Agora, imagine a implementação dos métodos do [protocolo UITextFieldDelegate](https://developer.apple.com/documentation/uikit/uitextfielddelegate), o controle para sabermos qual entrada de texto foi alterada para concatenarmos a string corretamente, criarmos uma string de saudação, para só então atualizarmos uma label. É um bocado de coisa para pensar. Num situação relativamente simples.
+Agora, imagine a implementação dos métodos do [protocolo UITextFieldDelegate](https://developer.apple.com/documentation/uikit/uitextfielddelegate), o controle para sabermos qual entrada de texto foi alterada para concatenarmos a string corretamente, criarmos uma string de saudação, para só então atualizarmos uma label. É um bocado de coisa para pensar. Numa situação relativamente simples.
 
 Se conseguirmos aprender os termos usados pelo **RxSwift**, podemos abstrair (até certo ponto) como realizar algumas das atividades "mecânicas", ou repetitivas, do nosso app. Nos permitindo aplicar um foco ainda maior no propósito para que o app está sendo desenvolvido - ou focarmos nas regras do negócio, como também é mencionado.
 
@@ -345,7 +420,7 @@ Tudo isso trazido para você pela Polishop!
 Veja alguns testemunhos!
 <br><sub>\<*/Locução super-empolgada*></sub>
 
-<sub>\<*dublagem fora sincronia<sup>6</sup> com os movimentos labiais*></sub>
+<sub>\<*dublagem fora de sincronia<sup>6</sup> com os movimentos labiais*></sub>
 
 > Desde que eu comecei a usar o **RxSwift**, eu não quero mais olhar para trás. Eu uso o **RxSwift** para tudo!
 
@@ -355,7 +430,7 @@ Veja alguns testemunhos!
 
 > MVVM? MVC? MVP? VIPER? Com **RxSwift** eu consigo migrar para a arquitetura de app da semana, facilmente! Sem suar!
 
-<sup>\<*/dublagem fora sincronia com os movimentos labiais*></sup>
+<sup>\<*/dublagem fora de sincronia com os movimentos labiais*></sup>
 
 Faça o checkout, configure seu *Podfile*, e confira os resultados você mesmo!
 
@@ -363,7 +438,7 @@ Da mesma forma que os preços dos produtos da Polishop, o **RxSwift** pode apres
 
 Numa analogia, pense em aprimorar seu vocabulário em inglês, adicionando novas palavras ao seu repertório. Mas nesse caso estaremos aprendendo um punhado de novos conceitos, e algumas dezenas de novas palavras (ou operadores/funções). E você já estará com seu *mindset* na direção certa.
 
-É também consenso entre os programadores **Rx**, **RxSwift** que praticamente a totalidade do entendimento e fluência no paradigma e bibliotecas vêm da experimentação, do uso contínuo, principalmente. 10% vêm do estudo, e 90% vêm da prática. Então tenha **sempre** isso em mente.
+É também consenso entre os programadores **Rx**, **RxSwift** que praticamente a totalidade do entendimento e a fluência no paradigma e bibliotecas vêm da experimentação, do uso contínuo principalmente. 10% vêm do estudo, e 90% vêm da prática. Então tenha **sempre** isso em mente.
 
 ### Referências
 
@@ -438,3 +513,33 @@ Nos dias de aula, durante o Projeto Final, pensei em realizarmos daily meetings,
 
 ### Site com APIs gratis para consumo e testes, pode trazer criatividade para as atividades
 https://rapidapi.com/collection/list-of-free-apis?utm_source=google&utm_medium=cpc&utm_campaign=1757574668_67679208454&utm_term=free%20api%20for%20testing_b&utm_content=1t1&gclid=Cj0KCQjwrdjnBRDXARIsAEcE5Yl_8Rlg1BP3IO_VXjslf14ChGjxHJ0SiVZXWSKCJddLhPyuVacTQ_MaAi-3EALw_wcB
+
+
+
+
+# Plano de Aula
+
+## 07/06 19:00h - 22:00h:
+* Toolchain - 19:00h: pincelada sobre. Pra que serve; O que ele faz?; Como e onde baixar; como substituir o toolchain atual pelo toolchain baixado;
+* Keychain - 19:30h: O que é; O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra); Como salvar e acessar o Keychain usando Valet; Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet; Quais os construtores o Valet tem e qual a diferença entre eles?;
+* Acessibilidade - 20:30h: 
+Fim da aula, propor atividade onde os alunos devem adicionar Keychain para o login de seus apps, armazenando o login e senha no keychain e a partir desse momento, usar o SecureEnclaveValet para consultar as chaves salvas no keychain, usando apenas a biometria ou código do device, para logar no app.
+Também deverão adicionar acessibilidade em pelo menos uma tela do app, que deve ficar 100% funcional para trabalhar com as "cortinas fechadas"
+
+* 22:00h - Liberar o restante da aula para a resolução do exercício e tirar dúvidas.
+
+Vou começar a criar um projeto ou target no projeto capios, com o modelo de atividade para que eles sigam em sala 
+
+Ref: [Valet](https://github.com/square/Valet)
+
+## 10/06 19:00h - 22:00h:
+
+
+## 12/06 19:00h - 22:00h:
+
+
+## 14/06 19:00h - 22:00h:
+
+
+## 17/06 19:00h - 22:00h:
+
