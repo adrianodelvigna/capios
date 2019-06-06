@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     
     var disposeBag: DisposeBag = DisposeBag()
     
+    override func viewDidLoad() {
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         disposeBag = DisposeBag()

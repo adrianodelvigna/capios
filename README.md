@@ -517,25 +517,25 @@ Durante a aula, nós fazemos uma nova aplicação, implementando todos os tópic
 * Toolchain: 
 pincelada sobre: 
 1. Pra que serve
-2. O que ele faz?
-3. Como e onde baixar
-4. como substituir o toolchain atual pelo toolchain baixado
+1. O que ele faz?
+1. Como e onde baixar
+1. como substituir o toolchain atual pelo toolchain baixado
 
-* Keychain:  
+* Keychain:
 1. O que é
-2. O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra)
-3. Adicionando a Lib ao projeto
-4. Como salvar e acessar o Keychain usando Valet
-5. Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet 
-6. Quais os construtores o Valet tem e qual a diferença entre eles?
+1. O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra)
+1. Adicionando a Lib ao projeto
+1. Como salvar e acessar o Keychain usando Valet
+1. Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet 
+1. Quais os construtores o Valet tem e qual a diferença entre eles?
 
 * Acessibilidade: 
 - Falar sobre o VoiceOver: 
     1. Como ativar
-    2. Falar sobre as funcionalidades básicas e o que geralmente não é abrangido pelo VoiceOver nativamente
-    3. Falar rapidamente sobre os 5 atributos existentes (label, traits, hint, frame, value)
-    4. Como testar acessibilidade com o simulador (Accessibility Inspector)
-    5. Ativar funcionalidade "fechar cortinas"
+    1. Falar sobre as funcionalidades básicas e o que geralmente não é abrangido pelo VoiceOver nativamente
+    1. Falar rapidamente sobre os 5 atributos existentes (label, traits, hint, frame, value)
+    1. Como testar acessibilidade com o simulador (Accessibility Inspector)
+    1. Ativar funcionalidade "fechar cortinas"
     
 * Fim da aula, propor atividade onde os alunos devem adicionar Keychain para o login de seus apps, armazenando o login e senha no keychain e a partir desse momento, usar o SecureEnclaveValet para consultar as chaves salvas no keychain, usando apenas a biometria ou código do device, para logar no app.
 Também deverão adicionar acessibilidade em pelo menos uma tela do app, que deve ficar 100% funcional para trabalhar com as "cortinas fechadas"
