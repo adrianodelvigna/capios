@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pGh-uD-No0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pGh-uD-No0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -134,10 +134,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1a6-KV-psf"/>
                                 </constraints>
-                                <state key="normal" title="Recuperar dados do outro app"/>
+                                <state key="normal" title="Recuperar dados Secure Enclave"/>
                                 <connections>
-                                    <action selector="logIn:" destination="3YF-Ec-Ezx" eventType="touchUpInside" id="CEM-tn-93M"/>
-                                    <action selector="retrieveDataFromOtherApp:" destination="3YF-Ec-Ezx" eventType="touchUpInside" id="mDp-gi-kdH"/>
+                                    <action selector="retrieveDataFromSecureEnclave:" destination="3YF-Ec-Ezx" eventType="touchUpInside" id="yZl-Zb-Vmd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -192,8 +191,13 @@
                                     <constraint firstAttribute="height" constant="150" id="6ZT-2O-uaE"/>
                                     <constraint firstAttribute="width" constant="150" id="aMn-bk-b83"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.roundCorners">
+                                        <integer key="value" value="75"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPb-rU-b6j">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arthur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPb-rU-b6j">
                                 <rect key="frame" x="20" y="193" width="335" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gDZ-1S-bF4"/>
@@ -207,31 +211,57 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="wMw-7B-FDT"/>
                                 </constraints>
-                                <state key="normal" title="Calcular"/>
+                                <state key="normal" title="Remover"/>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="AU8-ue-BrH">
+                                <rect key="frame" x="18" y="318.5" width="339" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="oJ3-22-Jc3"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderValueChange:" destination="kEG-VH-WSv" eventType="valueChanged" id="Z1U-wP-faJ"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peso do Arthur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4L-Xx-g5Y">
+                                <rect key="frame" x="20" y="270" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1Qc-Cn-UMT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="McT-K1-XZH" firstAttribute="centerX" secondItem="eU0-7n-AiM" secondAttribute="centerX" id="2qK-3I-cqd"/>
                             <constraint firstItem="5SM-bC-VLX" firstAttribute="leading" secondItem="sFo-Bq-xo2" secondAttribute="leading" constant="20" id="CFX-CM-uys"/>
                             <constraint firstItem="sFo-Bq-xo2" firstAttribute="bottom" secondItem="5SM-bC-VLX" secondAttribute="bottom" constant="20" id="Gew-S2-ow3"/>
+                            <constraint firstItem="AU8-ue-BrH" firstAttribute="top" secondItem="S4L-Xx-g5Y" secondAttribute="bottom" constant="8.5" id="GvM-sr-8aT"/>
+                            <constraint firstItem="sFo-Bq-xo2" firstAttribute="trailing" secondItem="AU8-ue-BrH" secondAttribute="trailing" constant="20" id="KsM-Mg-J2t"/>
                             <constraint firstItem="RPb-rU-b6j" firstAttribute="leading" secondItem="sFo-Bq-xo2" secondAttribute="leading" constant="20" id="PIi-Jh-bLj"/>
                             <constraint firstItem="sFo-Bq-xo2" firstAttribute="trailing" secondItem="RPb-rU-b6j" secondAttribute="trailing" constant="20" id="SYe-67-zib"/>
+                            <constraint firstItem="S4L-Xx-g5Y" firstAttribute="top" secondItem="RPb-rU-b6j" secondAttribute="bottom" constant="37" id="Ucz-ic-PHk"/>
+                            <constraint firstItem="sFo-Bq-xo2" firstAttribute="trailing" secondItem="S4L-Xx-g5Y" secondAttribute="trailing" constant="20" id="Zra-hX-9R4"/>
+                            <constraint firstItem="AU8-ue-BrH" firstAttribute="leading" secondItem="sFo-Bq-xo2" secondAttribute="leading" constant="20" id="cQK-7S-SaR"/>
                             <constraint firstItem="sFo-Bq-xo2" firstAttribute="trailing" secondItem="5SM-bC-VLX" secondAttribute="trailing" constant="20" id="mD1-R8-hhg"/>
                             <constraint firstItem="McT-K1-XZH" firstAttribute="top" secondItem="sFo-Bq-xo2" secondAttribute="top" constant="15" id="mKp-tp-ZwZ"/>
+                            <constraint firstItem="S4L-Xx-g5Y" firstAttribute="leading" secondItem="sFo-Bq-xo2" secondAttribute="leading" constant="20" id="oBU-wC-KhN"/>
                             <constraint firstItem="RPb-rU-b6j" firstAttribute="top" secondItem="McT-K1-XZH" secondAttribute="bottom" constant="8" id="pgl-zQ-fLo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sFo-Bq-xo2"/>
                     </view>
                     <connections>
-                        <outlet property="button" destination="5SM-bC-VLX" id="8sr-Ul-371"/>
                         <outlet property="descriptionLabel" destination="RPb-rU-b6j" id="bl4-0T-WQe"/>
                         <outlet property="imageView" destination="McT-K1-XZH" id="jLC-tE-U97"/>
+                        <outlet property="recalculateButton" destination="5SM-bC-VLX" id="8sr-Ul-371"/>
+                        <outlet property="sliderAccesibility" destination="AU8-ue-BrH" id="V6X-Rh-RlL"/>
+                        <outlet property="sliderDescription" destination="S4L-Xx-g5Y" id="UBb-Z0-Y74"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gHE-vo-wUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1018" y="941"/>
+            <point key="canvasLocation" x="1016.8" y="940.47976011994012"/>
         </scene>
         <!--Rx Operators Exercise View Controller-->
         <scene sceneID="Tyr-DD-hlz">
