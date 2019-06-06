@@ -519,6 +519,32 @@ Nos dias de aula, durante o *Projeto Final*, pensei em realizarmos daily meeting
 
 
 # Plano de Aula
+* Toolchain: 
+pincelada sobre: 
+1. Pra que serve
+1. O que ele faz?
+1. Como e onde baixar
+1. como substituir o toolchain atual pelo toolchain baixado
+
+* Keychain:
+1. O que é
+1. O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra)
+1. Adicionando a Lib ao projeto
+1. Como salvar e acessar o Keychain usando Valet
+1. Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet 
+1. Quais os construtores o Valet tem e qual a diferença entre eles?
+Ref: 
+[Valet](https://github.com/square/Valet)
+[Implementação Manual Wrapper Keychain](https://medium.com/ios-os-x-development/securing-user-data-with-keychain-for-ios-e720e0f9a8e2)
+
+* Acessibilidade: 
+- Falar sobre o VoiceOver: 
+    1. Como ativar
+    1. Falar sobre as funcionalidades básicas e o que geralmente não é abrangido pelo VoiceOver nativamente
+    1. Falar rapidamente sobre os 5 atributos existentes (label, traits, hint, frame, value)
+    1. Como testar acessibilidade com o simulador (Accessibility Inspector)
+    1. Ativar funcionalidade "fechar cortinas"
+
 
 ## <b>1:</b> 07/06/2019 (6ª feira) 19:00h - 22:00h
 
