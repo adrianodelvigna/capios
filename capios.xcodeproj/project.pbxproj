@@ -69,13 +69,6 @@
 			path = Samples;
 			sourceTree = "<group>";
 		};
-		50E4055322844714009AF077 /* RxStudy */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RxStudy;
-			sourceTree = "<group>";
-		};
 		600FB054FEBF595E3B9C0EA2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,9 +110,8 @@
 		B9448FAB2283463B00E342DE /* capios */ = {
 			isa = PBXGroup;
 			children = (
-				50E4055322844714009AF077 /* RxStudy */,
-				B9448FAC2283463B00E342DE /* AppDelegate.swift */,
 				507E1A1222A989B4007E3F2D /* Samples */,
+				B9448FAC2283463B00E342DE /* AppDelegate.swift */,
 				507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */,
 				507E1A1322A989D0007E3F2D /* HomeViewController.swift */,
 				50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */,

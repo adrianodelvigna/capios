@@ -29,7 +29,7 @@ class CreateAccountViewController: UIViewController {
     //Inicialização do Valet usando o construtor padrão valet, informando qual no 'identifier' o nome do sandbox que será criado e qual a 'accessibility' necessária para que o valet tenha acesso ao Keychain, nesse caso, o valet só terá acesso enquanto o device estiver desbloqueado.
     let valet: Valet = Valet.valet(with: Identifier(nonEmpty: "Database")!,
                                    accessibility: .whenUnlocked)
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Definição do título da tela na navigationBar
@@ -41,7 +41,6 @@ class CreateAccountViewController: UIViewController {
     
     func createAccount() {
         //Se os campos estiverem válidos, essa função será chamada e é aqui que nós faremos o armazenamento dos dados no valet.
-        
     }
     
     func bindUI() {
