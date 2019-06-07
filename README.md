@@ -1,20 +1,31 @@
 # Programa de Capacitação iOS
 
-## Toolchain
+## Toolchain Swift
 
 *Toolchain*, numa tradução literal: corrente de ferramentas.
 
-No mundo iOS, Xcode, Mac... o termo *toolchain* está ligado ao conjunto de ferramentas usadas para compilar (transformar seu código em algo executável) seu aplicativo.
+No mundo iOS, Xcode, Mac... o termo *toolchain* está ligado ao conjunto de ferramentas usadas para compilar (transformar seu código em algo executável), testar (*debug*) e empacotar seu aplicativo desenvolvido em Swift.
 
-Quando você instala o Xcode no seu Mac, o Xcode já inclui um *toolchain* compatível com a versão do Xcode que você acabou de instalar. (*É por isso que você tem que, geralmente, atualizar o Xcode se você quiser desenvolver apps para as versões mais recentes do iOS, ou usar novas versões do Swift*)
+Quando você instala o Xcode no seu Mac, o Xcode já inclui um *toolchain swift* compatível e "*homologado*" com a versão do Xcode que você acabou de instalar. (*É por isso que você tem que, geralmente, atualizar o Xcode se você quiser desenvolver apps para as versões mais recentes do iOS, ou usar novas versões do Swift*)
 
-Porém, caso você não possa atualizar o seu Xcode, tanto por questões de compatibilidade, ou por alguma outra limitação (como falta de permissão), você pode configurar o seu Xcode atual para usar um *toolchain* diferente, e experimentar versões diferentes do Swift, tanto mais atual, ou ainda mais antigo, caso seja necessário.
+Porém, caso você não possa atualizar o seu Xcode, tanto por questões de compatibilidade, ou por alguma outra limitação (como falta de permissão na máquina), você pode configurar o seu Xcode atual para usar um *toolchain* diferente, e experimentar versões diferentes do Swift, tanto mais atual, ou ainda mais antigo, caso seja necessário.
 
-Muito importante enfatizar que usando um *toolchain* diferente (para versões diferentes do Swift daquelas embutidas no Xcode) não necessariamente te permitirá explorar versões diferentes do SDK<sup>1</sup> iOS.
+Muito importante enfatizar que usando um *toolchain* diferente (para versões diferentes do Swift daquelas embutidas no Xcode) não necessariamente te permitirá explorar versões diferentes do SDK<sup>1</sup> iOS. Outro ponto importante é que ao usar um *toolchain* diferente daquele contido na versão que você está usando do Xcode, você também não vai conseguir publicar aplicativos na App Store.
+
+Finalmente, usar um *toolchain Swift* diferente daquele embutido no Xcode é de certa forma considerado um "*hack*", exclusivamente no sentido de que não é suportado ou endossado pela Apple, quando o objetivo é desenvolver e publicar apps nas lojas. Você estará por sua conta.
+
+Uma outra forma de testar a próxima versão do Swift, e de quebra a próxima versão do SDK iOS, é baixar a versão BETA do Xcode em: https://developer.apple.com/download/. É possível que seja necessário pertencer ao Apple Developer Program (conta paga Apple Developer), para ter acesso a esses downloads.
+
+Mas então, por que eu não uso direto a versão BETA do Xcode? É que, em algumas circunstâncias, uma nova versão do Xcode (11) exige uma nova versão do MacOS (Mojave - 10.14.3+), que por sua vez não é mais compatível com seu velho Mac (MacBook Pro 2011), por exemplo 🙃. Só resta então a alternativa de experimentar com *toolchains* alternativas.
+
+<sup>É possível a instalação de SDKs e o suporte a dispositivos com iOS mais novos em versões antigas do Xcode. Mas isso não pertence ao escopo desse documento. Em tese, um MacOS+Xcode antigos poderiam servir para desenvolvimento e testes de novas versões do Swift (usando um **toolchain** mais atual) e do SDK iOS (instalando um SDK atualizado num Xcode antigo).</sup>
 
 Referências:
 - [Resumo do Xcode, toolchains alternativos](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/AlternativeToolchains.html)
-
+- [Switching Swift Versions inside Xcode using Toolchains](https://medium.com/xcblog/switching-swift-versions-inside-xcode-using-toolchains-755b28831c43)
+- [Swift 5.0 and XCode 10.1 – Using a Custom Toolchain](https://learningswift.brightdigit.com/swift-5-0-xcode-10-1/)
+- [How to install a beta version of Swift](https://www.hackingwithswift.com/example-code/language/how-to-install-a-beta-version-of-swift)
+- [Using old versions of Swift in Xcode](https://m.pardel.net/using-old-versions-of-swift-in-xcode-4dd46644a257)
 
 <sup>
 <sup><b>1</b></sup> SDK, ou <i>software development kit</i> é o conjunto de ferramentas que você usa para desenvoler apps para o iOS, ou o Mac, ou qualquer outra plataforma na verdade. Quando você pensa em SDK no contexto iOS, pense também na versão do iOS que você pode referenciar, iOS 10, 11, 12, 13...
