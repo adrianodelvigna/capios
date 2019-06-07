@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var accessibilityButton: UIButton!
     
+    @IBOutlet weak var poorAccessibilityButton: UIButton!
+    
     var disposeBag: DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -44,6 +46,12 @@ class ViewController: UIViewController {
         
         accessibilityButton.rx.tap.subscribe(onNext: {
             if let vc = R.storyboard.main.accessibilityViewController() {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }).disposed(by: self.disposeBag)
+        
+        poorAccessibilityButton.rx.tap.subscribe(onNext: {
+            if let vc = R.storyboard.main.poorAccessibilityViewController() {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }).disposed(by: self.disposeBag)

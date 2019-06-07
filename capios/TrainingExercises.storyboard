@@ -52,23 +52,33 @@
                                 <state key="normal" title="Login"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seu app para Treinos e Exercícios" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHk-KU-dSq">
-                                <rect key="frame" x="20" y="104" width="335" height="57.5"/>
+                                <rect key="frame" x="20" y="159" width="335" height="94.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gato" translatesAutoresizingMaskIntoConstraints="NO" id="a2e-8z-eD8">
+                                <rect key="frame" x="144" y="89" width="87" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="b9W-WW-8MT"/>
+                                    <constraint firstAttribute="height" constant="50" id="kjy-ag-5zH"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="laL-Ql-aJP" firstAttribute="trailing" secondItem="MU4-wb-w8K" secondAttribute="trailing" constant="20" id="6XR-xN-Bb9"/>
                             <constraint firstItem="JHk-KU-dSq" firstAttribute="leading" secondItem="laL-Ql-aJP" secondAttribute="leading" constant="20" id="9kC-TT-Bbw"/>
                             <constraint firstItem="MU4-wb-w8K" firstAttribute="leading" secondItem="laL-Ql-aJP" secondAttribute="leading" constant="20" id="F58-xE-sr0"/>
-                            <constraint firstItem="JHk-KU-dSq" firstAttribute="top" secondItem="laL-Ql-aJP" secondAttribute="top" constant="40" id="IpK-eW-Qce"/>
                             <constraint firstItem="laL-Ql-aJP" firstAttribute="trailing" secondItem="JHk-KU-dSq" secondAttribute="trailing" constant="20" id="UhP-2m-OXQ"/>
+                            <constraint firstItem="JHk-KU-dSq" firstAttribute="top" secondItem="a2e-8z-eD8" secondAttribute="bottom" constant="20" id="Xeo-Tt-dD2"/>
+                            <constraint firstItem="MU4-wb-w8K" firstAttribute="top" secondItem="JHk-KU-dSq" secondAttribute="bottom" constant="20" id="b6V-Ap-dgr"/>
                             <constraint firstItem="laL-Ql-aJP" firstAttribute="trailing" secondItem="TW1-Gq-V9R" secondAttribute="trailing" constant="20" id="fA2-6E-aJi"/>
                             <constraint firstItem="TW1-Gq-V9R" firstAttribute="top" secondItem="MU4-wb-w8K" secondAttribute="bottom" constant="25" id="j8L-vh-a9g"/>
+                            <constraint firstItem="a2e-8z-eD8" firstAttribute="top" secondItem="laL-Ql-aJP" secondAttribute="top" constant="25" id="kgo-z9-Kwq"/>
                             <constraint firstItem="TW1-Gq-V9R" firstAttribute="leading" secondItem="laL-Ql-aJP" secondAttribute="leading" constant="20" id="lMP-dP-91Z"/>
                             <constraint firstItem="MU4-wb-w8K" firstAttribute="centerY" secondItem="Z5b-T1-UBt" secondAttribute="centerY" constant="-30" id="mBy-m5-9Ls"/>
+                            <constraint firstItem="a2e-8z-eD8" firstAttribute="centerX" secondItem="Z5b-T1-UBt" secondAttribute="centerX" id="mJN-uj-iUI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="laL-Ql-aJP"/>
                     </view>
@@ -81,21 +91,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPa-eO-0VS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="445.60000000000002" y="130.88455772113943"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Igs-hm-XMF">
-            <objects>
-                <viewController id="A2R-Im-Fg6" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vSO-s8-IBj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="c3k-aW-HGs"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3V0-a5-hPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1460" y="512"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="0iw-k2-nP3">
@@ -178,4 +173,7 @@
             <point key="canvasLocation" x="1460" y="-278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gato" width="796" height="496"/>
+    </resources>
 </document>
