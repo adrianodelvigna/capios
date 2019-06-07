@@ -1,5 +1,38 @@
 # Programa de Capacitação iOS
 
+## Toolchain
+
+*Toolchain*, numa tradução literal: corrente de ferramentas.
+
+No mundo iOS, Xcode, Mac... o termo *toolchain* está ligado ao conjunto de ferramentas usadas para compilar (transformar seu código em algo executável) seu aplicativo.
+
+Quando você instala o Xcode no seu Mac, o Xcode já inclui um *toolchain* compatível com a versão do Xcode que você acabou de instalar. (*É por isso que você tem que, geralmente, atualizar o Xcode se você quiser desenvolver apps para as versões mais recentes do iOS, ou usar novas versões do Swift*)
+
+Porém, caso você não possa atualizar o seu Xcode, tanto por questões de compatibilidade, ou por alguma outra limitação (como falta de permissão), você pode configurar o seu Xcode atual para usar um *toolchain* diferente, e experimentar versões diferentes do Swift, tanto mais atual, ou ainda mais antigo, caso seja necessário.
+
+Muito importante enfatizar que usando um *toolchain* diferente (para versões diferentes do Swift daquelas embutidas no Xcode) não necessariamente te permitirá explorar versões diferentes do SDK<sup>1</sup> iOS.
+
+Referências:
+- [Resumo do Xcode, toolchains alternativos](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/AlternativeToolchains.html)
+
+
+<sup>
+<sup><b>1</b></sup> SDK, ou <i>software development kit</i> é o conjunto de ferramentas que você usa para desenvoler apps para o iOS, ou o Mac, ou qualquer outra plataforma na verdade. Quando você pensa em SDK no contexto iOS, pense também na versão do iOS que você pode referenciar, iOS 10, 11, 12, 13...
+</sup>
+
+## Keychain
+
+*Keychain*, ou chaveiro, é a solução para armazenamento de dados de forma segura no iOS (e também no Mac, aliás).
+
+Chaveiro talvez não faça justiça do real poder dessa funcionalidade. Talvez a melhor analogia seria com um **cofre**, ou *vault*, em inglês.
+
+Com o Keychain, você pode armazenar senhas, chaves criptográficas, certificados e dados de forma totalmente segura.
+
+O iPhone é referência no mercado, por ser o estado da arte, quando estamos falando de armazenamento totalmente seguro e privacidade, para *smartphones*.
+
+Referências:
+- [Serviço de Keychain](https://developer.apple.com/documentation/security/keychain_services)
+
 ## Acessibilidade
 
 As funções de acessibilidade permitem que pessoas com limitações possam usufriur da máxima quantidade de funcionalidades possíveis no aplicativo.
@@ -10,7 +43,7 @@ A não aderência aos regulamentos estabelecidos pelo Banco Central, podem levar
 
 Dentre as funcionalidades mais usadas, e talvez a mais simples de acessibilidade no iOS, está o VoiceOver: um leitor de tela que permite aos usuários navegar pela interface, sem vê-la.
 
-Por padrão, o sistema operacional iOS, já faz pra você alguns passos da acessibilidade. Para testar essa experiência em seu app, basta ir até as configurações: Ajustes -> Geral -> Acessibilidade -> VoiceOver e então ativar a opção VoiceOver.
+Por padrão, o sistema operacional iOS, já faz pra você alguns passos da acessibilidade. Para testar essa experiência em seu app, basta ir até as configurações: `Ajustes → Geral → Acessibilidade → VoiceOver` e então ativar a opção **VoiceOver**.
 
 A partir desse momento, seu app começar a narrar suas interações e também dará algumas dicas de interação.
 
@@ -81,39 +114,6 @@ Referências:
 - [Acessibilidade iOS](https://developer.apple.com/accessibility/ios/)
 - [Tutorial - Primeiros passos](https://www.raywenderlich.com/845-ios-accessibility-tutorial-getting-started)
 
-## Toolchain
-
-*Toolchain*, numa tradução literal: corrente de ferramentas.
-
-No mundo iOS, Xcode, Mac... o termo *toolchain* está ligado ao conjunto de ferramentas usadas para compilar (transformar seu código em algo executável) seu aplicativo.
-
-Quando você instala o Xcode no seu Mac, o Xcode já inclui um *toolchain* compatível com a versão do Xcode que você acabou de instalar. (*É por isso que você tem que, geralmente, atualizar o Xcode se você quiser desenvolver apps para as versões mais recentes do iOS, ou usar novas versões do Swift*)
-
-Porém, caso você não possa atualizar o seu Xcode, tanto por questões de compatibilidade, ou por alguma outra limitação (como falta de permissão), você pode configurar o seu Xcode atual para usar um *toolchain* diferente, e experimentar versões diferentes do Swift, tanto mais atual, ou ainda mais antigo, caso seja necessário.
-
-Muito importante enfatizar que usando um *toolchain* diferente (para versões diferentes do Swift daquelas embutidas no Xcode) não necessariamente te permitirá explorar versões diferentes do SDK<sup>1</sup> iOS.
-
-Referências:
-- [Resumo do Xcode, toolchains alternativos](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/AlternativeToolchains.html)
-
-
-<sup>
-<sup><b>1</b></sup> SDK, ou <i>software development kit</i> é o conjunto de ferramentas que você usa para desenvoler apps para o iOS, ou o Mac, ou qualquer outra plataforma na verdade. Quando você pensa em SDK no contexto iOS, pense também na versão do iOS que você pode referenciar, iOS 10, 11, 12, 13...
-</sup>
-
-
-## Keychain
-
-*Keychain*, ou chaveiro, é a solução para armazenamento de dados de forma segura no iOS (e também no Mac, aliás).
-
-Chaveiro talvez não faça justiça do real poder dessa funcionalidade. Talvez a melhor analogia seria com um **cofre**, ou *vault*, em inglês.
-
-Com o Keychain, você pode armazenar senhas, chaves criptográficas, certificados e dados de forma totalmente segura.
-
-O iPhone é referência no mercado, por ser o estado da arte, quando estamos falando de armazenamento totalmente seguro e privacidade, para *smartphones*.
-
-Referências:
-- [Serviço de Keychain](https://developer.apple.com/documentation/security/keychain_services)
 
 ## Programação funcional reativa
 
