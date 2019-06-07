@@ -517,46 +517,15 @@ Nos dias de aula, durante o *Projeto Final*, pensei em realizarmos daily meeting
 ](https://github.com/public-apis/public-apis): A collective list of free APIs for use in software and web development.
 
 
-
-# Plano de Aula
-* Toolchain: 
-pincelada sobre: 
-1. Pra que serve
-1. O que ele faz?
-1. Como e onde baixar
-1. como substituir o toolchain atual pelo toolchain baixado
-
-* Keychain:
-1. O que é
-1. O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra)
-1. Adicionando a Lib ao projeto
-1. Como salvar e acessar o Keychain usando Valet
-1. Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet 
-1. Quais os construtores o Valet tem e qual a diferença entre eles?
-Ref: 
-[Valet](https://github.com/square/Valet)
-[Implementação Manual Wrapper Keychain](https://medium.com/ios-os-x-development/securing-user-data-with-keychain-for-ios-e720e0f9a8e2)
-
-* Acessibilidade: 
-- Falar sobre o VoiceOver: 
-    1. Como ativar
-    1. Falar sobre as funcionalidades básicas e o que geralmente não é abrangido pelo VoiceOver nativamente
-    1. Falar rapidamente sobre os 5 atributos existentes (label, traits, hint, frame, value)
-    1. Como testar acessibilidade com o simulador (Accessibility Inspector)
-    1. Ativar funcionalidade "fechar cortinas"
-
-
 ## <b>1:</b> 07/06/2019 (6ª feira) 19:00h - 22:00h
 
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
-19h00<br>19h30 | Toolchain<br><sup>Adriano</sup> | Pincelada sobre o assunto. Pra que serve?; O que ele faz?; Onde ele vive? Do que se alimenta? Como se reproduz? Como e onde baixar; como substituir o toolchain atual pelo toolchain baixado;
-19h30<br>20h20 | Keychain<br><sup>Chico</sup> | O que é; O que é a lib Valet e porque usa-lá (ou pq usar qualquer outra); Como salvar e acessar o Keychain usando Valet; Quais os tipos de Valet e o que cada um faz - Valet, SecureEnclaveValet, SinglePromptSecureEnclaveValet; Quais os construtores o Valet tem e qual a diferença entre eles?;
+19h00<br>19h30 | Toolchain<br><sup>Adriano</sup> | • Pincelada sobre o assunto.<br>• Pra que serve?<br>• O que ele faz?<br>• Onde ele vive?<br>• Do que se alimenta?<br>• Como se reproduz?<br>• Como e onde baixar; como substituir o toolchain atual pelo toolchain baixado;
+19h30<br>20h20 | Keychain<br><sup>Chico</sup> | • O que é?<br>• O que é a lib Valet e porque usa-lá? (ou porque usar qualquer outra)<br>• Como salvar e acessar o Keychain usando Valet?<br>• Quais os tipos de Valet e o que cada um faz: **Valet**, **SecureEnclaveValet**, **SinglePromptSecureEnclaveValet**;<br>• Quais os construtores o Valet tem e qual a diferença entre eles?
 20h20<br>20h30 | Intervalo | 💩
-20h30<br>21h00 | Acessibilidade<br><sup>Chico</sup> | Apresentação das funcionalidades e atributos de acessibilidade;
+20h30<br>21h00 | Acessibilidade<br><sup>Chico</sup> | <br>• Como ativar<br>• Falar sobre as funcionalidades básicas e o que geralmente não é abrangido pelo **VoiceOver** nativamente<br>• Falar rapidamente sobre os 5 atributos existentes (label, traits, hint, frame, value)<br>• Como testar acessibilidade com o simulador (Accessibility Inspector)<br>• Ativar funcionalidade "*fechar cortinas*"
 21h00<br>22h00 | Exercícios / Hora livre | Liberar o restante da aula para a resolução do exercício e tirar dúvidas;
-
-- [x] criar um projeto ou target no projeto capios, com o modelo de atividade para que os alunos sigam em sala 
 
 ### App de Exercício
 
@@ -573,6 +542,8 @@ Hora Aprox. | Tópico | Detalhes
 
 ### Referências 
 - [Valet](https://github.com/square/Valet)
+- [Implementação Manual Wrapper Keychain](https://medium.com/ios-os-x-development/securing-user-data-with-keychain-for-ios-e720e0f9a8e2)
+
 
 ## <b>2:</b> 10/06/2019 (2ª feira) 19:00h - 22:00h
 
