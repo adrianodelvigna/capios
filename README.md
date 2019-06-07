@@ -103,15 +103,17 @@ Esse inspector permite que você faça as seguintes tarefas:
 
 > Aí sim hein! Bem mais legal e bem mais interessante. Agora sim eu sinto que vou conseguir adequar meu app da melhor forma. Então como que eu faço pra começar a usar ele?!
 
-Simples! Basta acessar o menu do seu Xcode e navegar até: Xcode -> Open Developer Tool -> Accessibility Inspector.
-Você vai perceber que seu Xcode instanciou uma nova janela chamada 'Accessibility Inspector'.
+Simples! Basta acessar o menu do seu Xcode e navegar até: `Xcode → Open Developer Tool → Accessibility Inspector`. Você vai perceber que seu Xcode instanciou uma nova janela chamada **Accessibility Inspector**.
 
 Nesse inspector você vai encontrar 5 possíveis ações para tomar. 
-* Target Chooser: Permiti que você escolha pra qual device você vai testar. 
-* Inspection Pointer: Com ele selecionado, basta você navegar no simulador e você vai ver que o inspector já começará a exibir informações de acessibilidade sobre os elementos que o mouse passa por cima.
-* Inspection Detail: Traz todas as informações de acessibilidade do elemento que você está interagindo: Basic, Actions, Element e Hierarchy
-* Audit: Irá analisar a tela atual que está sendo exibida no simulador (como se fosse auditar o processo de acessibilidade do seu app). 
-* Settings: Essa opção serve pra vc testar outras deficiências sem que você tenha que sair do app, ir nas configurações do dispositivo e manualmente habilitar essas opções. Aqui você encontra algumas opções, como inverção das cores, redução da transparência, redução de movimento e mudança de fonte. Provavelmente, mais opções serão adicionadas futuramente. 
+
+Ação | Descrição
+--- | ---
+Target Chooser | Permite que você escolha pra qual device você vai testar.
+Inspection Pointer | Com ele selecionado, basta você navegar no simulador e você vai ver que o inspector já começará a exibir informações de acessibilidade sobre os elementos que o mouse passa por cima.
+Inspection Detail | Traz todas as informações de acessibilidade do elemento que você está interagindo: Basic, Actions, Element e Hierarchy
+Audit | Irá analisar a tela atual que está sendo exibida no simulador (como se fosse auditar o processo de acessibilidade do seu app).
+Settings | Essa opção serve pra vc testar outras deficiências sem que você tenha que sair do app, ir nas configurações do dispositivo e manualmente habilitar essas opções. Aqui você encontra algumas opções, como inverção das cores, redução da transparência, redução de movimento e mudança de fonte. Provavelmente, mais opções serão adicionadas futuramente.
 
 > Uhmmm, ok. Mas não tem nada?! Ta marcando meu Mac como target?! Não era pra usar o simulador?! Que que tá acontecendo?!
 
