@@ -19,6 +19,13 @@ class ViewController: UIViewController {
     
     var disposeBag: DisposeBag = DisposeBag()
     
+    override func viewDidLoad() {
+        //Aqui está sendo carregado um outro fluxo, apenas para que seja mais fácil para os alunos, começar o fluxo de exercícios
+        if let navVc = R.storyboard.trainingExercises.homeNavViewController() {
+            self.present(navVc, animated: true, completion: nil)
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         disposeBag = DisposeBag()
