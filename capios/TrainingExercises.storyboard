@@ -97,16 +97,81 @@
             </objects>
             <point key="canvasLocation" x="1460" y="512"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Account View Controller-->
         <scene sceneID="0iw-k2-nP3">
             <objects>
-                <viewController id="KST-PP-6bw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateAccountViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KST-PP-6bw" customClass="CreateAccountViewController" customModule="capios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bid-Lj-tEg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xO-xO-AMc">
+                                <rect key="frame" x="20" y="114" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fpO-Uv-s88">
+                                <rect key="frame" x="20" y="143" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXT-dC-chx">
+                                <rect key="frame" x="20" y="181" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="27B-AL-MfB">
+                                <rect key="frame" x="20" y="210" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Os campos devem possuir no mínimo 6 caracteres." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcO-U7-hFz">
+                                <rect key="frame" x="20" y="248" width="335" height="41"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.059945351013853121" blue="0.17115848724765304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbF-ZK-XTm">
+                                <rect key="frame" x="20" y="587" width="335" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="LG0-0k-dLV"/>
+                                </constraints>
+                                <state key="normal" title="Criar conta"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Es2-qB-Bh1" firstAttribute="trailing" secondItem="vcO-U7-hFz" secondAttribute="trailing" constant="20" id="3dm-NU-IBb"/>
+                            <constraint firstItem="vcO-U7-hFz" firstAttribute="top" secondItem="27B-AL-MfB" secondAttribute="bottom" constant="8" id="7s6-16-Gs0"/>
+                            <constraint firstItem="vcO-U7-hFz" firstAttribute="leading" secondItem="Es2-qB-Bh1" secondAttribute="leading" constant="20" id="G7g-ZP-0eg"/>
+                            <constraint firstItem="pbF-ZK-XTm" firstAttribute="leading" secondItem="Es2-qB-Bh1" secondAttribute="leading" constant="20" id="HEp-RY-eSo"/>
+                            <constraint firstItem="fpO-Uv-s88" firstAttribute="leading" secondItem="Es2-qB-Bh1" secondAttribute="leading" constant="20" id="JWU-Gh-NVu"/>
+                            <constraint firstItem="6xO-xO-AMc" firstAttribute="top" secondItem="Es2-qB-Bh1" secondAttribute="top" constant="50" id="LuI-J2-11c"/>
+                            <constraint firstItem="dXT-dC-chx" firstAttribute="top" secondItem="fpO-Uv-s88" secondAttribute="bottom" constant="8" id="Mrg-Ug-Q8M"/>
+                            <constraint firstItem="Es2-qB-Bh1" firstAttribute="trailing" secondItem="pbF-ZK-XTm" secondAttribute="trailing" constant="20" id="Spi-W7-KYg"/>
+                            <constraint firstItem="27B-AL-MfB" firstAttribute="top" secondItem="dXT-dC-chx" secondAttribute="bottom" constant="8" id="Tvm-0a-rAc"/>
+                            <constraint firstItem="Es2-qB-Bh1" firstAttribute="trailing" secondItem="6xO-xO-AMc" secondAttribute="trailing" constant="20" id="W6P-Ju-doy"/>
+                            <constraint firstItem="dXT-dC-chx" firstAttribute="leading" secondItem="Es2-qB-Bh1" secondAttribute="leading" constant="20" id="aD8-Gw-by3"/>
+                            <constraint firstItem="fpO-Uv-s88" firstAttribute="top" secondItem="6xO-xO-AMc" secondAttribute="bottom" constant="8" id="bnk-aE-LZg"/>
+                            <constraint firstItem="Es2-qB-Bh1" firstAttribute="trailing" secondItem="27B-AL-MfB" secondAttribute="trailing" constant="20" id="dHl-i5-pjd"/>
+                            <constraint firstItem="6xO-xO-AMc" firstAttribute="leading" secondItem="Es2-qB-Bh1" secondAttribute="leading" constant="20" id="dgu-UD-FJm"/>
+                            <constraint firstItem="27B-AL-MfB" firstAttribute="leading" secondItem="Es2-qB-Bh1" secondAttribute="leading" constant="20" id="iRf-0R-hLc"/>
+                            <constraint firstItem="Es2-qB-Bh1" firstAttribute="trailing" secondItem="fpO-Uv-s88" secondAttribute="trailing" constant="20" id="kqE-eh-Thx"/>
+                            <constraint firstItem="Es2-qB-Bh1" firstAttribute="bottom" secondItem="pbF-ZK-XTm" secondAttribute="bottom" constant="20" id="lxp-lO-G5T"/>
+                            <constraint firstItem="Es2-qB-Bh1" firstAttribute="trailing" secondItem="dXT-dC-chx" secondAttribute="trailing" constant="20" id="sKy-hD-Hzg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Es2-qB-Bh1"/>
                     </view>
+                    <connections>
+                        <outlet property="createAccountButton" destination="pbF-ZK-XTm" id="CzG-cE-bwP"/>
+                        <outlet property="errorMessageLabel" destination="vcO-U7-hFz" id="N7L-ue-Jz5"/>
+                        <outlet property="passwordTxtField" destination="27B-AL-MfB" id="wh9-7q-hrL"/>
+                        <outlet property="usernameTxtField" destination="fpO-Uv-s88" id="CJa-bJ-hFa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Vz-W6-Q3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
