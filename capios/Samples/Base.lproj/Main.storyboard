@@ -39,7 +39,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="0NO-mD-MhS"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Operadores Rx"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kN9-Bv-dEZ">
                                 <rect key="frame" x="20" y="381" width="335" height="80"/>
@@ -55,18 +55,28 @@
                                 </constraints>
                                 <state key="normal" title="Acessibilidade"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0PX-ee-MRc">
+                                <rect key="frame" x="20" y="557" width="335" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="L9B-hx-NUW"/>
+                                </constraints>
+                                <state key="normal" title="Acessibilidade Ruim"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Roe-fG-7rh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="16a-6s-Y3y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0PX-ee-MRc" secondAttribute="trailing" constant="20" id="8t6-4P-meG"/>
+                            <constraint firstItem="0PX-ee-MRc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ep4-HN-emf"/>
                             <constraint firstItem="kN9-Bv-dEZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fad-cu-Wwq"/>
                             <constraint firstItem="LgY-9S-6Ss" firstAttribute="top" secondItem="kN9-Bv-dEZ" secondAttribute="bottom" constant="8" id="P5m-2T-IvW"/>
                             <constraint firstItem="kN9-Bv-dEZ" firstAttribute="top" secondItem="Roe-fG-7rh" secondAttribute="bottom" constant="7.5" id="Rck-XB-Rhr"/>
-                            <constraint firstItem="Roe-fG-7rh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="U9N-Kx-Qfj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kN9-Bv-dEZ" secondAttribute="trailing" constant="20" id="UAf-oa-dOO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Roe-fG-7rh" secondAttribute="trailing" constant="20" id="YcN-8h-FkE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LgY-9S-6Ss" secondAttribute="trailing" constant="20" id="aYo-dr-BBs"/>
                             <constraint firstItem="LgY-9S-6Ss" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gi1-gd-tx6"/>
+                            <constraint firstItem="0PX-ee-MRc" firstAttribute="top" secondItem="LgY-9S-6Ss" secondAttribute="bottom" constant="8" id="lkU-Rt-y7V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0PX-ee-MRc" secondAttribute="bottom" constant="30" id="qde-Bp-d2k"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -74,6 +84,7 @@
                     <connections>
                         <outlet property="accessibilityButton" destination="LgY-9S-6Ss" id="erb-Bq-FXF"/>
                         <outlet property="keyChainButton" destination="kN9-Bv-dEZ" id="I7M-pe-tnS"/>
+                        <outlet property="poorAccessibilityButton" destination="0PX-ee-MRc" id="KiV-3j-nTx"/>
                         <outlet property="rxStudyButton" destination="Roe-fG-7rh" id="fRh-yH-uWm"/>
                     </connections>
                 </viewController>
@@ -310,5 +321,84 @@
             </objects>
             <point key="canvasLocation" x="2575" y="134"/>
         </scene>
+        <!--Poor Accessibility View Controller-->
+        <scene sceneID="4pV-Gx-wO1">
+            <objects>
+                <viewController storyboardIdentifier="PoorAccessibilityViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FDw-wp-EUB" customClass="PoorAccessibilityViewController" customModule="capios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ac0-Y1-jim">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gato" translatesAutoresizingMaskIntoConstraints="NO" id="bfb-Xu-BxC">
+                                <rect key="frame" x="112.5" y="35" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="R3f-dM-32C"/>
+                                    <constraint firstAttribute="width" constant="150" id="r6g-yk-VsZ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.roundCorners">
+                                        <integer key="value" value="75"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arthur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aI7-t2-Fx1">
+                                <rect key="frame" x="20" y="193" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6Nr-b2-cqu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hT-61-vLc">
+                                <rect key="frame" x="20" y="587" width="335" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="SGM-oK-J6q"/>
+                                </constraints>
+                                <state key="normal" title="Remover"/>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="w7w-4b-ar1">
+                                <rect key="frame" x="18" y="318.5" width="339" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Pnt-Ed-ERF"/>
+                                </constraints>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peso do Arthur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEW-2N-aCo">
+                                <rect key="frame" x="20" y="270" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7ef-Hz-w9P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Rf-xA-Fea" firstAttribute="trailing" secondItem="aI7-t2-Fx1" secondAttribute="trailing" constant="20" id="Iu8-g1-YWW"/>
+                            <constraint firstItem="PEW-2N-aCo" firstAttribute="top" secondItem="aI7-t2-Fx1" secondAttribute="bottom" constant="37" id="M3B-Ma-A8V"/>
+                            <constraint firstItem="aI7-t2-Fx1" firstAttribute="top" secondItem="bfb-Xu-BxC" secondAttribute="bottom" constant="8" id="N26-by-2I8"/>
+                            <constraint firstItem="bfb-Xu-BxC" firstAttribute="top" secondItem="6Rf-xA-Fea" secondAttribute="top" constant="15" id="OPL-fl-oPv"/>
+                            <constraint firstItem="6Rf-xA-Fea" firstAttribute="trailing" secondItem="6hT-61-vLc" secondAttribute="trailing" constant="20" id="cJh-jJ-AbX"/>
+                            <constraint firstItem="w7w-4b-ar1" firstAttribute="top" secondItem="PEW-2N-aCo" secondAttribute="bottom" constant="8.5" id="fr6-be-74b"/>
+                            <constraint firstItem="6hT-61-vLc" firstAttribute="leading" secondItem="6Rf-xA-Fea" secondAttribute="leading" constant="20" id="hH1-bj-wV9"/>
+                            <constraint firstItem="bfb-Xu-BxC" firstAttribute="centerX" secondItem="ac0-Y1-jim" secondAttribute="centerX" id="hTH-5j-CGx"/>
+                            <constraint firstItem="6Rf-xA-Fea" firstAttribute="trailing" secondItem="w7w-4b-ar1" secondAttribute="trailing" constant="20" id="jHv-xI-3Em"/>
+                            <constraint firstItem="w7w-4b-ar1" firstAttribute="leading" secondItem="6Rf-xA-Fea" secondAttribute="leading" constant="20" id="lme-hZ-Lof"/>
+                            <constraint firstItem="6Rf-xA-Fea" firstAttribute="trailing" secondItem="PEW-2N-aCo" secondAttribute="trailing" constant="20" id="mV8-gW-26I"/>
+                            <constraint firstItem="aI7-t2-Fx1" firstAttribute="leading" secondItem="6Rf-xA-Fea" secondAttribute="leading" constant="20" id="n9f-d2-jye"/>
+                            <constraint firstItem="6Rf-xA-Fea" firstAttribute="bottom" secondItem="6hT-61-vLc" secondAttribute="bottom" constant="20" id="oAm-R2-MqR"/>
+                            <constraint firstItem="PEW-2N-aCo" firstAttribute="leading" secondItem="6Rf-xA-Fea" secondAttribute="leading" constant="20" id="tKj-6X-rwk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Rf-xA-Fea"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CzZ-48-2Ku" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756" y="940"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="gato" width="796" height="496"/>
+    </resources>
 </document>

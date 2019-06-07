@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		500078CA22A812D200C525DF /* AccessibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500078C922A812D200C525DF /* AccessibilityViewController.swift */; };
+		504F0C6022AAD990002BC949 /* PoorAccessibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F0C5F22AAD990002BC949 /* PoorAccessibilityViewController.swift */; };
 		507E1A1122A985B3007E3F2D /* TrainingExercises.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */; };
 		507E1A1422A989D0007E3F2D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507E1A1322A989D0007E3F2D /* HomeViewController.swift */; };
 		50959C4022A15E9E009B4FA0 /* LoginKeychainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50959C3F22A15E9E009B4FA0 /* LoginKeychainViewController.swift */; };
@@ -27,6 +28,7 @@
 		3BC93BD6ED1640E1B59EE001 /* Pods-AulaKeychain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AulaKeychain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AulaKeychain/Pods-AulaKeychain.debug.xcconfig"; sourceTree = "<group>"; };
 		4B1BFEB53C34226A2E36511F /* Pods-AulaKeychain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AulaKeychain.release.xcconfig"; path = "Pods/Target Support Files/Pods-AulaKeychain/Pods-AulaKeychain.release.xcconfig"; sourceTree = "<group>"; };
 		500078C922A812D200C525DF /* AccessibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityViewController.swift; sourceTree = "<group>"; };
+		504F0C5F22AAD990002BC949 /* PoorAccessibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoorAccessibilityViewController.swift; sourceTree = "<group>"; };
 		507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrainingExercises.storyboard; sourceTree = "<group>"; };
 		507E1A1322A989D0007E3F2D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		50959C3F22A15E9E009B4FA0 /* LoginKeychainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginKeychainViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */,
 				50959C3F22A15E9E009B4FA0 /* LoginKeychainViewController.swift */,
 				500078C922A812D200C525DF /* AccessibilityViewController.swift */,
+				504F0C5F22AAD990002BC949 /* PoorAccessibilityViewController.swift */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				B9448FAD2283463B00E342DE /* AppDelegate.swift in Sources */,
 				507E1A1422A989D0007E3F2D /* HomeViewController.swift in Sources */,
 				B9F72F5A22834FED000BA70B /* R.generated.swift in Sources */,
+				504F0C6022AAD990002BC949 /* PoorAccessibilityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

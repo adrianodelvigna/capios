@@ -41,6 +41,7 @@ class CreateAccountViewController: UIViewController {
     
     func createAccount() {
         //Se os campos estiverem válidos, essa função será chamada e é aqui que nós faremos o armazenamento dos dados no valet.
+        
     }
     
     func bindUI() {
