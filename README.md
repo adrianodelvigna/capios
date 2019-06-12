@@ -1,5 +1,27 @@
 # Programa de Capacitação iOS
 
+## Conteúdo
+
+1. [Toolchain Swift](#toolchain-swift)
+1. [Keychain](#keychain)
+1. [Acessibilidade](#acessibilidade)
+1. [Programação funcional reativa](#programação-funcional-reativa)
+1. [Observer Pattern](#observer-pattern)
+1. [RxSwift](#rxswift)
+1. [Como ler código RxSwift](#como-ler-código-rxswift)
+1. [Como escrever código RxSwift](#como-escrever-código-rxswift)
+1. [+Operadores +RxMarbles](#operadores-rxmarbles)
+1. [MVVM com RxSwift](#mvvm-com-rxswift)
+1. [Como ler perguntas e respostas no Stackoverflow!](#como-ler-perguntas-e-respostas-no-stackoverflow)
+
+## Aulas
+
+1. [07/06/2019 (6ª feira)](#1-07062019-6%C2%AA-feira-19h00---22h00)
+1. [10/06/2019 (2ª feira)](#2-10062019-2%C2%AA-feira-19h00---22h00)
+1. [12/06/2019 (4ª feira)](#3-12062019-4%C2%AA-feira-19h00---22h00)
+1. [14/06/2019 (6ª feira)](#4-14062019-6%C2%AA-feira-19h00---22h00)
+1. [17/06/2019 (2ª feira)](#5-17062019-2%C2%AA-feira-19h00---22h00)
+
 ## Toolchain Swift
 
 *Toolchain*, numa tradução literal: corrente de ferramentas.
@@ -592,6 +614,7 @@ Podem-se adotar alguns passos básicos na escrita de código **RxSwift**. Em for
 - [ ] Identifique o conjunto de operador(es) que vão transformar a(s) fonte(s) de evento(s) assíncrono(s) desde sua origem até o formato de consumo final;
 - [ ] Identifique o formato que os recursos usados para o par observável/observador devem ser liberados quando não mais necessários;
 - [ ] Valide que o conjunto de eventos atinja o(s) requisito(s);
+- [ ] Verifique oportunidades de *binding* direto;
 
 Opcional
 
@@ -615,7 +638,7 @@ TBC
 
 TBC
 
-## <b>1:</b> 07/06/2019 (6ª feira) 19h00 - 22h00
+## 1: 07/06/2019 (6ª feira) 19h00 - 22h00
 
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
@@ -643,7 +666,7 @@ Hora Aprox. | Tópico | Detalhes
 - [Implementação Manual Wrapper Keychain](https://medium.com/ios-os-x-development/securing-user-data-with-keychain-for-ios-e720e0f9a8e2)
 
 
-## <b>2:</b> 10/06/2019 (2ª feira) 19h00 - 22h00
+## 2: 10/06/2019 (2ª feira) 19h00 - 22h00
 
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
@@ -662,7 +685,7 @@ Hora Aprox. | Tópico | Detalhes
             - **falha:** mostrar mensagem de falha
 
 
-## <b>3:</b> 12/06/2019 (4ª feira) 19h00 - 22h00
+## 3: 12/06/2019 (4ª feira) 19h00 - 22h00
 
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
@@ -678,11 +701,11 @@ Hora Aprox. | Tópico | Detalhes
 - Bonus points:
     - Activity indicator para chamadas de serviços
 
-## <b>4</b>: 14/06/2019 (6ª feira) 19h00 - 22h00
+## 4: 14/06/2019 (6ª feira) 19h00 - 22h00
 
 - TBD de acordo com o progresso da turma
 
-## <b>5</b>: 17/06/2019 (2ª feira) 19h00 - 22h00
+## 5: 17/06/2019 (2ª feira) 19h00 - 22h00
 
 - TBD de acordo com o progresso da turma
 - \+ considerações finais
