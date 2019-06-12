@@ -10,9 +10,9 @@
 1. [RxSwift](#rxswift)
 1. [Como ler código RxSwift](#como-ler-código-rxswift)
 1. [Como escrever código RxSwift](#como-escrever-código-rxswift)
-1. [+Operadores +RxMarbles](#+operadores-+rxmarbles)
+1. [+Operadores +RxMarbles](#operadores-rxmarbles)
 1. [MVVM com RxSwift](#mvvm-com-rxswift)
-1. [Como ler perguntas e respostas no Stackoverflow!](#como-ler-perguntas-e-respostas-no-stackoverflow!)
+1. [Como ler perguntas e respostas no Stackoverflow!](#como-ler-perguntas-e-respostas-no-stackoverflow)
 
 ## Toolchain Swift
 
