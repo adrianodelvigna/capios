@@ -1,5 +1,19 @@
 # Programa de Capacitação iOS
 
+## Conteúdo
+
+1. [Toolchain Swift](#toolchain-swift)
+1. [Keychain](#keychain)
+1. [Acessibilidade](#acessibilidade)
+1. [Programação funcional reativa](#programação-funcional-reativa)
+1. [Observer Pattern](#observer-pattern)
+1. [RxSwift](#rxswift)
+1. [Como ler código RxSwift](#como-ler-código-rxswift)
+1. [Como escrever código RxSwift](#como-escrever-código-rxswift)
+1. [+Operadores +RxMarbles](#+operadores-+rxmarbles)
+1. [MVVM com RxSwift](#mvvm-com-rxswift)
+1. [Como ler perguntas e respostas no Stackoverflow!](#como-ler-perguntas-e-respostas-no-stackoverflow!)
+
 ## Toolchain Swift
 
 *Toolchain*, numa tradução literal: corrente de ferramentas.
@@ -592,6 +606,7 @@ Podem-se adotar alguns passos básicos na escrita de código **RxSwift**. Em for
 - [ ] Identifique o conjunto de operador(es) que vão transformar a(s) fonte(s) de evento(s) assíncrono(s) desde sua origem até o formato de consumo final;
 - [ ] Identifique o formato que os recursos usados para o par observável/observador devem ser liberados quando não mais necessários;
 - [ ] Valide que o conjunto de eventos atinja o(s) requisito(s);
+- [ ] Verifique oportunidades de *binding* direto;
 
 Opcional
 
