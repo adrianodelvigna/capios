@@ -14,6 +14,14 @@
 1. [MVVM com RxSwift](#mvvm-com-rxswift)
 1. [Como ler perguntas e respostas no Stackoverflow!](#como-ler-perguntas-e-respostas-no-stackoverflow)
 
+## Aulas
+
+1. [07/06/2019 (6ª feira)](#1-07062019-6ª-feira-19h00-22h00)
+1. [10/06/2019 (2ª feira)](#2-10-06-2019-2ª-feira-19h00-22h00)
+1. [12/06/2019 (4ª feira)](#3-12-06-2019-4ª-feira-19h00-22h00)
+1. [14/06/2019 (6ª feira)](#4-14-06-2019-6ª-feira-19h00-22h00)
+1. [17/06/2019 (2ª feira)](#5-17-06-2019-2ª-feira-19h00-22h00)
+
 ## Toolchain Swift
 
 *Toolchain*, numa tradução literal: corrente de ferramentas.
@@ -630,7 +638,7 @@ TBC
 
 TBC
 
-## <b>1:</b> 07/06/2019 (6ª feira) 19h00 - 22h00
+## 1: 07/06/2019 (6ª feira) 19h00 - 22h00
 
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
@@ -658,7 +666,7 @@ Hora Aprox. | Tópico | Detalhes
 - [Implementação Manual Wrapper Keychain](https://medium.com/ios-os-x-development/securing-user-data-with-keychain-for-ios-e720e0f9a8e2)
 
 
-## <b>2:</b> 10/06/2019 (2ª feira) 19h00 - 22h00
+## 2: 10/06/2019 (2ª feira) 19h00 - 22h00
 
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
@@ -677,7 +685,7 @@ Hora Aprox. | Tópico | Detalhes
             - **falha:** mostrar mensagem de falha
 
 
-## <b>3:</b> 12/06/2019 (4ª feira) 19h00 - 22h00
+## 3: 12/06/2019 (4ª feira) 19h00 - 22h00
 
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
@@ -693,11 +701,11 @@ Hora Aprox. | Tópico | Detalhes
 - Bonus points:
     - Activity indicator para chamadas de serviços
 
-## <b>4</b>: 14/06/2019 (6ª feira) 19h00 - 22h00
+## 4: 14/06/2019 (6ª feira) 19h00 - 22h00
 
 - TBD de acordo com o progresso da turma
 
-## <b>5</b>: 17/06/2019 (2ª feira) 19h00 - 22h00
+## 5: 17/06/2019 (2ª feira) 19h00 - 22h00
 
 - TBD de acordo com o progresso da turma
 - \+ considerações finais
