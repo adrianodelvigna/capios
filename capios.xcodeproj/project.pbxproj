@@ -43,10 +43,10 @@
 		4B1BFEB53C34226A2E36511F /* Pods-AulaKeychain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AulaKeychain.release.xcconfig"; path = "Pods/Target Support Files/Pods-AulaKeychain/Pods-AulaKeychain.release.xcconfig"; sourceTree = "<group>"; };
 		500078C922A812D200C525DF /* AccessibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityViewController.swift; sourceTree = "<group>"; };
 		504F0C5F22AAD990002BC949 /* PoorAccessibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoorAccessibilityViewController.swift; sourceTree = "<group>"; };
-		507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrainingExercises.storyboard; sourceTree = "<group>"; };
-		507E1A1322A989D0007E3F2D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = TrainingExercises.storyboard; path = View/TrainingExercises.storyboard; sourceTree = "<group>"; };
+		507E1A1322A989D0007E3F2D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = View/HomeViewController.swift; sourceTree = "<group>"; };
 		50959C3F22A15E9E009B4FA0 /* LoginKeychainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginKeychainViewController.swift; sourceTree = "<group>"; };
-		50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = View/CreateAccountViewController.swift; sourceTree = "<group>"; };
 		50EA454E22AB0112004EE63D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxOperatorsExerciseViewController.swift; sourceTree = "<group>"; };
 		88D2DA43DAC0458579B892BA /* Pods_AulaKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AulaKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,9 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				25261A8C22ADAB7600CCD0E5 /* Custom */,
-				507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */,
-				507E1A1322A989D0007E3F2D /* HomeViewController.swift */,
-				50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */,
 				B9448FB52283463D00E342DE /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -296,13 +293,30 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-capios/Pods-capios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-capios/Pods-capios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-capios/Pods-capios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-capios/Pods-capios-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-capios/Pods-capios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B9F72F5822834E9E000BA70B /* Rswift */ = {
@@ -319,7 +333,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/capios/R.generated.swift,
+				"$SRCROOT/capios/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
