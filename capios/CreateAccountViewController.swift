@@ -41,7 +41,26 @@ class CreateAccountViewController: UIViewController {
     
     func createAccount() {
         //Se os campos estiverem válidos, essa função será chamada e é aqui que nós faremos o armazenamento dos dados no valet.
-        
+        if valet.canAccessKeychain() {
+            if valet.containsObject(forKey: "username") && valet.containsObject(forKey: "password") {
+                let alert = UIAlertController(title: "Ops", message: "Parece que você já tem uma conta criada nesse dispositivo", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            if let username = self.usernameTxtField.text,
+                let password = self.passwordTxtField.text {
+                valet.set(string: username, forKey: "username")
+                valet.set(string: password, forKey: "password")
+                
+                let alert = UIAlertController(title: "Opa!", message: "Conta criada com sucesso", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                    self.navigationController?.popViewController(animated: true)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     func bindUI() {

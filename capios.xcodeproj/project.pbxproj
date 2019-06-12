@@ -13,6 +13,7 @@
 		507E1A1422A989D0007E3F2D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507E1A1322A989D0007E3F2D /* HomeViewController.swift */; };
 		50959C4022A15E9E009B4FA0 /* LoginKeychainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50959C3F22A15E9E009B4FA0 /* LoginKeychainViewController.swift */; };
 		50EA454122AA77F6004EE63D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */; };
+		50EA454F22AB0112004EE63D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA454E22AB0112004EE63D /* LoginViewController.swift */; };
 		50EFF9872292EEA200A650FE /* RxOperatorsExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */; };
 		B9448FAD2283463B00E342DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9448FAC2283463B00E342DE /* AppDelegate.swift */; };
 		B9448FAF2283463B00E342DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9448FAE2283463B00E342DE /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 		507E1A1322A989D0007E3F2D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		50959C3F22A15E9E009B4FA0 /* LoginKeychainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginKeychainViewController.swift; sourceTree = "<group>"; };
 		50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		50EA454E22AB0112004EE63D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxOperatorsExerciseViewController.swift; sourceTree = "<group>"; };
 		88D2DA43DAC0458579B892BA /* Pods_AulaKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AulaKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1421A86D0998F566BC0701F /* Pods_capios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_capios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,7 @@
 				507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */,
 				507E1A1322A989D0007E3F2D /* HomeViewController.swift */,
 				50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */,
+				50EA454E22AB0112004EE63D /* LoginViewController.swift */,
 				B9448FB32283463D00E342DE /* Assets.xcassets */,
 				B9448FB52283463D00E342DE /* LaunchScreen.storyboard */,
 				B9448FB82283463D00E342DE /* Info.plist */,
@@ -305,6 +308,7 @@
 				B9448FAD2283463B00E342DE /* AppDelegate.swift in Sources */,
 				507E1A1422A989D0007E3F2D /* HomeViewController.swift in Sources */,
 				B9F72F5A22834FED000BA70B /* R.generated.swift in Sources */,
+				50EA454F22AB0112004EE63D /* LoginViewController.swift in Sources */,
 				504F0C6022AAD990002BC949 /* PoorAccessibilityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

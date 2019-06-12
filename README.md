@@ -86,6 +86,24 @@ Value | O valor de um elemento. Mais usado para descrever valores de elementos, 
 
 Como dito anteriormente, para maioria dos elementos, já existe um valor atribuído, você deve apenas aprimorar essa informação para trazer uma melhor experiência para seu usuário.
 
+### Outras formas de usar a acessibilidade
+
+Bom, além de atribuir acessibilidade para elementos visuais, você também pode chamar diretamente algumas funções da acessibilidade pra te ajudar a informar melhor, algumas situações para seu usuário através da chamada UIAccessibilityPostNotification
+
+Existem 6 tipos de Notifications para acessibilidade. Seguindo o guideline e as recomendações da Apple, abaixo tem a descrição e quando você deve usar cada uma das notificações:
+
+Notification | Detalhes | Uso
+:-: | --- | ---
+.announcement<br>ou<br>UIAccessibilityAnnouncementNotification | Quando alguma coisa precisa ser informado ao usuário através do VoiceOver. | UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, "Usuário selecionou o dia \\(selectedDay) no calendário")
+.layoutChanged<br>ou<br>UIAccessibilityLayoutChangedNotification | Quando surgir algum elemento visual que você precise evidenciar para o usuário, como uma mensagem de erro para um campo de texto que aparece apenas quando o campo está inválido. | UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, errorLabel)
+.screenChanged<br>ou<br>UIAccessibilityScreenChangedNotification | Quando você tem a necessidade de apontar o VoiceOver para um novo elemento que apareceu na tela e que ocupe a maior parte da tela, como uma alerta com mensagem de erro por exemplo | UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, messageLabel)<br>MessageLabel representa a UILabel que contém a mensagem de erro. 
+.pageScrolled<br>ou<br>UIAccessibilityPageScrolledNotification |  |
+.pauseAssistiveTechnology<br>ou<br>UIAccessibilityPauseAssistiveTechnologyNotification | Quando você precisa pausar o voiceOver, para dar destaque a uma informação específica, como uma tela de loading, onde você precisa que seu usuário aguarde e não quer que nenhuma mensagem passe a informação incorreta para ele. É mandatório que após a chamada do .pauseAssistiveTechnology você faça uma .resumeAssistiveTechnology para devolver a acessibilidade ao usuário. Como paramêtros, você passa no postNotification o .pauseAssistiveTechnology e como segundo parametro um identificador que representa a tecnologia desejada (voiceOver, switchControl...) | Na versão swift 3.2 o .pauseAssistiveTechnology funciona apenas para SwitchControl e não para voiceOver.
+.resumeAssistiveTechnology<br>ou<br>UIAccessibilityResumeAssistiveTechnologyNotification | Chamada que resume a acessibilidade para o device, ou seja, devolve o controle da acessbilidade para o device. Deve ser chamado sempre que houver uma chamada de .pauseAssistiveTechnology | Na versão swift 3.2 o .pauseAssistiveTechnology funciona apenas para SwitchControl e não para voiceOver.
+<br>
+
+Como percebemos, a chamada UIAccessibilityPostNotification, aceita como seu segundo parâmetro, ou um elemento visual, ou uma mensagem para ser dita através do VoiceOver ou um identificador para o pause e resume do assistente de acessibilidade.
+
 > Beleza! Agora entendi. Mas putz... Toda que vez que eu for testar ou for fazer uma alteração, eu vou ter que navegar no app no modo VoiceOver ativo?! Meio chato hein...
 
 Caaaaaalma, é óbvio que a Apple não ia te deixar na mão nesse momento né. Pensando nisso, a Apple adicionou ao Xcode, a partir da versão 8, o Accessibility Inspector!
