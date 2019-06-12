@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gKK-jS-4di">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KTQ-La-aMc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -91,6 +91,36 @@ e na janela de debug</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faf-9W-lfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-17" y="184"/>
+        </scene>
+        <!--Exemplo3-->
+        <scene sceneID="JwG-u8-dl8">
+            <objects>
+                <viewController id="KTQ-La-aMc" customClass="Exemplo3" customModule="capios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gfB-Ld-MyQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dvo-Ep-FEA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dvo-Ep-FEA" firstAttribute="bottom" secondItem="FVm-7V-Q9j" secondAttribute="bottom" id="72u-g6-2Az"/>
+                            <constraint firstItem="dvo-Ep-FEA" firstAttribute="top" secondItem="FVm-7V-Q9j" secondAttribute="top" id="8iZ-zX-iGJ"/>
+                            <constraint firstItem="dvo-Ep-FEA" firstAttribute="leading" secondItem="FVm-7V-Q9j" secondAttribute="leading" id="aGg-qM-jo7"/>
+                            <constraint firstItem="dvo-Ep-FEA" firstAttribute="trailing" secondItem="FVm-7V-Q9j" secondAttribute="trailing" id="dA7-8t-ksU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FVm-7V-Q9j"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="dvo-Ep-FEA" id="Km3-Ub-g8L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="apB-FU-Utz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="823.20000000000005" y="177.66116941529236"/>
         </scene>
     </scenes>
 </document>
