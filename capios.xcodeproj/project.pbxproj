@@ -10,6 +10,8 @@
 		25261A9222ADABB900CCD0E5 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25261A9022ADABB900CCD0E5 /* ContactTableViewCell.swift */; };
 		25261A9322ADABB900CCD0E5 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25261A9122ADABB900CCD0E5 /* ContactTableViewCell.xib */; };
 		25261A9B22ADC0C200CCD0E5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25261A9A22ADC0C200CCD0E5 /* Contact.swift */; };
+		258E2A0522B00E340016C021 /* ContactAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E2A0422B00E340016C021 /* ContactAPI.swift */; };
+		258E2A0C22B03FFC0016C021 /* Exemplo3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E2A0B22B03FFC0016C021 /* Exemplo3.swift */; };
 		500078CA22A812D200C525DF /* AccessibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500078C922A812D200C525DF /* AccessibilityViewController.swift */; };
 		504F0C6022AAD990002BC949 /* PoorAccessibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F0C5F22AAD990002BC949 /* PoorAccessibilityViewController.swift */; };
 		507E1A1122A985B3007E3F2D /* TrainingExercises.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */; };
@@ -34,6 +36,8 @@
 		25261A9022ADABB900CCD0E5 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		25261A9122ADABB900CCD0E5 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		25261A9A22ADC0C200CCD0E5 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		258E2A0422B00E340016C021 /* ContactAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAPI.swift; sourceTree = "<group>"; };
+		258E2A0B22B03FFC0016C021 /* Exemplo3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exemplo3.swift; sourceTree = "<group>"; };
 		3BC93BD6ED1640E1B59EE001 /* Pods-AulaKeychain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AulaKeychain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AulaKeychain/Pods-AulaKeychain.debug.xcconfig"; sourceTree = "<group>"; };
 		4B1BFEB53C34226A2E36511F /* Pods-AulaKeychain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AulaKeychain.release.xcconfig"; path = "Pods/Target Support Files/Pods-AulaKeychain/Pods-AulaKeychain.release.xcconfig"; sourceTree = "<group>"; };
 		500078C922A812D200C525DF /* AccessibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				25261A9A22ADC0C200CCD0E5 /* Contact.swift */,
+				258E2A0422B00E340016C021 /* ContactAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				B91ABFD722AEB83A00487E4B /* RxSwiftStoryboard.storyboard */,
 				B925BAC122AECCA7007DF84D /* Exemplo1.swift */,
 				B925BAC322AEE130007DF84D /* Exemplo2.swift */,
+				258E2A0B22B03FFC0016C021 /* Exemplo3.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -344,6 +350,7 @@
 			files = (
 				B925BAC222AECCA7007DF84D /* Exemplo1.swift in Sources */,
 				B925BAC422AEE130007DF84D /* Exemplo2.swift in Sources */,
+				258E2A0C22B03FFC0016C021 /* Exemplo3.swift in Sources */,
 				500078CA22A812D200C525DF /* AccessibilityViewController.swift in Sources */,
 				50EFF9872292EEA200A650FE /* RxOperatorsExerciseViewController.swift in Sources */,
 				50959C4022A15E9E009B4FA0 /* LoginKeychainViewController.swift in Sources */,
@@ -353,6 +360,7 @@
 				25261A9B22ADC0C200CCD0E5 /* Contact.swift in Sources */,
 				25261A9222ADABB900CCD0E5 /* ContactTableViewCell.swift in Sources */,
 				507E1A1422A989D0007E3F2D /* HomeViewController.swift in Sources */,
+				258E2A0522B00E340016C021 /* ContactAPI.swift in Sources */,
 				B9F72F5A22834FED000BA70B /* R.generated.swift in Sources */,
 				504F0C6022AAD990002BC949 /* PoorAccessibilityViewController.swift in Sources */,
 			);

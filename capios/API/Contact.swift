@@ -9,16 +9,12 @@
 import Foundation
 import UIKit
 
-class Contact {
-    var contactAvatar: UIImage
-    var contactName: String
-    var contactPhoneNumber: String
-    var contactID: Int
-
-    public init(contactAvatar: UIImage, contactName: String, contactPhoneNumber: String, contactID: Int) {
-        self.contactAvatar = contactAvatar
-        self.contactName = contactName
-        self.contactPhoneNumber = contactPhoneNumber
-        self.contactID = contactID
-    }
+public struct Contact {
+    var contactAvatar: UIImage = UIImage()
+    var contactName: String = ""
+    var contactPhoneNumber: String = ""
+    var contactID: Int = 0
+    var contactFullDetails: String = ""
+    
+    public init() {}
 }

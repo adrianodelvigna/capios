@@ -541,6 +541,34 @@ Note, que as saídas na área de debug acima foram propositalmente formatadas pa
 
 Veja alguns exemplos no projeto Xcode contido nesse repositório. Outra fonte valiosa de exemplos é o próprio repositório do [**RxSwift** no Github](https://github.com/ReactiveX/RxSwift), especialmente as pastas [RxExample](https://github.com/ReactiveX/RxSwift/tree/master/RxExample) e [RxTest](https://github.com/ReactiveX/RxSwift/tree/master/RxTest)<sup>8</sup>.
 
+Agora que já estamos um pouco mais familiarizados com a leitura de um exemplo simples em **RxSwift**, vamos expandí-lo com alguns operadores, que nada mais são que funções que alteram o conteúdo de um **evento assíncrono**, ou até mesmo encadeiam um ouro tipo de **evento assíncrono** como resultado de um primeiro **evento assíncrono**.
+
+Vamos partir de onde paramos no exemplo acima, de observável e observador, mas agora, vamos remover os comentários acima, e comentar somente o código e operadores adicionados. Se ainda houverem quaisquer dúvidas a respeito de código não comentado abaixo, verifique se o mesmo trecho de código está comentado acima, para maiores esclarecimentos.
+
+### Exemplo 2: Transformando eventos numéricos
+
+```swift
+let observable = Observable<Int>.interval(1.0, scheduler: MainScheduler.instance)
+
+let observer = observable
+    .debug()
+    .map { $0 + 1 }
+    .debug()
+    .subscribe(
+    onNext: {
+        print("--\($0)", terminator: "")
+    },
+    onError: { error in
+        print("--X (\(error.localizedDescription))")
+    },
+    onCompleted: {
+        print("--| (Observable completed)")
+    },
+    onDisposed: {
+        print(" ..Resources released")
+    })
+```
+
 *Mais... no próximo commit.*
 
 ### Referências
