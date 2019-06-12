@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KTQ-La-aMc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Exemplo1-->
+        <scene sceneID="xKT-GF-U2V">
+            <objects>
+                <viewController id="FNE-Ch-pK5" customClass="Exemplo1" customModule="capios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cdx-aZ-rIP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exemplo 1 de RxSwift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cb2-QT-tna">
+                                <rect key="frame" x="106" y="323" width="163.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veja o console de debug" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndu-BN-lE0">
+                                <rect key="frame" x="113" y="348" width="149" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Cb2-QT-tna" firstAttribute="centerX" secondItem="Cdx-aZ-rIP" secondAttribute="centerX" id="Ig1-7K-L2Q"/>
+                            <constraint firstItem="ndu-BN-lE0" firstAttribute="centerX" secondItem="Cb2-QT-tna" secondAttribute="centerX" id="LUt-FD-GNb"/>
+                            <constraint firstItem="ndu-BN-lE0" firstAttribute="top" secondItem="Cb2-QT-tna" secondAttribute="bottom" constant="4" id="PpD-q4-K3T"/>
+                            <constraint firstItem="Cb2-QT-tna" firstAttribute="centerY" secondItem="Cdx-aZ-rIP" secondAttribute="centerY" id="lrG-tk-y4l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rok-bJ-lFx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MJR-7H-kJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-798" y="184"/>
+        </scene>
+        <!--Exemplo2-->
+        <scene sceneID="meO-xB-AdW">
+            <objects>
+                <viewController id="gKK-jS-4di" customClass="Exemplo2" customModule="capios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xwC-TI-puh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exemplo 2 de RxSwift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MN-Eg-Hc8">
+                                <rect key="frame" x="105" y="323" width="165.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOR-CO-o0k">
+                                <rect key="frame" x="107" y="348" width="161.5" height="41"/>
+                                <string key="text">Fique de olho aqui
+e na janela de debug</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7v-3h-ERV">
+                                <rect key="frame" x="160" y="597" width="55" height="30"/>
+                                <state key="normal" title="Tap Me!"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E7v-3h-ERV" firstAttribute="centerX" secondItem="xwC-TI-puh" secondAttribute="centerX" id="MJh-pL-fCD"/>
+                            <constraint firstItem="dOR-CO-o0k" firstAttribute="top" secondItem="6MN-Eg-Hc8" secondAttribute="bottom" constant="4" id="PZh-Lc-nQZ"/>
+                            <constraint firstItem="dOR-CO-o0k" firstAttribute="centerX" secondItem="6MN-Eg-Hc8" secondAttribute="centerX" id="RKk-rw-Zzz"/>
+                            <constraint firstItem="6MN-Eg-Hc8" firstAttribute="centerX" secondItem="xwC-TI-puh" secondAttribute="centerX" id="VIx-DS-T9n"/>
+                            <constraint firstItem="rKg-jS-dPG" firstAttribute="bottom" secondItem="E7v-3h-ERV" secondAttribute="bottom" constant="40" id="ZWv-LF-sgz"/>
+                            <constraint firstItem="6MN-Eg-Hc8" firstAttribute="centerY" secondItem="xwC-TI-puh" secondAttribute="centerY" id="tuS-c7-aHl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rKg-jS-dPG"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="E7v-3h-ERV" id="3Fu-8I-tth"/>
+                        <outlet property="label" destination="dOR-CO-o0k" id="pcp-oD-CYR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="faf-9W-lfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17" y="184"/>
+        </scene>
+        <!--Exemplo3-->
+        <scene sceneID="JwG-u8-dl8">
+            <objects>
+                <viewController id="KTQ-La-aMc" customClass="Exemplo3" customModule="capios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gfB-Ld-MyQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dvo-Ep-FEA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dvo-Ep-FEA" firstAttribute="bottom" secondItem="FVm-7V-Q9j" secondAttribute="bottom" id="72u-g6-2Az"/>
+                            <constraint firstItem="dvo-Ep-FEA" firstAttribute="top" secondItem="FVm-7V-Q9j" secondAttribute="top" id="8iZ-zX-iGJ"/>
+                            <constraint firstItem="dvo-Ep-FEA" firstAttribute="leading" secondItem="FVm-7V-Q9j" secondAttribute="leading" id="aGg-qM-jo7"/>
+                            <constraint firstItem="dvo-Ep-FEA" firstAttribute="trailing" secondItem="FVm-7V-Q9j" secondAttribute="trailing" id="dA7-8t-ksU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FVm-7V-Q9j"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="dvo-Ep-FEA" id="Km3-Ub-g8L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="apB-FU-Utz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="823.20000000000005" y="177.66116941529236"/>
+        </scene>
+    </scenes>
+</document>

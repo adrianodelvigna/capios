@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25261A9222ADABB900CCD0E5 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25261A9022ADABB900CCD0E5 /* ContactTableViewCell.swift */; };
+		25261A9322ADABB900CCD0E5 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25261A9122ADABB900CCD0E5 /* ContactTableViewCell.xib */; };
+		25261A9B22ADC0C200CCD0E5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25261A9A22ADC0C200CCD0E5 /* Contact.swift */; };
+		258E2A0522B00E340016C021 /* ContactAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E2A0422B00E340016C021 /* ContactAPI.swift */; };
+		258E2A0C22B03FFC0016C021 /* Exemplo3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258E2A0B22B03FFC0016C021 /* Exemplo3.swift */; };
 		500078CA22A812D200C525DF /* AccessibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500078C922A812D200C525DF /* AccessibilityViewController.swift */; };
 		504F0C6022AAD990002BC949 /* PoorAccessibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F0C5F22AAD990002BC949 /* PoorAccessibilityViewController.swift */; };
 		507E1A1122A985B3007E3F2D /* TrainingExercises.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */; };
@@ -15,6 +20,9 @@
 		50EA454122AA77F6004EE63D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */; };
 		50EA454F22AB0112004EE63D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA454E22AB0112004EE63D /* LoginViewController.swift */; };
 		50EFF9872292EEA200A650FE /* RxOperatorsExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */; };
+		B91ABFD822AEB83A00487E4B /* RxSwiftStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B91ABFD722AEB83A00487E4B /* RxSwiftStoryboard.storyboard */; };
+		B925BAC222AECCA7007DF84D /* Exemplo1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B925BAC122AECCA7007DF84D /* Exemplo1.swift */; };
+		B925BAC422AEE130007DF84D /* Exemplo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B925BAC322AEE130007DF84D /* Exemplo2.swift */; };
 		B9448FAD2283463B00E342DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9448FAC2283463B00E342DE /* AppDelegate.swift */; };
 		B9448FAF2283463B00E342DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9448FAE2283463B00E342DE /* ViewController.swift */; };
 		B9448FB22283463B00E342DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9448FB02283463B00E342DE /* Main.storyboard */; };
@@ -26,6 +34,11 @@
 
 /* Begin PBXFileReference section */
 		0081E4D27F24336D340AE041 /* Pods-capios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capios.release.xcconfig"; path = "Pods/Target Support Files/Pods-capios/Pods-capios.release.xcconfig"; sourceTree = "<group>"; };
+		25261A9022ADABB900CCD0E5 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		25261A9122ADABB900CCD0E5 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		25261A9A22ADC0C200CCD0E5 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		258E2A0422B00E340016C021 /* ContactAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAPI.swift; sourceTree = "<group>"; };
+		258E2A0B22B03FFC0016C021 /* Exemplo3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exemplo3.swift; sourceTree = "<group>"; };
 		3BC93BD6ED1640E1B59EE001 /* Pods-AulaKeychain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AulaKeychain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AulaKeychain/Pods-AulaKeychain.debug.xcconfig"; sourceTree = "<group>"; };
 		4B1BFEB53C34226A2E36511F /* Pods-AulaKeychain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AulaKeychain.release.xcconfig"; path = "Pods/Target Support Files/Pods-AulaKeychain/Pods-AulaKeychain.release.xcconfig"; sourceTree = "<group>"; };
 		500078C922A812D200C525DF /* AccessibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +51,9 @@
 		50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxOperatorsExerciseViewController.swift; sourceTree = "<group>"; };
 		88D2DA43DAC0458579B892BA /* Pods_AulaKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AulaKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1421A86D0998F566BC0701F /* Pods_capios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_capios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B91ABFD722AEB83A00487E4B /* RxSwiftStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RxSwiftStoryboard.storyboard; sourceTree = "<group>"; };
+		B925BAC122AECCA7007DF84D /* Exemplo1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exemplo1.swift; sourceTree = "<group>"; };
+		B925BAC322AEE130007DF84D /* Exemplo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exemplo2.swift; sourceTree = "<group>"; };
 		B9448FA92283463B00E342DE /* capios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = capios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9448FAC2283463B00E342DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9448FAE2283463B00E342DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +77,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25261A8B22ADAB6100CCD0E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				25261A8C22ADAB7600CCD0E5 /* Custom */,
+				507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */,
+				507E1A1322A989D0007E3F2D /* HomeViewController.swift */,
+				50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */,
+				B9448FB52283463D00E342DE /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		25261A8C22ADAB7600CCD0E5 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				25261A8D22ADAB7E00CCD0E5 /* Cell */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		25261A8D22ADAB7E00CCD0E5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				25261A9022ADABB900CCD0E5 /* ContactTableViewCell.swift */,
+				25261A9122ADABB900CCD0E5 /* ContactTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		25261A9922ADADB300CCD0E5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				25261A9A22ADC0C200CCD0E5 /* Contact.swift */,
+				258E2A0422B00E340016C021 /* ContactAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		507E1A1222A989B4007E3F2D /* Samples */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +169,9 @@
 		B9448FAB2283463B00E342DE /* capios */ = {
 			isa = PBXGroup;
 			children = (
+				B9F1A51422AEB514007ADCDF /* RxSwift */,
+				25261A9922ADADB300CCD0E5 /* API */,
+				25261A8B22ADAB6100CCD0E5 /* View */,
 				507E1A1222A989B4007E3F2D /* Samples */,
 				B9448FAC2283463B00E342DE /* AppDelegate.swift */,
 				507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */,
@@ -122,11 +179,21 @@
 				50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */,
 				50EA454E22AB0112004EE63D /* LoginViewController.swift */,
 				B9448FB32283463D00E342DE /* Assets.xcassets */,
-				B9448FB52283463D00E342DE /* LaunchScreen.storyboard */,
 				B9448FB82283463D00E342DE /* Info.plist */,
 				B9F72F5922834FED000BA70B /* R.generated.swift */,
 			);
 			path = capios;
+			sourceTree = "<group>";
+		};
+		B9F1A51422AEB514007ADCDF /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				B91ABFD722AEB83A00487E4B /* RxSwiftStoryboard.storyboard */,
+				B925BAC122AECCA7007DF84D /* Exemplo1.swift */,
+				B925BAC322AEE130007DF84D /* Exemplo2.swift */,
+				258E2A0B22B03FFC0016C021 /* Exemplo3.swift */,
+			);
+			path = RxSwift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +261,8 @@
 				B9448FB72283463D00E342DE /* LaunchScreen.storyboard in Resources */,
 				B9448FB42283463D00E342DE /* Assets.xcassets in Resources */,
 				507E1A1122A985B3007E3F2D /* TrainingExercises.storyboard in Resources */,
+				B91ABFD822AEB83A00487E4B /* RxSwiftStoryboard.storyboard in Resources */,
+				25261A9322ADABB900CCD0E5 /* ContactTableViewCell.xib in Resources */,
 				B9448FB22283463B00E342DE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,7 +286,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\n#Ativar a parte abaixo caso deseje que o swiftlint funcione apenas em classes que tiveram alteração no Git.\n#Não esquecer de comentar a primeira linha caso vá utilizar a configuração abaixo.\n#A compilação fica um pouco mais lenta com esse processo.\n# Run SwiftLint\n#START_DATE=$(date +\"%s\")\n\n#SWIFT_LINT=/usr/local/bin/swiftlint\n\n# Run SwiftLint for given filename\n#run_swiftlint() {\n#local filename=\"${1}\"\n#if [[ \"${filename##*.}\" == \"swift\" ]]; then\n#${SWIFT_LINT} autocorrect --path \"${filename}\"\n#${SWIFT_LINT} lint --path \"${filename}\"\n#fi\n#}\n\n#if [[ -e \"${SWIFT_LINT}\" ]]; then\n#echo \"SwiftLint version: $(${SWIFT_LINT} version)\"\n# Run for both staged and unstaged files\n#git diff --name-only | while read filename; do run_swiftlint \"${filename}\"; done\n#git diff --cached --name-only | while read filename; do run_swiftlint \"${filename}\"; done\n#else\n#echo \"${SWIFT_LINT} is not installed.\"\n#exit 0\n#fi\n\n#END_DATE=$(date +\"%s\")\n\n#DIFF=$(($END_DATE - $START_DATE))\n#echo \"SwiftLint took $(($DIFF / 60)) minutes and $(($DIFF % 60)) seconds to complete.\"\n";
+			shellScript = "#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\n#Ativar a parte abaixo caso deseje que o swiftlint funcione apenas em classes que tiveram alteração no Git.\n#Não esquecer de comentar a primeira linha caso vá utilizar a configuração abaixo.\n#A compilação fica um pouco mais lenta com esse processo.\n# Run SwiftLint\n#START_DATE=$(date +\"%s\")\n\n#SWIFT_LINT=/usr/local/bin/swiftlint\n\n# Run SwiftLint for given filename\n#run_swiftlint() {\n#local filename=\"${1}\"\n#if [[ \"${filename##*.}\" == \"swift\" ]]; then\n#${SWIFT_LINT} autocorrect --path \"${filename}\"\n#${SWIFT_LINT} lint --path \"${filename}\"\n#fi\n#}\n\n#if [[ -e \"${SWIFT_LINT}\" ]]; then\n#echo \"SwiftLint version: $(${SWIFT_LINT} version)\"\n# Run for both staged and unstaged files\n#git diff --name-only | while read filename; do run_swiftlint \"${filename}\"; done\n#git diff --cached --name-only | while read filename; do run_swiftlint \"${filename}\"; done\n#else\n#echo \"${SWIFT_LINT} is not installed.\"\n#exit 0\n#fi\n\n#END_DATE=$(date +\"%s\")\n\n#DIFF=$(($END_DATE - $START_DATE))\n#echo \"SwiftLint took $(($DIFF / 60)) minutes and $(($DIFF % 60)) seconds to complete.\"\n";
 		};
 		A5BE9C5633C83D53ADBD643F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -225,30 +294,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-capios/Pods-capios-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-capios/Pods-capios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-capios/Pods-capios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-capios/Pods-capios-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-capios/Pods-capios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B9F72F5822834E9E000BA70B /* Rswift */ = {
@@ -300,13 +354,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B925BAC222AECCA7007DF84D /* Exemplo1.swift in Sources */,
+				B925BAC422AEE130007DF84D /* Exemplo2.swift in Sources */,
+				258E2A0C22B03FFC0016C021 /* Exemplo3.swift in Sources */,
 				500078CA22A812D200C525DF /* AccessibilityViewController.swift in Sources */,
 				50EFF9872292EEA200A650FE /* RxOperatorsExerciseViewController.swift in Sources */,
 				50959C4022A15E9E009B4FA0 /* LoginKeychainViewController.swift in Sources */,
 				B9448FAF2283463B00E342DE /* ViewController.swift in Sources */,
 				50EA454122AA77F6004EE63D /* CreateAccountViewController.swift in Sources */,
 				B9448FAD2283463B00E342DE /* AppDelegate.swift in Sources */,
+				25261A9B22ADC0C200CCD0E5 /* Contact.swift in Sources */,
+				25261A9222ADABB900CCD0E5 /* ContactTableViewCell.swift in Sources */,
 				507E1A1422A989D0007E3F2D /* HomeViewController.swift in Sources */,
+				258E2A0522B00E340016C021 /* ContactAPI.swift in Sources */,
 				B9F72F5A22834FED000BA70B /* R.generated.swift in Sources */,
 				50EA454F22AB0112004EE63D /* LoginViewController.swift in Sources */,
 				504F0C6022AAD990002BC949 /* PoorAccessibilityViewController.swift in Sources */,
