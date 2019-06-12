@@ -665,41 +665,21 @@ Hora Aprox. | Tópico | Detalhes
 - [Valet](https://github.com/square/Valet)
 - [Implementação Manual Wrapper Keychain](https://medium.com/ios-os-x-development/securing-user-data-with-keychain-for-ios-e720e0f9a8e2)
 
-
 ## 2: 10/06/2019 (2ª feira) 19h00 - 22h00
 
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
-19h00<br>20h20 | RxSwift<br><sup>Adriano</sup> | Exposição do RxSwift
+19h00<br>20h20 | RxSwift<br><sup>Adriano & Allan</sup> | • Exposição do RxSwift: [Programação funcional reativa](#programação-funcional-reativa) → [Como ler código RxSwift](#como-ler-código-rxswift)
 20h20<br>20h30 | Intervalo | 🍫🥤🥪
-20h30<br>22h00 | Refatorar os exercício<br>do dia anterior | Usando os conceitos de *RxSwift* e *binding*
-
-### App de Exercício
-
-1. App com:
-    1. Refatorar as telas usando *RxCocoa + Binding*
-    1. Regras:
-        - O botão "Login" só fica habilitado se os campos de usuário e senha têm mais de 6 caracteres usando Rx.
-        - Ao clicar no botão "Login" validar o usuário e a senha com o que está na  *Keychain*
-            - **sucesso:** mostrar mensagem de sucesso
-            - **falha:** mostrar mensagem de falha
-
+20h30<br>22h00 | RxSwift<br><sup>Adriano & Allan</sup> | • observável: `Observable<Int>.interval(...)`<br>• método `.subscribe(...)`<br>• método `.debug()`<br>• eventos: `onNext`, `onError`, `onCompleted`, `onDisposed`<br>• observável: `button.rx.tap`<br>• operador: `.map {...}`<br> • operador: `.flatMap {...}`<br> • operador: `.filter {...}`<br>• método:`.disposed(by:...)`<br>• método: `.bind(to:...)`<br><sub>Ver `Exemplo1.swift` e `Exemplo2.swift`</sub>
 
 ## 3: 12/06/2019 (4ª feira) 19h00 - 22h00
 
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
-19h00<br>20h20 | RxSwift<br><sup>Adriano</sup> | • Continuação do RxSwift.<br>• Mostrar o uso do `map` e do `flatMap`<br>• Uso de JSON + Swagger
+19h00<br>20h20 | RxSwift<br><sup>Chico & Adriano</sup> | • Continuação do RxSwift.<br>• Mostrar o uso do `map` e do `flatMap`<br>• Uso de JSON + Swagger
 20h20<br>20h30 | Intervalo | 🍕🍕🍕 + 🥤 + 🍦 = 💩
-20h30<br>22h00 | RxSwift<br><sup>Allan & Chico</sup> | Cenários de chamadas de endpoints consecutivas e formatar uma *model*
-
-### App de Exercício
-
-- App que faça 2 ou mais chamadas de endpoints (serviços) e retorne um array de objetos e exibir esse array de objetos na janela de inspector.
-     - Tratamento de erros para as repostas do endpoint via Rx.
-
-- Bonus points:
-    - Activity indicator para chamadas de serviços
+20h30<br>22h00 | RxSwift<br><sup>Chico & Adriano</sup> | • Cenários de chamadas de endpoints consecutivas e formatar uma *model*
 
 ## 4: 14/06/2019 (6ª feira) 19h00 - 22h00
 
