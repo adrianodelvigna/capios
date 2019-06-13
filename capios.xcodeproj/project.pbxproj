@@ -15,7 +15,6 @@
 		500078CA22A812D200C525DF /* AccessibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500078C922A812D200C525DF /* AccessibilityViewController.swift */; };
 		5006EDC122B17C9C004813E1 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5006EDC022B17C9C004813E1 /* Main.strings */; };
 		5006EDC322B18820004813E1 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5006EDC222B18811004813E1 /* Montserrat-Bold.otf */; };
-		5006EDC522B19193004813E1 /* ListOfContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5006EDC422B19193004813E1 /* ListOfContactsViewController.swift */; };
 		504F0C6022AAD990002BC949 /* PoorAccessibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504F0C5F22AAD990002BC949 /* PoorAccessibilityViewController.swift */; };
 		507E1A1122A985B3007E3F2D /* TrainingExercises.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */; };
 		507E1A1422A989D0007E3F2D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507E1A1322A989D0007E3F2D /* HomeViewController.swift */; };
@@ -45,12 +44,11 @@
 		500078C922A812D200C525DF /* AccessibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityViewController.swift; sourceTree = "<group>"; };
 		5006EDC022B17C9C004813E1 /* Main.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Main.strings; sourceTree = "<group>"; };
 		5006EDC222B18811004813E1 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
-		5006EDC422B19193004813E1 /* ListOfContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfContactsViewController.swift; sourceTree = "<group>"; };
 		504F0C5F22AAD990002BC949 /* PoorAccessibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoorAccessibilityViewController.swift; sourceTree = "<group>"; };
-		507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = TrainingExercises.storyboard; path = View/TrainingExercises.storyboard; sourceTree = "<group>"; };
-		507E1A1322A989D0007E3F2D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = View/HomeViewController.swift; sourceTree = "<group>"; };
+		507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrainingExercises.storyboard; sourceTree = "<group>"; };
+		507E1A1322A989D0007E3F2D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		50959C3F22A15E9E009B4FA0 /* LoginKeychainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginKeychainViewController.swift; sourceTree = "<group>"; };
-		50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = View/CreateAccountViewController.swift; sourceTree = "<group>"; };
+		50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		50EA454E22AB0112004EE63D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxOperatorsExerciseViewController.swift; sourceTree = "<group>"; };
 		7762F8C5FEA43D9C324168C3 /* Pods-capios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capios.release.xcconfig"; path = "Pods/Target Support Files/Pods-capios/Pods-capios.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				25261A8C22ADAB7600CCD0E5 /* Custom */,
+				507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */,
+				507E1A1322A989D0007E3F2D /* HomeViewController.swift */,
+				50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */,
+				50EA454E22AB0112004EE63D /* LoginViewController.swift */,
 				B9448FB52283463D00E342DE /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -171,11 +173,6 @@
 				25261A9922ADADB300CCD0E5 /* API */,
 				25261A8B22ADAB6100CCD0E5 /* View */,
 				B9448FAC2283463B00E342DE /* AppDelegate.swift */,
-				507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */,
-				507E1A1322A989D0007E3F2D /* HomeViewController.swift */,
-				50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */,
-				50EA454E22AB0112004EE63D /* LoginViewController.swift */,
-				5006EDC422B19193004813E1 /* ListOfContactsViewController.swift */,
 				5006EDC222B18811004813E1 /* Montserrat-Bold.otf */,
 				5006EDC022B17C9C004813E1 /* Main.strings */,
 				B9448FB32283463D00E342DE /* Assets.xcassets */,
@@ -373,7 +370,6 @@
 			files = (
 				B925BAC222AECCA7007DF84D /* Exemplo1.swift in Sources */,
 				B925BAC422AEE130007DF84D /* Exemplo2.swift in Sources */,
-				5006EDC522B19193004813E1 /* ListOfContactsViewController.swift in Sources */,
 				258E2A0C22B03FFC0016C021 /* Exemplo3.swift in Sources */,
 				500078CA22A812D200C525DF /* AccessibilityViewController.swift in Sources */,
 				50EFF9872292EEA200A650FE /* RxOperatorsExerciseViewController.swift in Sources */,

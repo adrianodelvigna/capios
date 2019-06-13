@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
                                     username, password -> Bool in
             if let _username = username,
                 let _password = password {
-                if _username.count >= 6 && _password.count >= 6 {
+                if _username.count > 0 && _password.count > 0 {
                     return true
                 }
                 return false
@@ -52,9 +52,7 @@ class LoginViewController: UIViewController {
                 let usernameField = self.usernameTxtField.text,
                 let passwordField = self.passwordTextField.text {
                 if username == usernameField && password == passwordField {
-                    if let vc = R.storyboard.trainingExercises.listOfContactsViewController() {
-                        self.navigationController?.pushViewController(vc, animated: true)
-                    }
+                    print("Sucesso")
                 } else {
                     print("Fail")
                 }
