@@ -64,7 +64,7 @@ class CreateAccountViewController: UIViewController {
     
     func bindUI() {
         createAccountButton.rx.tap.subscribe(onNext: {
-            //a declaração de weak self em closures, é necessária para evitar possível 'memory leak'
+            //a declaração de weak self em closures, é necessária para evitar possível retenção de memória, por manter referências "fortes" dos elementos desse self
             [weak self] in
             // Um pequeno guard para garantir que o self ainda está disponível para uso
             guard let `self` = self else { return }

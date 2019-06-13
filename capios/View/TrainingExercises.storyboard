@@ -159,31 +159,6 @@
             </objects>
             <point key="canvasLocation" x="1460" y="448"/>
         </scene>
-        <!--List Of Contacts View Controller-->
-        <scene sceneID="BEl-CS-bLV">
-            <objects>
-                <viewController storyboardIdentifier="ListOfContactsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cji-jI-3dt" customClass="ListOfContactsViewController" customModule="capios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CHc-KF-V8H">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nad-zP-6o7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="uBk-PV-bd3"/>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="nad-zP-6o7" id="IqR-FG-qMy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S1a-j4-eJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2341.5999999999999" y="447.52623688155927"/>
-        </scene>
         <!--Create Account View Controller-->
         <scene sceneID="0iw-k2-nP3">
             <objects>
