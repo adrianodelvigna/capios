@@ -159,6 +159,121 @@
             </objects>
             <point key="canvasLocation" x="1460" y="448"/>
         </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="8WW-Kc-8ic">
+            <objects>
+                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C1r-MZ-uE5" customClass="MenuViewController" customModule="capios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mlt-04-ZDD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYa-sI-icZ">
+                                <rect key="frame" x="137.5" y="311.5" width="100" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Q2G-v3-PTz"/>
+                                    <constraint firstAttribute="width" constant="100" id="hEV-6i-Lw1"/>
+                                </constraints>
+                                <state key="normal" title="Contatos"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo ao seu App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqx-LD-3L0">
+                                <rect key="frame" x="20" y="40" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nqn-ta-8Qr" firstAttribute="trailing" secondItem="Fqx-LD-3L0" secondAttribute="trailing" constant="20" id="5OS-S3-eYa"/>
+                            <constraint firstItem="PYa-sI-icZ" firstAttribute="centerY" secondItem="mlt-04-ZDD" secondAttribute="centerY" id="CPf-G5-EmZ"/>
+                            <constraint firstItem="Fqx-LD-3L0" firstAttribute="top" secondItem="Nqn-ta-8Qr" secondAttribute="top" constant="20" id="Tij-uh-Qlf"/>
+                            <constraint firstItem="PYa-sI-icZ" firstAttribute="centerX" secondItem="mlt-04-ZDD" secondAttribute="centerX" id="dUd-AM-WpL"/>
+                            <constraint firstItem="Fqx-LD-3L0" firstAttribute="leading" secondItem="Nqn-ta-8Qr" secondAttribute="leading" constant="20" id="rRo-Ng-8NB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Nqn-ta-8Qr"/>
+                    </view>
+                    <connections>
+                        <outlet property="contactsButton" destination="PYa-sI-icZ" id="Coa-Gb-hNg"/>
+                        <outlet property="titleLabel" destination="Fqx-LD-3L0" id="hP4-xU-vqD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RiU-YJ-dSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2367" y="448"/>
+        </scene>
+        <!--Contact List View Controller-->
+        <scene sceneID="Okp-ht-SoT">
+            <objects>
+                <viewController storyboardIdentifier="ContactListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TBY-4e-mdV" customClass="ContactListViewController" customModule="capios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hfh-dO-2B0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0iQ-d0-XDh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0iQ-d0-XDh" firstAttribute="top" secondItem="hfh-dO-2B0" secondAttribute="top" id="AOm-gf-2RV"/>
+                            <constraint firstItem="0iQ-d0-XDh" firstAttribute="leading" secondItem="UEK-BZ-8hj" secondAttribute="leading" id="cxK-mH-Zap"/>
+                            <constraint firstItem="0iQ-d0-XDh" firstAttribute="bottom" secondItem="UEK-BZ-8hj" secondAttribute="bottom" id="gRf-Ca-Dhk"/>
+                            <constraint firstItem="0iQ-d0-XDh" firstAttribute="trailing" secondItem="UEK-BZ-8hj" secondAttribute="trailing" id="hxP-4K-gf8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UEK-BZ-8hj"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="0iQ-d0-XDh" id="kHl-4w-KNk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mdV-Ve-s3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3170.4000000000001" y="447.52623688155927"/>
+        </scene>
+        <!--Contact Details View Controller-->
+        <scene sceneID="Cth-fO-rNV">
+            <objects>
+                <viewController storyboardIdentifier="ContactDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9fz-vd-4Cf" customClass="ContactDetailsViewController" customModule="capios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nt7-7b-LfR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UU8-bh-ngq">
+                                <rect key="frame" x="112.5" y="40" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="j4e-Zr-g5H"/>
+                                    <constraint firstAttribute="height" constant="150" id="xSg-R3-olW"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0UE-Ah-wMM">
+                                <rect key="frame" x="20" y="198" width="335" height="449"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UU8-bh-ngq" firstAttribute="centerX" secondItem="nt7-7b-LfR" secondAttribute="centerX" id="UWH-pI-QCN"/>
+                            <constraint firstItem="0UE-Ah-wMM" firstAttribute="top" secondItem="UU8-bh-ngq" secondAttribute="bottom" constant="8" id="V7Q-QZ-yFi"/>
+                            <constraint firstItem="Qt6-o4-Yw9" firstAttribute="trailing" secondItem="0UE-Ah-wMM" secondAttribute="trailing" constant="20" id="Xtm-75-s2V"/>
+                            <constraint firstItem="UU8-bh-ngq" firstAttribute="top" secondItem="Qt6-o4-Yw9" secondAttribute="top" constant="20" id="leq-L0-0aO"/>
+                            <constraint firstItem="Qt6-o4-Yw9" firstAttribute="bottom" secondItem="0UE-Ah-wMM" secondAttribute="bottom" constant="20" id="sb8-Fj-Ni8"/>
+                            <constraint firstItem="0UE-Ah-wMM" firstAttribute="leading" secondItem="Qt6-o4-Yw9" secondAttribute="leading" constant="20" id="tme-yM-B1F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qt6-o4-Yw9"/>
+                    </view>
+                    <connections>
+                        <outlet property="contactImageView" destination="UU8-bh-ngq" id="ciJ-vz-csw"/>
+                        <outlet property="detailsTextView" destination="0UE-Ah-wMM" id="u84-LG-MLm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fdt-LK-4oP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4036" y="447.52623688155927"/>
+        </scene>
         <!--Create Account View Controller-->
         <scene sceneID="0iw-k2-nP3">
             <objects>
