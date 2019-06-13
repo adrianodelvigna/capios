@@ -1,0 +1,10 @@
+/*
+  Main.strings
+  capios
+
+  Created by Francisco de Carvalho Costa Neto on 12/06/19.
+  Copyright © 2019 Adriano. All rights reserved.
+*/
+
+"vaultUsernameKey" = "username";
+"vaultPasswordKey" = "password";
