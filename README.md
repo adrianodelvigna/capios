@@ -683,11 +683,20 @@ Hora Aprox. | Tópico | Detalhes
 
 ## 4: 14/06/2019 (6ª feira) 19h00 - 22h00
 
-- TBD de acordo com o progresso da turma
+- Refatorar projetos finais para usar:
+    - RxSwift
+        - eventos de UI
+        - respostas de APIs
+    - R.swift
+        - arquivo de strings
+        - arquivos de imagens
+        - storyboards
+        - células de TableView
+    - navegação via código
 
 ## 5: 17/06/2019 (2ª feira) 19h00 - 22h00
 
-- TBD de acordo com o progresso da turma
+- RxMarbles + RxSwift + MVVM
 - \+ considerações finais
 
 
