@@ -1,5 +1,27 @@
 # Programa de Capacitação iOS
 
+## Conteúdo
+
+1. [Toolchain Swift](#toolchain-swift)
+1. [Keychain](#keychain)
+1. [Acessibilidade](#acessibilidade)
+1. [Programação funcional reativa](#programação-funcional-reativa)
+1. [Observer Pattern](#observer-pattern)
+1. [RxSwift](#rxswift)
+1. [Como ler código RxSwift](#como-ler-código-rxswift)
+1. [Como escrever código RxSwift](#como-escrever-código-rxswift)
+1. [+Operadores +RxMarbles](#operadores-rxmarbles)
+1. [MVVM com RxSwift](#mvvm-com-rxswift)
+1. [Como ler perguntas e respostas no Stackoverflow!](#como-ler-perguntas-e-respostas-no-stackoverflow)
+
+## Aulas
+
+1. [07/06/2019 (6ª feira)](#1-07062019-6%C2%AA-feira-19h00---22h00)
+1. [10/06/2019 (2ª feira)](#2-10062019-2%C2%AA-feira-19h00---22h00)
+1. [12/06/2019 (4ª feira)](#3-12062019-4%C2%AA-feira-19h00---22h00)
+1. [14/06/2019 (6ª feira)](#4-14062019-6%C2%AA-feira-19h00---22h00)
+1. [17/06/2019 (2ª feira)](#5-17062019-2%C2%AA-feira-19h00---22h00)
+
 ## Toolchain Swift
 
 *Toolchain*, numa tradução literal: corrente de ferramentas.
@@ -422,7 +444,8 @@ O **RxSwift** pode te ajudar a fazer tudo isso! Observe<sup>5</sup>!
 ```swift
 viewModel
     .rows
-    .bind(to: resultsTableView.rx.items(cellIdentifier: "WikipediaSearchCell", cellType: WikipediaSearchCell.self)) { (_, viewModel, cell) in
+    .bind(to: resultsTableView.rx.items(cellIdentifier: "WikipediaSearchCell",
+          cellType: WikipediaSearchCell.self)) { (_, viewModel, cell) in
         cell.title = viewModel.title
         cell.url = viewModel.url
     }
@@ -487,18 +510,135 @@ Numa analogia, pense em aprimorar seu vocabulário em inglês, adicionando novas
 
 ## Como ler código RxSwift
 
-*Continua... no próximo commit.*
+OK. Se você chegou até aqui (e assistiu a aula (2.) principalmente), você já deve ter uma ideia melhor do que é essa coisa toda de programação funcional reativa e um pouquinho de **RxSwift**. Nesse momento, você deve ter em mente que no cerne de toda essa discussão estão coisas que acontecem fora de ordem: o toque em um botão, uma notificação, um timer que expirou, ou a resposta de uma chamada a um endpoint de rede. Esses são **eventos** **assícronos**: que o app não consegue predizer quando vão acontecer, mas que o app - mesmo assim - precisa estar pronto para quando eles aconteçam.
 
+O método tradicional para responder a esses **eventos assíncronos** (na plataforma iOS em especial) se baseia no uso de *delegates*, *KVOs*, *notificações* e *callbacks*. Já com bibliotecas como o **RxSwift**, esses **eventos assíncronos** são tratados declarativamente, por meio de funções (*operadores* no jargão reativo). Declarativamente dizemos *o que fazer* e não *como fazer*.
+
+Depois desse resumo, vamos tentar traduzir alguns exemplos comuns da programação com **RxSwift**, para que a leitura desse tipo de código seja mais natural e então nos proporcione a escrita de tal tipo de código, como objetivo final. Vamos tentar criar uma [pedra de rosetta](https://en.wikipedia.org/wiki/Rosetta_Stone) 😊.
+
+### Exemplo 1: Eventos numéricos
+
+```swift
+let observable = Observable<Int>.interval(1.0, scheduler: MainScheduler.instance)
+// Foi criado algo observável. Uma sequência de números inteiros, incrementais, começando de zero
+// a cada segundo. Esse evento assíncrono vai rodar na threat prinicipal, a da interface gráfica (UI)
+
+
+let observer = observable
+    .subscribe(
+    onNext: {
+        print("--\($0)", terminator: "")
+        // a cada elemento (número inteiro) gerado, ele é exibido na área de debug
+    },
+    onError: { error in
+        print("--X (\(error.localizedDescription))")
+        // se no momento de gerar um inteiro, algo der errado, exibe esse erro
+        // (a princípio isso nunca deve acontecer com o exemplo observável acima)
+    },
+    onCompleted: {
+        print("--| (Observable completed)")
+        // se o observável indicar que ele concluiu sua geração de números inteiros,
+        // informamos tal fato na área de debug
+    },
+    onDisposed: {
+        print(" ..Resources released")
+        // também mostramos quando todos os recursos usados pelo par observável/observador
+        // for liberado, para ter certeza que não temos nenhum problema no futuro
+    })
+// Foi criado um observador, apartir da sequência de inteiros observável acima.
+
+// O único trabalho desse observador é nos mostrar as possíveis sequências de eventos.
+
+// Nesse caso específico, o observável só começa a gerar eventos, isto é, números inteiros
+// a cada segundo, quando o observador subscreve à sequência de eventos, literalmente o
+// objetivo do método .subscribe(...).
+
+// Dessa forma, nenhum evento (ou número inteiro) é perdido desde o momento que o observável é
+// criado e o momento que o observador é criado e subscreve à sequência de eventos.
+```
+
+O trecho de código acima, se apropriadamente inserido dentro de um projeto iOS, vai gerar a seguinte saída na área de debug do Xcode:
+
+```
+--(0)--(1)--(2)--(3)--(4)--(5)--(6)--(7)-- ...
+```
+
+Idealmente, o seu app vai continuar gerando números inteiros sequenciais para sempre, até o universo esfriar. Esse tipo de observável não nos permite, sem ajustes, emitir eventos de erro (*error*), ou conclusão (*complete*).
+
+Mas caso um evento de conclusão fosse emitido, ele seria exibido como a barra vertical no exemplo abaixo:
+
+```
+--(0)--(1)--(2)--(3)--(4)--(5)--(6)--| (Observable completed)
+```
+
+E no caso de um evento de erro:
+
+```
+--(0)--(1)--(2)--(3)--X (Ixi, deu erro!)
+```
+
+Note, que as saídas na área de debug acima foram propositalmente formatadas para se parecer o máximo possível com os exemplos da documentação oficial do [RxSwift, Getting Started](https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md).
+
+Veja alguns exemplos no projeto Xcode contido nesse repositório. Outra fonte valiosa de exemplos é o próprio repositório do [**RxSwift** no Github](https://github.com/ReactiveX/RxSwift), especialmente as pastas [RxExample](https://github.com/ReactiveX/RxSwift/tree/master/RxExample) e [RxTest](https://github.com/ReactiveX/RxSwift/tree/master/RxTest)<sup>8</sup>.
+
+Agora que já estamos um pouco mais familiarizados com a leitura de um exemplo simples em **RxSwift**, vamos expandí-lo com alguns operadores, que nada mais são que funções que alteram o conteúdo de um **evento assíncrono**, ou até mesmo encadeiam um ouro tipo de **evento assíncrono** como resultado de um primeiro **evento assíncrono**.
+
+Vamos partir de onde paramos no exemplo acima, de observável e observador, mas agora, vamos remover os comentários acima, e comentar somente o código e operadores adicionados. Se ainda houverem quaisquer dúvidas a respeito de código não comentado abaixo, verifique se o mesmo trecho de código está comentado acima, para maiores esclarecimentos.
+
+### Exemplo 2: Transformando eventos numéricos
+
+```swift
+let observable = Observable<Int>.interval(1.0, scheduler: MainScheduler.instance)
+
+let observer = observable
+    .debug()
+    .map { $0 + 1 }
+    .debug()
+    .subscribe(
+    onNext: {
+        print("--\($0)", terminator: "")
+    },
+    onError: { error in
+        print("--X (\(error.localizedDescription))")
+    },
+    onCompleted: {
+        print("--| (Observable completed)")
+    },
+    onDisposed: {
+        print(" ..Resources released")
+    })
+```
+
+*Mais... no próximo commit.*
 
 ### Referências
 
 - [RxSwift For Dummies 🐣 Part 1](http://web.archive.org/web/20181004041223/http://swiftpearls.com/RxSwift-for-dummies-1-Observables.html)
 - [RxSwift For Dummies 🐥 Part 2](http://web.archive.org/web/20180926004433/http://swiftpearls.com/RxSwift-for-dummies-2-Operators.html)
+- [rx-marin blog](http://rx-marin.com/)
+
+<sup>
+<sup>8</sup> Se você se deparar com um projeto com documentação deficiente no Github, veja se o projeto possui um conjunto de testes. Muitas vezes, apenas entendendo o que esse conjunto de testes faz, já é possível entender como o código em questão deve ser usado, contornando deficiências de documentação.
+</sup>
 
 
 ## Como escrever código RxSwift
 
-🎗Para aprender o **RxSwift** você não necessariamente precisa se restringir às fontes (artigos, livros, vídeos, cursos) do **RxSwift**. Por ser quase um padrão (**ReactiveX**) outras bibliotecas como o RxJS, RxJava, Rx .Net podem servir como mais uma referência, especialmente no uso de operadores. Até mesmo bibliotecas como as supra-citadas <a href="https://github.com/ReactiveCocoa/ReactiveCocoa">ReactiveCocoa</a> e <a href="https://github.com/DeclarativeHub/Bond">Bond</a> (que não necessariamente implementam o padrão **ReactiveX**) possuem documentação que podem complementar o entendimento dos conceitos mais básicos.
+Podem-se adotar alguns passos básicos na escrita de código **RxSwift**. Em forma de checklist:
+
+- [ ] Identifique a fonte de eventos assíncronos, e.g., toque em botões, notificações, timers, repostas de uma API via rede;
+- [ ] Identifique quaisquer fontes adicionais de eventos assíncronos;
+- [ ] Identifique onde e como a(s) fonte(s) de evento(s) assíncrono(s) devem ser usado(s)/consumido(s);
+- [ ] Identifique o conjunto de operador(es) que vão transformar a(s) fonte(s) de evento(s) assíncrono(s) desde sua origem até o formato de consumo final;
+- [ ] Identifique o formato que os recursos usados para o par observável/observador devem ser liberados quando não mais necessários;
+- [ ] Valide que o conjunto de eventos atinja o(s) requisito(s);
+- [ ] Verifique oportunidades de *binding* direto;
+
+Opcional
+
+- [ ] Verifique quaisquer oportunidades de simplificar ou tornar mais legível o conjunto de operador(es) de transformação utilizado(s);
+
+🎗Para aprender o **RxSwift** você não necessariamente precisa se restringir às fontes (artigos, livros, vídeos, cursos) do **RxSwift**. Por ser quase um padrão (**ReactiveX**) outras bibliotecas como o [RxJS](https://github.com/ReactiveX/rxjs), [RxJava](https://github.com/ReactiveX/RxJava), [Rx .Net](https://github.com/ReactiveX/RxJava) podem servir como mais uma referência, especialmente no uso de operadores. Até mesmo bibliotecas como as supra-citadas <a href="https://github.com/ReactiveCocoa/ReactiveCocoa">ReactiveCocoa</a> e <a href="https://github.com/DeclarativeHub/Bond">Bond</a> (que não necessariamente implementam o padrão **ReactiveX**) possuem documentação que podem complementar o entendimento dos conceitos mais básicos.
 
 ## +Operadores +RxMarbles
 
@@ -516,39 +656,7 @@ TBC
 
 TBC
 
-
-## Modelagem das atividades de classe/extra-classe
-Para as atividades iniciais (de aprendizagem), será solicitado que os estudantes façam modificações em seus próprios projetos de conclusão:
-Ex: 
-- [ ] Usar Keychain para o sistema de login do app.
-- [ ]  Substituir taps de botões, por funções Rx.
-- [ ]  Apps devem usar pesquisa com API usando throttle na searchbar.
-- [ ]  Fazer transições de tela usando Rswift.
-- [ ]  Criar arquivos de internacionalização para strings.
-
-**SUGESTÃO:** Inserir regras segundo [**SwiftLint**](https://github.com/realm/SwiftLint) nos projetos individuais, para que se habituem. Sem contar que lint é extremamente usado por diversas empresas, então acredito agregar valor. 
-
-Dessa forma, os alunos terão pouco tempo desperdiçado, sem necessidade de desenvolver um app completo para apenas uma atividade ou outra e poderão focar o aprendizado aonde é realmente necessário.
-
-Pra isso funcionar, será necessário que tenhamos acesso aos projetos, para que possamos analisar e inserir uma boas atividades para os projetos.
-
-Para o "*Projeto Final*" ainda mantém a ideia de criar um novo app para que todos manipulem em diferentes funcionalidades.
-Talvez o ideal aqui seja fazer uma simulação completa de um fluxo de trabalho. Eu entendo que nesse momento estamos analisando a capacidade de trabalhar em equipe e também resoluções de gitFlow e não mais questão de capacidade técnica.
-
-Nesse caso, eu sugiro que a última atividade, seja o desenvolvimento de um app completo, que deverá ser feita em uma única entrega por toda a equipe.
-Nós elaboramos o conceito e a especificação funcional para o desenvolvimento do app e eles, como equipe, deverão dividir e distribuir (com nosso acompanhamento) as tarefas, organizar os conflitos, merges e abrir os PRs ao fim de cada nova funcionalidade do app que for desenvolvida.
-
-Nos dias de aula, durante o *Projeto Final*, pensei em realizarmos daily meetings, pra tirar dúvidas e acompanhar o andamento do projeto, como jornadeiros.
-
-
-### APIs Gratuitas
-
-- [Índice de APIs gratuitas](https://rapidapi.com/collection/list-of-free-apis?utm_source=google&utm_medium=cpc&utm_campaign=1757574668_67679208454&utm_term=free%20api%20for%20testing_b&utm_content=1t1&gclid=Cj0KCQjwrdjnBRDXARIsAEcE5Yl_8Rlg1BP3IO_VXjslf14ChGjxHJ0SiVZXWSKCJddLhPyuVacTQ_MaAi-3EALw_wcB)
- - [public-apis/public-apis
-](https://github.com/public-apis/public-apis): A collective list of free APIs for use in software and web development.
-
-
-## <b>1:</b> 07/06/2019 (6ª feira) 19:00h - 22:00h
+## 1: 07/06/2019 (6ª feira) 19h00 - 22h00
 
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
@@ -575,47 +683,32 @@ Hora Aprox. | Tópico | Detalhes
 - [Valet](https://github.com/square/Valet)
 - [Implementação Manual Wrapper Keychain](https://medium.com/ios-os-x-development/securing-user-data-with-keychain-for-ios-e720e0f9a8e2)
 
-
-## <b>2:</b> 10/06/2019 (2ª feira) 19:00h - 22:00h
+## 2: 10/06/2019 (2ª feira) 19h00 - 22h00
 
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
-19h00<br>20h20 | RxSwift<br><sup>Adriano</sup> | Exposição do RxSwift
+19h00<br>20h20 | RxSwift<br><sup>Adriano & Allan</sup> | • Exposição do RxSwift: [Programação funcional reativa](#programação-funcional-reativa) → [Como ler código RxSwift](#como-ler-código-rxswift)
 20h20<br>20h30 | Intervalo | 🍫🥤🥪
-20h30<br>22h00 | Refatorar os exercício<br>do dia anterior | Usando os conceitos de *RxSwift* e *binding*
+20h30<br>22h00 | RxSwift<br><sup>Adriano & Allan</sup> | • observável: `Observable<Int>.interval(...)`<br>• método `.subscribe(...)`<br>• método `.debug()`<br>• eventos: `onNext`, `onError`, `onCompleted`, `onDisposed`<br>• observável: `button.rx.tap`<br>• operador: `.map {...}`<br> • operador: `.flatMap {...}`<br> • operador: `.filter {...}`<br>• método:`.disposed(by:...)`<br>• método: `.bind(to:...)`<br><sub>Ver `Exemplo1.swift` e `Exemplo2.swift`</sub>
 
-### App de Exercício
-
-1. App com:
-    1. Refatorar as telas usando *RxCocoa + Binding*
-    1. Regras:
-        - O botão "Login" só fica habilitado se os campos de usuário e senha têm mais de 6 caracteres usando Rx.
-        - Ao clicar no botão "Login" validar o usuário e a senha com o que está na  *Keychain*
-            - **sucesso:** mostrar mensagem de sucesso
-            - **falha:** mostrar mensagem de falha
-
-
-## <b>3:</b> 12/06/2019 (4ª feira) 19:00h - 22:00h
+## 3: 12/06/2019 (4ª feira) 19h00 - 22h00
 
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
-19h00<br>20h20 | RxSwift<br><sup>Adriano</sup> | • Continuação do RxSwift.<br>• Mostrar o uso do `map` e do `flatMap`<br>• Uso de JSON + Swagger
+19h00<br>20h20 | RxSwift<br><sup>Chico & Adriano</sup> | • Continuação do RxSwift.<br>• Mostrar o uso do `map` e do `flatMap`<br>• Uso de JSON + Swagger
 20h20<br>20h30 | Intervalo | 🍕🍕🍕 + 🥤 + 🍦 = 💩
-20h30<br>22h00 | RxSwift<br><sup>Allan & Chico</sup> | Cenários de chamadas de endpoints consecutivas e formatar uma *model*
+20h30<br>22h00 | RxSwift<br><sup>Chico & Adriano</sup> | • Cenários de chamadas de endpoints consecutivas e formatar uma *model*
 
-### App de Exercício
-
-- App que faça 2 ou mais chamadas de endpoints (serviços) e retorne um array de objetos e exibir esse array de objetos na janela de inspector.
-     - Tratamento de erros para as repostas do endpoint via Rx.
-
-- Bonus points:
-    - Activity indicator para chamadas de serviços
-
-## <b>4</b>: 14/06/2019 (6ª feira) 19:00h - 22:00h
+## 4: 14/06/2019 (6ª feira) 19h00 - 22h00
 
 - TBD de acordo com o progresso da turma
 
-## <b>5</b>: 17/06/2019 (2ª feira) 19:00h - 22:00h
+## 5: 17/06/2019 (2ª feira) 19h00 - 22h00
 
 - TBD de acordo com o progresso da turma
 - \+ considerações finais
+
+
+## Work In Progress
+
+- [Modelagem de atividades extra-classe](HomeWorkModels.md)
