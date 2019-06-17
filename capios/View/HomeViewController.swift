@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var createAccount: UIButton! {
@@ -25,9 +27,28 @@ class HomeViewController: UIViewController {
         }
     }
     
+    let disposeBag: DisposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.title = "App Exercícios"
+        
+        createAccount.rx.tap.subscribe(onNext: {
+            [weak self] in
+            guard let `self` = self else { return }
+            if let vc = R.storyboard.trainingExercises.createAccountViewController() {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }).disposed(by: disposeBag)
+        
+        //EXERCICIO: FAÇAM O MESMO PARA LOGINVIEWCONTROLLER
+        loginAccount.rx.tap.subscribe(onNext: {
+            [weak self] in
+            guard let `self` = self else { return }
+            if let vc = R.storyboard.trainingExercises.loginViewController() {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }).disposed(by: disposeBag)
     }
 }

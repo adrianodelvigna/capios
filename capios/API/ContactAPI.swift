@@ -16,7 +16,6 @@ public enum CallType {
 }
 
 public struct ContactAPI {
-    
     public func rx_getContactData() -> Observable<[Contact]> {
         return rx_APIRequest(call: .contactInfo).map { json in
             self.parseContacts(json: json)
@@ -25,10 +24,7 @@ public struct ContactAPI {
 
 }
 
-
 extension ContactAPI {
-    
-    
     fileprivate func parseContacts(json: JSON) -> [Contact] {
         var contacts = [Contact]()
         
