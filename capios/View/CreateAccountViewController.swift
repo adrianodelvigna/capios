@@ -34,19 +34,37 @@ class CreateAccountViewController: UIViewController {
         super.viewDidLoad()
         // Definição do título da tela na navigationBar
         self.title = "Criar Conta"
-        
         //Função onde são realizados os binds de Rx
         self.bindUI()
     }
     
     func createAccount() {
         //Se os campos estiverem válidos, essa função será chamada e é aqui que nós faremos o armazenamento dos dados no valet.
-        
+        if valet.canAccessKeychain() {
+            if valet.containsObject(forKey: R.string.main.vaultUsernameKey()) && valet.containsObject(forKey: R.string.main.vaultPasswordKey()) {
+                let alert = UIAlertController(title: "Ops", message: "Parece que você já tem uma conta criada nesse dispositivo", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            if let username = self.usernameTxtField.text,
+                let password = self.passwordTxtField.text {
+                valet.set(string: username, forKey: R.string.main.vaultUsernameKey())
+                valet.set(string: password, forKey: R.string.main.vaultPasswordKey())
+                
+                let alert = UIAlertController(title: "Opa!", message: "Conta criada com sucesso", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                    self.navigationController?.popViewController(animated: true)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     func bindUI() {
         createAccountButton.rx.tap.subscribe(onNext: {
-            //a declaração de weak self em closures, é necessária para evitar possível 'memory leak'
+            //a declaração de weak self em closures, é necessária para evitar possível retenção de memória, por manter referências "fortes" dos elementos desse self
             [weak self] in
             // Um pequeno guard para garantir que o self ainda está disponível para uso
             guard let `self` = self else { return }
