@@ -609,7 +609,7 @@ let observer = observable
     })
 ```
 
-*Mais... no próximo commit.*
+*Mais num próximo commit...*
 
 ### Referências
 
@@ -642,15 +642,139 @@ Opcional
 
 ## +Operadores +RxMarbles
 
-TBC
+Até o momento usamos alguns dos operadores [ReactiveX](http://reactivex.io/documentation/operators.html) mais comuns: `map`, `flatMap` e `filter`. Existem muitos outros porém, que podem nos ajudar em muitas situações complexas.
 
-## MVVM com RxSwift
+Para uma lista completa dos operadores do padrão ReactiveX, vale a pena visitar esse [link](http://reactivex.io/documentation/operators.html). Tenha em mente que o padrão ReactiveX funciona muito como uma referência: as diversas implementações do padrão (RxJS, Rx .NET, RxJava...) costumam divergir em aguns termos e na nomenclatura de alguns dos operadores. Ou em alguns casos, nem mesmo implementam todos os operadores. Por isso é preciso sempre estar de olho no que cada cada uma dessas implementações oferece, e como são oferecidas. O **RxSwift** **não** é uma exceção a isso.
 
-TBC
+Recapitulando:
+
+Operador | Função/Uso
+--- | ---
+`map` | Transforma o conteúdo de cada evento observável.
+`flatMap` | Transforma um evento observável em outro evento observável. Use-o para concatenar eventos assíncronos.
+`filter` | Seleciona o conteúdo de um evento que vai ser propagado no *stream* de eventos. Apenas aqueles eventos cujo conteúdo passe determinado critério continuam na *stream* de eventos.
+
+Alguns outros operadores são incrivelmente úteis, e podem nos ajudar em muitas situações cotidianas:
+
+Operador | Função/Uso
+--- | ---
+`combineLatest` | combina o último resultado de dois ou mais observáveis. Usado por exemplo quando se quer disparar 2+ chamadas de API, e precisamos aguardar essas 2+ chamadas antes de continuar com algum processamento.
+`delay` | atrasa a propagação de um evento, na *stream* de eventos, por um determinado tempo.
+`throttle` | emite o último evento observável gerado depois de transcorrido um determinado tempo. Use-o quando você quer evitar o *flood* de uma chamada de API por exemplo: quando você quiser limitar uma chamada de uma API de busca após 300ms depois de entrada a última letra num campo de entrada.
+`zip` | combina o conteúdo de 2+ observáveis.
+`distinctUntilChanged` | só emite um novo evento observável quando o conteúdo desse for diferente do imediatamente anterior.
+
+> Tá. Eu li as explicações acima, mas parece grego pra mim... Eu leio sobre os operadores no [link de operadores](http://reactivex.io/documentation/operators.html) e só fico mais confuso(a)! Não sei o que usar!
+
+Ok, ok. Tem uma coisa que pode te ajudar!
+
+### RxMarbles
+
+**RxMarbles** são diagramas que nos mostram como um operador **ReactiveX** funciona. Se você seguir esse site [RxMarbles](https://rxmarbles.com/) você vai encontrar uma quantidade razoável de diagramas para alguns operadores - e o melhor, os diagramas são interativos!
+
+Infelizmente ainda não há diagramas para todos os [operadores ReactiveX](http://reactivex.io/documentation/operators.html), mas alguns dos mais comumente usados estão lá.
+
+Lembra do operador `map`? Ele tem um [diagrama interativo](https://rxmarbles.com/#map) só para ele:
+
+![map diagram](map_diagram.png  )
+<sup>Diagrama operador `map` aqui...</sup>
+
+No link acima, no site RxMarbles, arraste uma ou mais "*bolinhas*" numeradas/*marbles* na primeira linha de eventos, você vai ver que a linha de baixo é atualizada também!
+
+O diagrama interativo do operador `flatMap` não existe no site RxMarbles, mas um diagrama não interativo pode ser visto aqui → [diagrama](http://reactivex.io/documentation/operators/flatmap.html).
+
+![flatMap diagram](flatMap_diagram.png)
+
+### Como achar o operador que eu preciso?
+
+Com o descrito acima, sugerimos alguns passos para procurar o operador Rx que você precisa:
+
+1. Vá para a página de [operadores Rx](http://reactivex.io/documentation/operators.html);
+1. Role a tela até a seção "**A Decision Tree of Observable Operators**", e percorra a árvore de decisão de acordo com suas necessidades;
+    1. Ou dê uma olhada diretamente em cada uma das sessões dessa página quando você tiver maior conhecimento e confiança no uso dos operadores Rx;
+1. Quando você achar um operador que você acha que possa te ajudar, procure pelo RxMarble do operador no site [RxMarbles](https://rxmarbles.com/) e verifique seu funcionamento;
+1. Implemente um pequeno `Observable` de teste para testar o operador em questão. Use `Observable<T>.just(...)`, `Observable<T>.interval()` ou `UIButton.rx.tap` para ter um *observable* facilmente;
+1. Valide o funcionamento do operador no trcho de código de destino.
+
 
 ### Referências
 
+- [The Operators of ReactiveX](http://reactivex.io/documentation/operators.html)
+- [RxMarbles](https://rxmarbles.com/)
+
+
+## MVVM com RxSwift
+
+MVVM, ou Model-View-ViewModel, é mais uma arquitetura de software que tenta exercer o princípio de *sepration of concerns*. Onde os três domínios são responsáveis por:
+
+- Model: lógica/regras de negócio, ou lógica/regras de *backend*
+- ViewModel: converte os valores da *model*, ou regra de negócio, para uma representação de view
+- View: ligada à *view model* para exibir gráfica e reativamente o conteúdo convertido pela *view model*
+
+A exemplo do **RxSwift**, a arquitetura **MVVM** também tem suas origens no [ambiente .NET](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel).
+
+### Pragmaticamente...
+
+Orientação | Model<sup>9</sup> | ViewModel<sup>9</sup> | View
+:-: | --- | --- | ---
+Implementa | • regras de negócio<br>• chamadas de endpoints de API<br>• acesso a banco de dados locais | • `Observables`<br>• `Subjects`<br>• métodos consumidos pela view  | • Elementos de tela (UIKit)<br>• `Storyboard`, `xib` e `ViewControllers`<br>• *subscriptions* para ventos vindos da view model
+Faz | • representação lógica dos dados<br>• contextualização das regras<br>de negócio para a solução<br>• descreve o que uma solução<br>pode fazer | • representação lógica do estado de uma tela<br>• representação lógica das ações de uma tela<br>• descreve o que uma tela pode fazer<br>sem desenhá-la | • observa eventos da *view model*<br>• desenha (exibe) a tela e seus elementos<br>• coleta input do usuário (via tela, teclado...) e<br>passa para a *view model*
+Importa<br><sup>*(consome)*</sup> | • Foundation<br>• Libs<br>• Frameworks<br>• Pods | • Foundation<br>• Libs<br>• Frameworks<br>• Pods | • Foundation<br>• Libs<br>• Frameworks<br>• Pods<br>• **UIKit**
+**Não** importa<br><sup>*(não deveria)*</sup> | • UIKit | • UIKit | 
+Exporta<br><sup>*(torna público)*</sup> | • APIs declarativas para regras de<br>negócio no contexto da solução<br>• repositório de dados | • representação de uma view/tela<br>• *bindable properties* | • Teoricamente exportaria apenas a<br>própria view para a tela, por exemplo<br>• Elementos reativos à mudanças<br>da *view model*
+
+### No contexto iOS, UIKit, Foundation...
+
+Model<sup>9</sup> | View Model<sup>9</sup> | View
+--- | --- | ---
+`class`, `struct` ou funções/métodos<br>com regras de negócio e dados | `class`, `struct` ou funções/métodos<br>com definições e comportamentos<br>de telas | `storyboard`, `xib` ou `UIViewController`<br>para desenho de telas
+
+### Idealmente...
+
+Model<sup>9</sup> | View Model<sup>9</sup> | View
+--- | --- | ---
+• Permite realizar **todas** as<br>ações de negócio da solução<br>programaticamente | • Permite "simular" ou representar<br>todas as telas e navegações de<br>tela programaticamente<br>• Consome recursos exportados<br>**apenas** pela(s) model(s) | • Permite ver e interagir com as telas<br>• Consome recursos exportados<br>**apenas** pela(s) view model(s)
+
+### Melhores práticas para com a View Model
+
+- **Nunca** referencie a view controller
+- **Nunca** importe o módulo UIKit
+- **Nunca** referencie **nada** do UIKit. Se você começar a pensar que eu preciso de uma referência para um botão, ou um text input field na view model... Pare! **NÃO** faça isso!
+- A view model pode ser implementada somente como um container de dados, e com pouca funcionalidade
+
+<sup>Fonte: [MVVM with RxSwift](https://academy.realm.io/posts/slug-max-alexander-mvvm-rxswift/) - View Model Worst Practices</sup>
+
+### Comparativamente com outras arquiteturas de apps...
+
+![Comparação entre arquiteturas](ArchMatrix.png)
+
+### Comparativamente com o MVC padrão iOS...
+
+MVC iOS | MVVM
+:-: | :-:
+![MVC from Apple Docs](mvcFromAppleDocs.png) | ![MVVM](mvvm.jpeg)
+
+### Ao final de tudo isso, teríamos algo como...
+
+![](mvvm_rxswift.jpeg)
+
+![](mvvm_rxswift_the_right_way.png)
+
+### Referências
+
+- [The MVVM Pattern](https://docs.microsoft.com/en-us/previous-versions/msp-n-p/hh848246(v=pandp.10)): Microsoft Patterns & Practices
+- [MVVM with RxSwift](https://academy.realm.io/posts/slug-max-alexander-mvvm-rxswift/)
+
+Alguns exemplos para implementação MVVM com RxSwift, não necessariamente da forma mais correta:
+
+- [MVVM with RxSwift : User Login](https://medium.com/swift2go/mvvm-with-rxswift-the-user-login-cc43df423c9e)
+- [MVVM + RxSwift on iOS part 1](https://hackernoon.com/mvvm-rxswift-on-ios-part-1-69608b7ed5cd)
+- [MVVM + RxSwift on iOS part 2: Practical MVVM + RxSwift](https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693)
 - [RxSwift MVVM API Manual 📃](http://web.archive.org/web/20180728071049/http://swiftpearls.com/mvvm-state-manage.html)
+
+<sup>
+<sup>9</sup> A segregação de responsabilidades entre a <i>model</i> e a <i>viewmodel</i> pode ser alvo de contestação/argumentação. O que deve ser colcado em cada um dos dois e assim por diante segundo a experiência profissional. As recomendações acima foram feitas em função do modelo original de MVVM na plataforma .NET e de um pouco de raciocínio lógico: <i>view model</i> / modelo de view.
+</sup>
 
 ## Como ler perguntas e respostas no Stackoverflow!
 
@@ -688,7 +812,7 @@ Hora Aprox. | Tópico | Detalhes
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
 19h00<br>20h20 | RxSwift<br><sup>Adriano & Allan</sup> | • Exposição do RxSwift: [Programação funcional reativa](#programação-funcional-reativa) → [Como ler código RxSwift](#como-ler-código-rxswift)
-20h20<br>20h30 | Intervalo | 🍫🥤🥪
+20h20<br>20h30 | Intervalo | 🍫 + 🥤 + 🥪
 20h30<br>22h00 | RxSwift<br><sup>Adriano & Allan</sup> | • observável: `Observable<Int>.interval(...)`<br>• método `.subscribe(...)`<br>• método `.debug()`<br>• eventos: `onNext`, `onError`, `onCompleted`, `onDisposed`<br>• observável: `button.rx.tap`<br>• operador: `.map {...}`<br> • operador: `.flatMap {...}`<br> • operador: `.filter {...}`<br>• método:`.disposed(by:...)`<br>• método: `.bind(to:...)`<br><sub>Ver `Exemplo1.swift` e `Exemplo2.swift`</sub>
 
 ## 3: 12/06/2019 (4ª feira) 19h00 - 22h00
@@ -714,10 +838,13 @@ Hora Aprox. | Tópico | Detalhes
 
 ## 5: 17/06/2019 (2ª feira) 19h00 - 22h00
 
-- RxMarbles + RxSwift + MVVM
-- \+ considerações finais
+Hora Aprox. | Tópico | Detalhes
+--- | :-: | ---
+19h00<br>19h30 | RxSwift → RxMarbles | • Como aprender e usar os demais operadores do RxSwift
+19h30<br>20h20 | MVVM &<br>RxSwift | • Breve revisão do tema MVVM<br>• Como o RxSwift pode te ajudar com o MVVM<br>• Como organizar e refatorar seu projeto
+20h20<br>20h30 | Intervalo | 🍫 + 🌭 + 🥤
+20h30<br>21h40 | MVVM &<br>RxSwift | • Hands-on: transforme seu projeto em MVVM usando RxSwift
+21h40<br>22h00 | Últimas dúvidas<br>Considerações finais<br>Comunicados | • Últimas dúvidas: acessibilidade, keychain services, RxSwift, MVVM...<br>• Happy-hour na 4ª-feira: let's celebrate! 🍾 🥂 🍕🍕🍕🍕
 
 
-## Work In Progress
-
-- [Modelagem de atividades extra-classe](HomeWorkModels.md)
+*That's all folks!!*
