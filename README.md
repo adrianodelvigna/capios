@@ -676,7 +676,7 @@ Infelizmente ainda não há diagramas para todos os [operadores ReactiveX](http:
 
 Lembra do operador `map`? Ele tem um [diagrama interativo](https://rxmarbles.com/#map) só para ele:
 
-![map diagram](map_diagram.png)
+![map diagram](map_diagram.png  )
 <sup>Diagrama operador `map` aqui...</sup>
 
 No link acima, no site RxMarbles, arraste uma ou mais "*bolinhas*" numeradas/*marbles* na primeira linha de eventos, você vai ver que a linha de baixo é atualizada também!
@@ -705,11 +705,76 @@ Com o descrito acima, sugerimos alguns passos para procurar o operador Rx que vo
 
 ## MVVM com RxSwift
 
-TBC
+MVVM, ou Model-View-ViewModel, é mais uma arquitetura de software que tenta exercer o princípio de *sepration of concerns*. Onde os três domínios são responsáveis por:
+
+- Model: lógica/regras de negócio, ou lógica/regras de *backend*
+- ViewModel: converte os valores da *model*, ou regra de negócio, para uma representação de view
+- View: ligada à *view model* para exibir gráfica e reativamente o conteúdo convertido pela *view model*
+
+A exemplo do **RxSwift**, a arquitetura **MVVM** também tem suas origens no [ambiente .NET](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel).
+
+### Pragmaticamente...
+
+Orientação | Model<sup>9</sup> | ViewModel<sup>9</sup> | View
+:-: | --- | --- | ---
+Implementa | • regras de negócio<br>• chamadas de endpoints de API<br>• acesso a banco de dados locais | • `Observables`<br>• `Subjects`<br>• métodos consumidos pela view  | • Elementos de tela (UIKit)<br>• `Storyboard`, `xib` e `ViewControllers`<br>• *subscriptions* para ventos vindos da view model
+Faz | • representação lógica dos dados<br>• contextualização das regras<br>de negócio para a solução<br>• descreve o que uma solução<br>pode fazer | • representação lógica do estado de uma tela<br>• representação lógica das ações de uma tela<br>• descreve o que uma tela pode fazer<br>sem desenhá-la | • observa eventos da *view model*<br>• desenha (exibe) a tela e seus elementos<br>• coleta input do usuário (via tela, teclado...) e<br>passa para a *view model*
+Importa<br><sup>*(consome)*</sup> | • Foundation<br>• Libs<br>• Frameworks<br>• Pods | • Foundation<br>• Libs<br>• Frameworks<br>• Pods | • Foundation<br>• Libs<br>• Frameworks<br>• Pods<br>• **UIKit**
+**Não** importa<br><sup>*(não deveria)*</sup> | • UIKit | • UIKit | 
+Exporta<br><sup>*(torna público)*</sup> | • APIs declarativas para regras de<br>negócio no contexto da solução<br>• repositório de dados | • representação de uma view/tela<br>• *bindable properties* | • Teoricamente exportaria apenas a<br>própria view para a tela, por exemplo<br>• Elementos reativos à mudanças<br>da *view model*
+
+### No contexto iOS, UIKit, Foundation...
+
+Model<sup>9</sup> | View Model<sup>9</sup> | View
+--- | --- | ---
+`class`, `struct` ou funções/métodos<br>com regras de negócio e dados | `class`, `struct` ou funções/métodos<br>com definições e comportamentos<br>de telas | `storyboard`, `xib` ou `UIViewController`<br>para desenho de telas
+
+### Idealmente...
+
+Model<sup>9</sup> | View Model<sup>9</sup> | View
+--- | --- | ---
+• Permite realizar **todas** as<br>ações de negócio da solução<br>programaticamente | • Permite "simular" ou representar<br>todas as telas e navegações de<br>tela programaticamente<br>• Consome recursos exportados<br>**apenas** pela(s) model(s) | • Permite ver e interagir com as telas<br>• Consome recursos exportados<br>**apenas** pela(s) view model(s)
+
+### Melhores práticas para com a View Model
+
+- **Nunca** referencie a view controller
+- **Nunca** importe o módulo UIKit
+- **Nunca** referencie **nada** do UIKit. Se você começar a pensar que eu preciso de uma referência para um botão, ou um text input field na view model... Pare! **NÃO** faça isso!
+- A view model pode ser implementada somente como um container de dados, e com pouca funcionalidade
+
+<sup>Fonte: [MVVM with RxSwift](https://academy.realm.io/posts/slug-max-alexander-mvvm-rxswift/) - View Model Worst Practices</sup>
+
+### Comparativamente com outras arquiteturas de apps...
+
+![Comparação entre arquiteturas](ArchMatrix.png)
+
+### Comparativamente com o MVC padrão iOS...
+
+MVC iOS | MVVM
+:-: | :-:
+![MVC from Apple Docs](mvcFromAppleDocs.png) | ![MVVM](mvvm.jpeg)
+
+### Ao final de tudo isso, teríamos algo como...
+
+![](mvvm_rxswift.jpeg)
+
+![](mvvm_rxswift_the_right_way.png)
 
 ### Referências
 
+- [The MVVM Pattern](https://docs.microsoft.com/en-us/previous-versions/msp-n-p/hh848246(v=pandp.10)): Microsoft Patterns & Practices
+- [MVVM with RxSwift](https://academy.realm.io/posts/slug-max-alexander-mvvm-rxswift/)
+
+Alguns exemplos para implementação MVVM com RxSwift, não necessariamente da forma mais correta:
+
+- [MVVM with RxSwift : User Login](https://medium.com/swift2go/mvvm-with-rxswift-the-user-login-cc43df423c9e)
+- [MVVM + RxSwift on iOS part 1](https://hackernoon.com/mvvm-rxswift-on-ios-part-1-69608b7ed5cd)
+- [MVVM + RxSwift on iOS part 2: Practical MVVM + RxSwift](https://medium.com/flawless-app-stories/practical-mvvm-rxswift-a330db6aa693)
 - [RxSwift MVVM API Manual 📃](http://web.archive.org/web/20180728071049/http://swiftpearls.com/mvvm-state-manage.html)
+
+<sup>
+<sup>9</sup> A segregação de responsabilidades entre a <i>model</i> e a <i>viewmodel</i> pode ser alvo de contestação/argumentação. O que deve ser colcado em cada um dos dois e assim por diante segundo a experiência profissional. As recomendações acima foram feitas em função do modelo original de MVVM na plataforma .NET e de um pouco de raciocínio lógico: <i>view model</i> / modelo de view.
+</sup>
 
 ## Como ler perguntas e respostas no Stackoverflow!
 
