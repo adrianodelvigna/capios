@@ -591,7 +591,7 @@ let observer = observable
     })
 ```
 
-*Mais... no próximo commit.*
+*Mais num próximo commit...*
 
 ### Referências
 
@@ -624,7 +624,66 @@ Opcional
 
 ## +Operadores +RxMarbles
 
-TBC
+Até o momento usamos alguns dos operadores [ReactiveX](http://reactivex.io/documentation/operators.html) mais comuns: `map`, `flatMap` e `filter`. Existem muitos outros porém, que podem nos ajudar em muitas situações complexas.
+
+Para uma lista completa dos operadores do padrão ReactiveX, vale a pena visitar esse [link](http://reactivex.io/documentation/operators.html). Tenha em mente que o padrão ReactiveX funciona muito como uma referência: as diversas implementações do padrão (RxJS, Rx .NET, RxJava...) costumam divergir em aguns termos e na nomenclatura de alguns dos operadores. Ou em alguns casos, nem mesmo implementam todos os operadores. Por isso é preciso sempre estar de olho no que cada cada uma dessas implementações oferece, e como são oferecidas. O **RxSwift** **não** é uma exceção a isso.
+
+Recapitulando:
+
+Operador | Função/Uso
+--- | ---
+`map` | Transforma o conteúdo de cada evento observável.
+`flatMap` | Transforma um evento observável em outro evento observável. Use-o para concatenar eventos assíncronos.
+`filter` | Seleciona o conteúdo de um evento que vai ser propagado no *stream* de eventos. Apenas aqueles eventos cujo conteúdo passe determinado critério continuam na *stream* de eventos.
+
+Alguns outros operadores são incrivelmente úteis, e podem nos ajudar em muitas situações cotidianas:
+
+Operador | Função/Uso
+--- | ---
+`combineLatest` | combina o último resultado de dois ou mais observáveis. Usado por exemplo quando se quer disparar 2+ chamadas de API, e precisamos aguardar essas 2+ chamadas antes de continuar com algum processamento.
+`delay` | atrasa a propagação de um evento, na *stream* de eventos, por um determinado tempo.
+`throttle` | emite o último evento observável gerado depois de transcorrido um determinado tempo. Use-o quando você quer evitar o *flood* de uma chamada de API por exemplo: quando você quiser limitar uma chamada de uma API de busca após 300ms depois de entrada a última letra num campo de entrada.
+`zip` | combina o conteúdo de 2+ observáveis.
+`distinctUntilChanged` | só emite um novo evento observável quando o conteúdo desse for diferente do imediatamente anterior.
+
+> Tá. Eu li as explicações acima, mas parece grego pra mim... Eu leio sobre os operadores no [link de operadores](http://reactivex.io/documentation/operators.html) e só fico mais confuso(a)! Não sei o que usar!
+
+Ok, ok. Tem uma coisa que pode te ajudar!
+
+### RxMarbles
+
+**RxMarbles** são diagramas que nos mostram como um operador **ReactiveX** funciona. Se você seguir esse site [RxMarbles](https://rxmarbles.com/) você vai encontrar uma quantidade razoável de diagramas para alguns operadores - e o melhor, os diagramas são interativos!
+
+Infelizmente ainda não há diagramas para todos os [operadores ReactiveX](http://reactivex.io/documentation/operators.html), mas alguns dos mais comumente usados estão lá.
+
+Lembra do operador `map`? Ele tem um [diagrama interativo](https://rxmarbles.com/#map) só para ele:
+
+![map diagram](map_diagram.png)
+<sup>Diagrama operador `map` aqui...</sup>
+
+No link acima, no site RxMarbles, arraste uma ou mais "*bolinhas*" numeradas/*marbles* na primeira linha de eventos, você vai ver que a linha de baixo é atualizada também!
+
+O diagrama interativo do operador `flatMap` não existe no site RxMarbles, mas um diagrama não interativo pode ser visto aqui → [diagrama](http://reactivex.io/documentation/operators/flatmap.html).
+
+![flatMap diagram](flatMap_diagram.png)
+
+### Como achar o operador que eu preciso?
+
+Com o descrito acima, sugerimos alguns passos para procurar o operador Rx que você precisa:
+
+1. Vá para a página de [operadores Rx](http://reactivex.io/documentation/operators.html);
+1. Role a tela até a seção "**A Decision Tree of Observable Operators**", e percorra a árvore de decisão de acordo com suas necessidades;
+    1. Ou dê uma olhada diretamente em cada uma das sessões dessa página quando você tiver maior conhecimento e confiança no uso dos operadores Rx;
+1. Quando você achar um operador que você acha que possa te ajudar, procure pelo RxMarble do operador no site [RxMarbles](https://rxmarbles.com/) e verifique seu funcionamento;
+1. Implemente um pequeno `Observable` de teste para testar o operador em questão. Use `Observable<T>.just(...)`, `Observable<T>.interval()` ou `UIButton.rx.tap` para ter um *observable* facilmente;
+1. Valide o funcionamento do operador no trcho de código de destino.
+
+
+### Referências
+
+- [The Operators of ReactiveX](http://reactivex.io/documentation/operators.html)
+- [RxMarbles](https://rxmarbles.com/)
+
 
 ## MVVM com RxSwift
 
@@ -670,7 +729,7 @@ Hora Aprox. | Tópico | Detalhes
 Hora Aprox. | Tópico | Detalhes
 --- | :-: | ---
 19h00<br>20h20 | RxSwift<br><sup>Adriano & Allan</sup> | • Exposição do RxSwift: [Programação funcional reativa](#programação-funcional-reativa) → [Como ler código RxSwift](#como-ler-código-rxswift)
-20h20<br>20h30 | Intervalo | 🍫🥤🥪
+20h20<br>20h30 | Intervalo | 🍫 + 🥤 + 🥪
 20h30<br>22h00 | RxSwift<br><sup>Adriano & Allan</sup> | • observável: `Observable<Int>.interval(...)`<br>• método `.subscribe(...)`<br>• método `.debug()`<br>• eventos: `onNext`, `onError`, `onCompleted`, `onDisposed`<br>• observável: `button.rx.tap`<br>• operador: `.map {...}`<br> • operador: `.flatMap {...}`<br> • operador: `.filter {...}`<br>• método:`.disposed(by:...)`<br>• método: `.bind(to:...)`<br><sub>Ver `Exemplo1.swift` e `Exemplo2.swift`</sub>
 
 ## 3: 12/06/2019 (4ª feira) 19h00 - 22h00
@@ -696,10 +755,13 @@ Hora Aprox. | Tópico | Detalhes
 
 ## 5: 17/06/2019 (2ª feira) 19h00 - 22h00
 
-- RxMarbles + RxSwift + MVVM
-- \+ considerações finais
+Hora Aprox. | Tópico | Detalhes
+--- | :-: | ---
+19h00<br>19h30 | RxSwift → RxMarbles | • Como aprender e usar os demais operadores do RxSwift
+19h30<br>20h20 | MVVM &<br>RxSwift | • Breve revisão do tema MVVM<br>• Como o RxSwift pode te ajudar com o MVVM<br>• Como organizar e refatorar seu projeto
+20h20<br>20h30 | Intervalo | 🍫 + 🌭 + 🥤
+20h30<br>21h40 | MVVM &<br>RxSwift | • Hands-on: transforme seu projeto em MVVM usando RxSwift
+21h40<br>22h00 | Últimas dúvidas<br>Considerações finais<br>Comunicados | • Últimas dúvidas: acessibilidade, keychain services, RxSwift, MVVM...<br>• Happy-hour na 4ª-feira: let's celebrate! 🍾 🥂 🍕🍕🍕🍕
 
 
-## Work In Progress
-
-- [Modelagem de atividades extra-classe](HomeWorkModels.md)
+*That's all folks!!*
