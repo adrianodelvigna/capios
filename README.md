@@ -63,8 +63,114 @@ Com o Keychain, você pode armazenar senhas, chaves criptográficas, certificado
 
 O iPhone é referência no mercado, por ser o estado da arte, quando estamos falando de armazenamento totalmente seguro e privacidade, para *smartphones*.
 
+Existem diversas formas de acessar o seu Keychain. Você pode fazer o seu próprio **wrapper** que seria um pacote responsável por acessar e manipular os dados do seu keychain, mas como é um trabalho, um tanto quanto complexo, diversas fontes recomendam que você já use um wrapper existente, como *Valet*, *SwiftKeychainWarpper*, *SamKeychain*, entre outros.
+
+Em nossas aulas nós usaremos o Valet e vocês verão como é simples fazer a criação de um cofre usando **Valet**, como acessar as informações salvas no seu cofre usando o Valet e como recuperar essas informações, além claro, de todas as possibilidades de acesso que cada construtor do Valet tem pra te oferecer.
+
+Existem 3 tipos de objeto Valet disponível, e cada um vai acessar o Keychain de uma maneira específica:
+
+Objeto | Descrição | Parametros para os Construtores
+:-: | :-- | ---
+Valet | Valet padrão que é usado para acessar e gravar dicionários no keychain. | Todos os construtores desse ***valet*** levam dois valores, Identifier e accessibility. ***Identifier*** é um identificador único que você irá dar ao seu *cofre*, para armazenar e recuperar dados salvos no mesmo cofre. Também é necessário informar o nível de ***accessibility***<sup>1</sup>, ou seja, quando o valet poderá acessar o keychain.
+SecureEnclaveValet | A forma mais segura de armazenar dados no universo Apple. Toda vez que você desejar acessar uma chave dentro do seu *cofre* salvo, será solicitado ao usuário a confirmação de presença, ou seja, o usuário deverá usar ou FaceID, ou touchID ou Passcode para acessar o *cofre*, caso contrário, não terá acesso aos valores salvos naquele *cofre* do keychain. Caso o usuário não tenha um Passcode salvo, esse Valet também não terá acesso aos *cofres*. | O SecureEnclaveValet, possuí dois parametros para construção também. O ***Identifier*** que tem a mesma função do Valet padrão e o segundo parâmetro é ***accessControl***, que você deve informar qual o tipo de **verificação de presença**<sup>2</sup> que você quer usar.
+SinglePromptSecureEnclaveValet | Funciona como o SecureEnclaveValet, porém não irá solicitar a confirmação de presença a cada vez que algum dado for recuperado do Keychain. Esse Valet, irá solicitar a confirmação de presença, apenas a primeira vez que o dado for solicitado. Caso você deseje que o Valet solicite mais uma vez a confirmação de presença com esse objeto, você deve chamar a função: requirePromptOnNextAccess().
+
+Não esqueça que para usar os **'Secure Enclaves'** você deve adicionar no seu Info.plist a chave 'Privacy - Face ID Usage Description (NSFaceIDUsageDescription)'.
+<br>Ahh! Mais um detalhe. Se seu usuário apagar o Passcode/TouchID/FaceID, os dados serão removidos do Secure Enclave.
+<br>Para saber se o seu *valet* está disponível, basta chamar a função **canAccessKeychain()** do próprio *valet*.
+
+Objeto | Construtor | Descrição
+:-: | :-- | ---
+Valet | Valet.valet(<br>with: Identifier(nonEmpty: "Database")!,<br>accessibility: .whenUnlocked) | Cria um *cofre* chamado **Database** e que terá acesso apenas **Quando o dispositivo estiver desbloqueado**. Cria o *cofre* no Keychain para uso exclusivo nesse device e dentro do mesmo app apenas.
+Valet | Valet.sharedAccessGroupValet(<br>with: Identifier(nonEmpty: "Database")!,<br>accessibility: .whenUnlocked) | Cria um *cofre* chamada **Database**, que terá acesso apenas **Quando o dispositivo estiver desbloqueado**. Esse construtor permite que você compartilhe o seu *cofre* com outros app desenvolvidos pelo mesmo desenvolvedor ou pelo mesmo time de desenvolvimento. Para isso, você deverá usar exatamente o mesmo *Objeto* **(Valet)**, o mesmo *construtor* **(sharedAccessGroupValet)** e o mesmo *Identifier* para o cofre **(Database)**
+Valet | Valet.iCloudValet(<br>with: Identifier(nonEmpty: "Database")!,<br>accessibility: .whenUnlocked) | Cria um *cofre* chamada **Database**, que terá acesso apenas **Quando o dispositivo estiver desbloqueado**. Esse construtor permite que você compartilhe o seu *cofre* entre dispositivos que usem a mesma conta do iCloud. Por exemplo, no caso do seu usuário querer acessar o mesmo app no iPhone e depois, no iPad. Para isso, você deverá usar exatamente o mesmo *Objeto* **(Valet)**, o mesmo *construtor* **(iCloudValet)** e o mesmo *Identifier* para o cofre **(Database)**
+Valet | Valet.iCloudSharedAccessGroupValet(<br>with: Identifier(nonEmpty: "Database")!,<br>accessibility: .whenUnlocked) | Cria um *cofre* chamada **Database**, que terá acesso apenas **Quando o dispositivo estiver desbloqueado**. Esse construtor permite que você compartilhe o seu *cofre* entre dispositivos que usem a mesma conta do iCloud e que sejam desenvolvidos pelo mesmo desenvolvedor ou time de desenvolvimento. Por exemplo, no caso do seu usuário querer acessar o mesmo app no iPhone e depois, no iPad. Para isso, você deverá usar exatamente o mesmo *Objeto* **(Valet)**, o mesmo *construtor* **(iCloudSharedAccessGroupValet)** e o mesmo *Identifier* para o cofre **(Database)**
+SecureEnclaveValet | SecureEnclaveValet.valet(<br>with: Identifier(nonEmpty: "Database")!,<br>accessControl: .biometricAny) | Cria um *cofre* chamada **Database**, que só terá acesso, mediante a *confirmação de presença* **(TouchID, FaceID, Passcode)** de qualquer tipo. A cada solicitação de acesso ao Keychain, o *Valet* irá solicitar a *confirmação de presença* do usuário. Cria o *cofre* no Keychain para uso exclusivo nesse device e dentro do mesmo app apenas.
+SecureEnclaveValet | SecureEnclaveValet.sharedAccessGroupValet(<br>with: Identifier(nonEmpty: "Database")!,<br>accessControl: .biometricAny) | Cria um *cofre* chamada **Database**, que só terá acesso, mediante a *confirmação de presença* **(TouchID, FaceID, Passcode)** de qualquer tipo. A cada solicitação de acesso ao Keychain, o *Valet* irá solicitar a *confirmação de presença* do usuário. Esse construtor permite que você compartilhe o seu *cofre* com outros app desenvolvidos pelo mesmo desenvolvedor ou pelo mesmo time de desenvolvimento. Para isso, você deverá usar exatamente o mesmo *Objeto* **(SecureEnclaveValet)**, o mesmo *construtor* **(sharedAccessGroupValet)** e o mesmo *Identifier* para o cofre **(Database)**
+SinglePromptSecureEnclaveValet | SinglePromptSecureEnclaveValet.valet(<br>with: Identifier(nonEmpty: "Database")!,<br>accessControl: .biometricAny) | Cria um *cofre* chamada **Database**, que só terá acesso, mediante a *confirmação de presença* **(TouchID, FaceID, Passcode)** de qualquer tipo. Esse construtor, diferente do anterior, irá solicitar a *confirmação de presença* apenas na primeira vez que você solicitar o acesso ao keychain. Ele só irá solicitar a *confirmação de presença* novamente, se o usuário bloquear a tela ou se você usar o comando ***requirePromptOnNextAccess()***. Cria o *cofre* no Keychain para uso exclusivo nesse device e dentro do mesmo app apenas.
+SinglePromptSecureEnclaveValet | SinglePromptSecureEnclaveValet.sharedAccessGroupValet(<br>with: Identifier(nonEmpty: "Database")!,<br>accessControl: .biometricAny) | Cria um *cofre* chamada **Database**, que só terá acesso, mediante a *confirmação de presença* **(TouchID, FaceID, Passcode)** de qualquer tipo. Esse construtor irá solicitar a *confirmação de presença* apenas na primeira vez que você solicitar o acesso ao keychain. Ele só irá solicitar a *confirmação de presença* novamente, se o usuário bloquear a tela ou se você usar o comando ***requirePromptOnNextAccess()***. Esse construtor permite que você compartilhe o seu *cofre* com outros app desenvolvidos pelo mesmo desenvolvedor ou pelo mesmo time de desenvolvimento. Para isso, você deverá usar exatamente o mesmo *Objeto* **(SecureEnclaveValet)**, o mesmo *construtor* **(sharedAccessGroupValet)** e o mesmo *Identifier* para o cofre **(Database)**
+
+Bastante opção né?! Fica tranquilo. Primeiro você precisava saber todas as formas que você pode fazer as construções do seu valet, porque o uso é praticamente igual pra todos eles.
+
+## Como Armazenar e Recuperar valores do **Keychain** usando **Valet**
+
+### Armazenando String:
+``` swift
+let valet: Valet = Valet.valet(with: Identifier(nonEmpty: "Database")!,
+                                   accessibility: .whenUnlocked)
+valet.set(string: "Valor a ser salvo", forKey: "Chave para armazenar string")
+```
+
+Para recuperar a String salva, basta usar:<br>
+``` swift
+let value = valet.string(forKey:"Chave para armazenar string")
+```
+Lembre-se que o valor recuperado aqui, é um valor opcional, afinal de contas, seu *Valet* não sabe se esse valor existe no seu Keychain ou não, então vamos manter a boa qualidade do nosso código e criar uma proteção para isso
+``` swift
+if let value = valet.string(forKey:"Chave para armazenar string") {
+    //Aqui nós iremos usar o valor
+}
+```
+ou
+``` swift
+guard let value = valet.string(forKey:"Chave para armazenar string") else { return }
+```
+
+Também é possível armazenar e recuperar objetos em formato Data. Para isso Você irá usar o método setObject
+### Armazenando Objetos:
+```swift 
+valet.set(object: Data, forKey: "Chave do meu objeto")
+```
+E para recuperar os dados
+```swift 
+valet.object(forKey: "Chave do meu objeto")
+```
+
+Bem simples, não? Agora vamos ver como fica, caso a gente queira usar o ***Secure Enclave***
+
+### Usando **Secure Enclave**
+O armazenamento de chaves é bem simples com uso de SecureEnclave, inclusive, o armazenamento dos dados é feito exatamente da mesma forma:
+```swift
+//Não importa qual dos objetos de SecureEnclave você está usando (SecureEnclaveValet ou SinglePromptSecureEnclaveValet) a armazenamento e a recuperação dos dados será igual
+let valetWithBiometrics: SinglePromptSecureEnclaveValet = SinglePromptSecureEnclaveValet.valet(with: Identifier(nonEmpty: "Database")!, accessControl: .biometricAny)
+valetWithBiometrics.set(string: username, forKey: "username")
+valetWithBiometrics.set(object: objeto, forKey: "chave do objeto")
+```
+
+Agora vem a grande diferença dos objetos SecureEnclave e o Valet tradicional. O SecureEnclave, não vai te retornar o objeto que você deseja logo de cara, porque teu usuário pode não ter feito a *verificação de presença*, ou pode ter cancelado a ação de verificação, quando foi solicitado para ele.
+
+> O que é que retorna nesse campo então?!
+
+Aqui será retornado um objeto chamado ***SecureEnclave.Result<<'Tipo do Dado'>>*** onde 'Tipo do Dado' pode ser Data ou String, dependendo do que você armazenou.
+
+> Tá ok... Mas como eu vou fazer pra ler esses dados? O que é um SecureEnclave.Result?!?!?!?!
+
+O secureEnclaveResult, nada mais é do que um **Enum** que retorna 3 possíveis resultados **success(result)**, **userCancelled** ou **itemNotFound**, onde 'result' é o valor que você está querendo recuperar do keychain. Para tratar o retorno desse SecureEnclave, basta nós fazermos um **Switch** para tratar o retorno dessa solicitação:
+```swift
+switch valetWithBiometrics.string(forKey: "username", withPrompt: "use seu Touch ID para acessar seu usuários") {
+case let .success(username):
+    print("O nome do usuário é: \(username)")
+    
+case .userCancelled:
+    print("usuário cancelou o acesso ao campo username do keychain")
+    
+case .itemNotFound:
+    print("campo 'username' não encontrado")
+}
+```
+
+Prontinho! No caso acima, quando o usuário fizer a confirmação de presença dele, você terá acesso a chave *username* que esta armazenada no seu Keychain
+
+Simples né?! Caso vocês queiram ver como funciona a implementação completa de um **Wrapper** ou queira construir o seu próprio, dá uma olhadinha [aqui](https://agostini.tech/2017/03/06/creating-a-simple-keychain-wrapper/)
+
+<sup>1. Acesse esse [link](https://github.com/square/Valet/blob/master/Sources/Accessibility.swift) para ver todos os níveis de acessibilidade possível para o ***Valet***</sup><br>
+<sup>2. Acesse esse [link](https://github.com/square/Valet/blob/master/Sources/SecureEnclaveAccessControl.swift) para ver todos os níveis de controle de acesso possível, para o ***SecureEnclaveValet*** e ***SinglePromptSecureEnclaveValet***</sup>
+
 Referências:
 - [Serviço de Keychain](https://developer.apple.com/documentation/security/keychain_services)
+- [Valet](https://github.com/square/Valet)
+- [Implementação Manual Wrapper Keychain](https://medium.com/ios-os-x-development/securing-user-data-with-keychain-for-ios-e720e0f9a8e2)
+- [Criação de um keychain Wrapper Simples](https://agostini.tech/2017/03/06/creating-a-simple-keychain-wrapper/)
 
 ## Acessibilidade
 
@@ -159,13 +265,22 @@ Settings | Essa opção serve pra vc testar outras deficiências sem que você t
 
 Calma. Pra ligar o inspector para seu simulador, primeiro você precisa abrir o simulador. Então rode sua aplicação no simulador e após ele ativo, vai lá no 'Accessibility Inspector' que você vai ver que agora o simulador irá aparecer lá no seus Targets. 
 
-Agora basta analisar a tela com o 'Inspection Pointer' e o 'Audit' do 'Accessibility Inspector', para ver quais pontos da sua aplicação aprensenta falhas de acessibilidade. 
+Agora basta analisar a tela com o 'Inspection Pointer' e o 'Audit' do 'Accessibility Inspector', para ver quais pontos da sua aplicação apresenta falhas de acessibilidade.
 
 Ahh! E não esquece que pra testar realmente se está funcional ou não sua acessibilidade, é ideal que você faça testes no seu app com as "cortinas fechadas"!
+
+### Mais algumas dicas do VoiceOver:
+
+Para ativar/desativar o VoiceOver, você não precisa entrar toda hora na sessão de ajustes do seu app. A Apple deixou um atalho lá nas configurações, que permite você acionar o VoiceOver, apenas apertando o botão **Home** do seu device, três vezes.
+
+Para acionar essa funcionalidade, basta ir em Ajustes → Geral → Acessibilidade → Atalho de Acessibilidade (última opção) e então marcar qual a Acessibilidade que você deseja marcar como atalho.
+
+Para navegar entre os componentes que estão com acessbilidade na sua tela, você não precisa necessariamente passar o dedo por eles, basta fazer swipe para direita ou para esquerda para, avançar para o próxima elemento acessível ou para ir para o elemento anterior, respectivamente.
 
 Referências:
 - [Acessibilidade iOS](https://developer.apple.com/accessibility/ios/)
 - [Tutorial - Primeiros passos](https://www.raywenderlich.com/845-ios-accessibility-tutorial-getting-started)
+- [Como deixar o VoiceOver mais amigável](https://medium.com/bpxl-craft/how-to-make-voiceover-more-friendly-in-your-ios-app-8fac34ab8c51)
 
 
 ## Programação funcional reativa
@@ -644,7 +759,7 @@ Opcional
 
 Até o momento usamos alguns dos operadores [ReactiveX](http://reactivex.io/documentation/operators.html) mais comuns: `map`, `flatMap` e `filter`. Existem muitos outros porém, que podem nos ajudar em muitas situações complexas.
 
-Para uma lista completa dos operadores do padrão ReactiveX, vale a pena visitar esse [link](http://reactivex.io/documentation/operators.html). Tenha em mente que o padrão ReactiveX funciona muito como uma referência: as diversas implementações do padrão (RxJS, Rx .NET, RxJava...) costumam divergir em aguns termos e na nomenclatura de alguns dos operadores. Ou em alguns casos, nem mesmo implementam todos os operadores. Por isso é preciso sempre estar de olho no que cada cada uma dessas implementações oferece, e como são oferecidas. O **RxSwift** **não** é uma exceção a isso.
+Para uma lista completa dos operadores do padrão ReactiveX, vale a pena visitar esse [link](http://reactivex.io/documentation/operators.html). Tenha em mente que o padrão ReactiveX funciona muito como uma referência: as diversas implementações do padrão (RxJS, Rx .NET, RxJava...) costumam divergir em aguns termos e na nomenclatura de alguns dos operadores. Ou em alguns casos, nem mesmo implementam todos os operadores. Por isso é preciso sempre estar de olho no que cada uma dessas implementações oferece, e como são oferecidas. O **RxSwift** **não** é uma exceção a isso.
 
 Recapitulando:
 
@@ -652,15 +767,15 @@ Operador | Função/Uso
 --- | ---
 `map` | Transforma o conteúdo de cada evento observável.
 `flatMap` | Transforma um evento observável em outro evento observável. Use-o para concatenar eventos assíncronos.
-`filter` | Seleciona o conteúdo de um evento que vai ser propagado no *stream* de eventos. Apenas aqueles eventos cujo conteúdo passe determinado critério continuam na *stream* de eventos.
+`filter` | Seleciona o conteúdo de um evento que vai ser propagado no *stream* de eventos. Apenas aqueles eventos, cujo conteúdo passe determinado critério, continuam na *stream* de eventos.
 
-Alguns outros operadores são incrivelmente úteis, e podem nos ajudar em muitas situações cotidianas:
+Alguns outros operadores são incrivelmente úteis e podem nos ajudar em muitas situações cotidianas:
 
 Operador | Função/Uso
 --- | ---
 `combineLatest` | combina o último resultado de dois ou mais observáveis. Usado por exemplo quando se quer disparar 2+ chamadas de API, e precisamos aguardar essas 2+ chamadas antes de continuar com algum processamento.
 `delay` | atrasa a propagação de um evento, na *stream* de eventos, por um determinado tempo.
-`throttle` | emite o último evento observável gerado depois de transcorrido um determinado tempo. Use-o quando você quer evitar o *flood* de uma chamada de API por exemplo: quando você quiser limitar uma chamada de uma API de busca após 300ms depois de entrada a última letra num campo de entrada.
+`throttle` | emite o último evento observável gerado depois de transcorrido um determinado tempo. Use-o quando você quer evitar o *flood* de uma chamada de API por exemplo: quando você quiser limitar uma chamada de uma API de busca após 300ms depois de entrada a última letra num campo de busca.
 `zip` | combina o conteúdo de 2+ observáveis.
 `distinctUntilChanged` | só emite um novo evento observável quando o conteúdo desse for diferente do imediatamente anterior.
 
@@ -705,7 +820,7 @@ Com o descrito acima, sugerimos alguns passos para procurar o operador Rx que vo
 
 ## MVVM com RxSwift
 
-MVVM, ou Model-View-ViewModel, é mais uma arquitetura de software que tenta exercer o princípio de *sepration of concerns*. Onde os três domínios são responsáveis por:
+MVVM, ou Model-View-ViewModel, é mais uma arquitetura de software que tenta exercer o princípio de *separation of concerns*. Onde os três domínios são responsáveis por:
 
 - Model: lógica/regras de negócio, ou lógica/regras de *backend*
 - ViewModel: converte os valores da *model*, ou regra de negócio, para uma representação de view
@@ -717,7 +832,7 @@ A exemplo do **RxSwift**, a arquitetura **MVVM** também tem suas origens no [am
 
 Orientação | Model<sup>9</sup> | ViewModel<sup>9</sup> | View
 :-: | --- | --- | ---
-Implementa | • regras de negócio<br>• chamadas de endpoints de API<br>• acesso a banco de dados locais | • `Observables`<br>• `Subjects`<br>• métodos consumidos pela view  | • Elementos de tela (UIKit)<br>• `Storyboard`, `xib` e `ViewControllers`<br>• *subscriptions* para ventos vindos da view model
+Implementa | • regras de negócio<br>• chamadas de endpoints de API<br>• acesso a banco de dados locais | • `Observables`<br>• `Subjects`<br>• métodos consumidos pela view  | • Elementos de tela (UIKit)<br>• `Storyboard`, `xib` e `ViewControllers`<br>• *subscriptions* para eventos vindos da view model
 Faz | • representação lógica dos dados<br>• contextualização das regras<br>de negócio para a solução<br>• descreve o que uma solução<br>pode fazer | • representação lógica do estado de uma tela<br>• representação lógica das ações de uma tela<br>• descreve o que uma tela pode fazer<br>sem desenhá-la | • observa eventos da *view model*<br>• desenha (exibe) a tela e seus elementos<br>• coleta input do usuário (via tela, teclado...) e<br>passa para a *view model*
 Importa<br><sup>*(consome)*</sup> | • Foundation<br>• Libs<br>• Frameworks<br>• Pods | • Foundation<br>• Libs<br>• Frameworks<br>• Pods | • Foundation<br>• Libs<br>• Frameworks<br>• Pods<br>• **UIKit**
 **Não** importa<br><sup>*(não deveria)*</sup> | • UIKit | • UIKit | 
@@ -804,8 +919,9 @@ Hora Aprox. | Tópico | Detalhes
 - Lição de casa terminar as telas caso necessário.
 
 ### Referências 
-- [Valet](https://github.com/square/Valet)
-- [Implementação Manual Wrapper Keychain](https://medium.com/ios-os-x-development/securing-user-data-with-keychain-for-ios-e720e0f9a8e2)
+- [Internacionalização strings](https://medium.com/@rafaelcpalmeida/internacionaliza%C3%A7%C3%A3o-com-swift-5921f92e6b41)
+- [Pod R.swift](https://github.com/mac-cain13/R.swift)
+- [Porque devemos usar weak self](https://blog.haloneuro.com/swift-memory-leak-gotcha-with-weak-self-67293d5bc060)
 
 ## 2: 10/06/2019 (2ª feira) 19h00 - 22h00
 
