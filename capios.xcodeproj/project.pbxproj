@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,6 +31,15 @@
 		B9448FB22283463B00E342DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9448FB02283463B00E342DE /* Main.storyboard */; };
 		B9448FB42283463D00E342DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9448FB32283463D00E342DE /* Assets.xcassets */; };
 		B9448FB72283463D00E342DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9448FB52283463D00E342DE /* LaunchScreen.storyboard */; };
+		B9F4BA9822B814CD00AD3583 /* UserAccountOnKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F4BA9722B814CD00AD3583 /* UserAccountOnKeychain.swift */; };
+		B9F4BA9A22B8158D00AD3583 /* UserAccountProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F4BA9922B8158D00AD3583 /* UserAccountProtocol.swift */; };
+		B9F4BA9D22B81F6C00AD3583 /* SecureKeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F4BA9C22B81F6C00AD3583 /* SecureKeyValueStorage.swift */; };
+		B9F4BAA022B8244E00AD3583 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F4BA9F22B8244E00AD3583 /* CreateAccountViewModel.swift */; };
+		B9F4BAA222B8245B00AD3583 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F4BAA122B8245B00AD3583 /* LoginViewModel.swift */; };
+		B9F4BAA422B836FF00AD3583 /* MVVMHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F4BAA322B836FF00AD3583 /* MVVMHomeViewController.swift */; };
+		B9F4BAA622B8371000AD3583 /* MVVMCreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F4BAA522B8371000AD3583 /* MVVMCreateAccountViewController.swift */; };
+		B9F4BAA822B8372300AD3583 /* MVVMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F4BAA722B8372300AD3583 /* MVVMLoginViewController.swift */; };
+		B9F4BAAA22B8373B00AD3583 /* MVVMStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9F4BAA922B8373B00AD3583 /* MVVMStoryboard.storyboard */; };
 		B9F72F5A22834FED000BA70B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F72F5922834FED000BA70B /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +71,15 @@
 		B9448FB32283463D00E342DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9448FB62283463D00E342DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9448FB82283463D00E342DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9F4BA9722B814CD00AD3583 /* UserAccountOnKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountOnKeychain.swift; sourceTree = "<group>"; };
+		B9F4BA9922B8158D00AD3583 /* UserAccountProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountProtocol.swift; sourceTree = "<group>"; };
+		B9F4BA9C22B81F6C00AD3583 /* SecureKeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureKeyValueStorage.swift; sourceTree = "<group>"; };
+		B9F4BA9F22B8244E00AD3583 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		B9F4BAA122B8245B00AD3583 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		B9F4BAA322B836FF00AD3583 /* MVVMHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMHomeViewController.swift; sourceTree = "<group>"; };
+		B9F4BAA522B8371000AD3583 /* MVVMCreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMCreateAccountViewController.swift; sourceTree = "<group>"; };
+		B9F4BAA722B8372300AD3583 /* MVVMLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMLoginViewController.swift; sourceTree = "<group>"; };
+		B9F4BAA922B8373B00AD3583 /* MVVMStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MVVMStoryboard.storyboard; sourceTree = "<group>"; };
 		B9F72F5922834FED000BA70B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		CB1074D3C2638B4A790115BC /* Pods_capios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_capios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -129,6 +147,7 @@
 		507E1A1222A989B4007E3F2D /* Samples */ = {
 			isa = PBXGroup;
 			children = (
+				B9F4BA8B22B812A700AD3583 /* MVVM */,
 				B9F1A51422AEB514007ADCDF /* RxSwift */,
 				B9448FB02283463B00E342DE /* Main.storyboard */,
 				B9448FAE2283463B00E342DE /* ViewController.swift */,
@@ -193,6 +212,102 @@
 			path = RxSwift;
 			sourceTree = "<group>";
 		};
+		B9F4BA8B22B812A700AD3583 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				B9F4BA9222B8148A00AD3583 /* Models */,
+				B9F4BA8C22B812CB00AD3583 /* Home */,
+				B9F4BA8E22B812DD00AD3583 /* CreateAccount */,
+				B9F4BA8D22B812D600AD3583 /* Login */,
+				B9F4BAA922B8373B00AD3583 /* MVVMStoryboard.storyboard */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		B9F4BA8C22B812CB00AD3583 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B9F4BA9022B8139200AD3583 /* ViewModel */,
+				B9F4BA9122B8139800AD3583 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B9F4BA8D22B812D600AD3583 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B9F4BA9622B814B200AD3583 /* ViewModel */,
+				B9F4BA9522B814AD00AD3583 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B9F4BA8E22B812DD00AD3583 /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				B9F4BA9322B8149700AD3583 /* ViewModel */,
+				B9F4BA9422B814A300AD3583 /* View */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		B9F4BA9022B8139200AD3583 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B9F4BA9122B8139800AD3583 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9F4BAA322B836FF00AD3583 /* MVVMHomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B9F4BA9222B8148A00AD3583 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B9F4BA9922B8158D00AD3583 /* UserAccountProtocol.swift */,
+				B9F4BA9722B814CD00AD3583 /* UserAccountOnKeychain.swift */,
+				B9F4BA9C22B81F6C00AD3583 /* SecureKeyValueStorage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B9F4BA9322B8149700AD3583 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B9F4BA9F22B8244E00AD3583 /* CreateAccountViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B9F4BA9422B814A300AD3583 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9F4BAA522B8371000AD3583 /* MVVMCreateAccountViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B9F4BA9522B814AD00AD3583 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9F4BAA722B8372300AD3583 /* MVVMLoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B9F4BA9622B814B200AD3583 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B9F4BAA122B8245B00AD3583 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -255,6 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F4BAAA22B8373B00AD3583 /* MVVMStoryboard.storyboard in Resources */,
 				B9448FB72283463D00E342DE /* LaunchScreen.storyboard in Resources */,
 				B9448FB42283463D00E342DE /* Assets.xcassets in Resources */,
 				507E1A1122A985B3007E3F2D /* TrainingExercises.storyboard in Resources */,
@@ -315,30 +431,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-capios/Pods-capios-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-capios/Pods-capios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-capios/Pods-capios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-capios/Pods-capios-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-capios/Pods-capios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B9F72F5822834E9E000BA70B /* Rswift */ = {
@@ -376,14 +477,22 @@
 				50959C4022A15E9E009B4FA0 /* LoginKeychainViewController.swift in Sources */,
 				B9448FAF2283463B00E342DE /* ViewController.swift in Sources */,
 				50EA454122AA77F6004EE63D /* CreateAccountViewController.swift in Sources */,
+				B9F4BA9822B814CD00AD3583 /* UserAccountOnKeychain.swift in Sources */,
 				B9448FAD2283463B00E342DE /* AppDelegate.swift in Sources */,
+				B9F4BAA622B8371000AD3583 /* MVVMCreateAccountViewController.swift in Sources */,
 				25261A9B22ADC0C200CCD0E5 /* Contact.swift in Sources */,
 				25261A9222ADABB900CCD0E5 /* ContactTableViewCell.swift in Sources */,
 				507E1A1422A989D0007E3F2D /* HomeViewController.swift in Sources */,
+				B9F4BAA822B8372300AD3583 /* MVVMLoginViewController.swift in Sources */,
+				B9F4BAA422B836FF00AD3583 /* MVVMHomeViewController.swift in Sources */,
 				258E2A0522B00E340016C021 /* ContactAPI.swift in Sources */,
+				B9F4BA9D22B81F6C00AD3583 /* SecureKeyValueStorage.swift in Sources */,
+				B9F4BA9A22B8158D00AD3583 /* UserAccountProtocol.swift in Sources */,
+				B9F4BAA022B8244E00AD3583 /* CreateAccountViewModel.swift in Sources */,
 				B9F72F5A22834FED000BA70B /* R.generated.swift in Sources */,
 				50EA454F22AB0112004EE63D /* LoginViewController.swift in Sources */,
 				504F0C6022AAD990002BC949 /* PoorAccessibilityViewController.swift in Sources */,
+				B9F4BAA222B8245B00AD3583 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
