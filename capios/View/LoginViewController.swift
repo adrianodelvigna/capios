@@ -52,9 +52,17 @@ class LoginViewController: UIViewController {
                 let usernameField = self.usernameTxtField.text,
                 let passwordField = self.passwordTextField.text {
                 if username == usernameField && password == passwordField {
-                    print("Sucesso")
+                    if let vc = R.storyboard.trainingExercises.menuViewController() {
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
                 } else {
-                    print("Fail")
+                    let invalidField = username != usernameField ? "'username'" : "'password'"
+                    let alertMessage = "verifique se o campo \(invalidField) está preenchido corretamente"
+                    let alert = UIAlertController(title: "Ixi! Deu erro",
+                                                  message: alertMessage,
+                                                  preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         }).disposed(by: self.disposeBag)

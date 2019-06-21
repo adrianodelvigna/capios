@@ -22,6 +22,9 @@
 		50EA454122AA77F6004EE63D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */; };
 		50EA454F22AB0112004EE63D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA454E22AB0112004EE63D /* LoginViewController.swift */; };
 		50EFF9872292EEA200A650FE /* RxOperatorsExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */; };
+		50FF62B022B28B2600CB2645 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FF62AF22B28B2600CB2645 /* MenuViewController.swift */; };
+		50FF62B222B28BBC00CB2645 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FF62B122B28BBC00CB2645 /* ContactListViewController.swift */; };
+		50FF62C022B299DC00CB2645 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FF62BF22B299DC00CB2645 /* ContactDetailsViewController.swift */; };
 		5A62D3378A61325C9686BBE3 /* Pods_capios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1074D3C2638B4A790115BC /* Pods_capios.framework */; };
 		B91ABFD822AEB83A00487E4B /* RxSwiftStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B91ABFD722AEB83A00487E4B /* RxSwiftStoryboard.storyboard */; };
 		B925BAC222AECCA7007DF84D /* Exemplo1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B925BAC122AECCA7007DF84D /* Exemplo1.swift */; };
@@ -60,6 +63,9 @@
 		50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		50EA454E22AB0112004EE63D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50EFF9862292EEA200A650FE /* RxOperatorsExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxOperatorsExerciseViewController.swift; sourceTree = "<group>"; };
+		50FF62AF22B28B2600CB2645 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		50FF62B122B28BBC00CB2645 /* ContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
+		50FF62BF22B299DC00CB2645 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		7762F8C5FEA43D9C324168C3 /* Pods-capios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-capios.release.xcconfig"; path = "Pods/Target Support Files/Pods-capios/Pods-capios.release.xcconfig"; sourceTree = "<group>"; };
 		B91ABFD722AEB83A00487E4B /* RxSwiftStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RxSwiftStoryboard.storyboard; sourceTree = "<group>"; };
 		B925BAC122AECCA7007DF84D /* Exemplo1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exemplo1.swift; sourceTree = "<group>"; };
@@ -112,7 +118,10 @@
 				507E1A1022A985B3007E3F2D /* TrainingExercises.storyboard */,
 				507E1A1322A989D0007E3F2D /* HomeViewController.swift */,
 				50EA454022AA77F6004EE63D /* CreateAccountViewController.swift */,
+				50FF62BF22B299DC00CB2645 /* ContactDetailsViewController.swift */,
+				50FF62AF22B28B2600CB2645 /* MenuViewController.swift */,
 				50EA454E22AB0112004EE63D /* LoginViewController.swift */,
+				50FF62B122B28BBC00CB2645 /* ContactListViewController.swift */,
 				B9448FB52283463D00E342DE /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -470,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B925BAC222AECCA7007DF84D /* Exemplo1.swift in Sources */,
+				50FF62C022B299DC00CB2645 /* ContactDetailsViewController.swift in Sources */,
 				B925BAC422AEE130007DF84D /* Exemplo2.swift in Sources */,
 				258E2A0C22B03FFC0016C021 /* Exemplo3.swift in Sources */,
 				500078CA22A812D200C525DF /* AccessibilityViewController.swift in Sources */,
@@ -482,6 +492,8 @@
 				B9F4BAA622B8371000AD3583 /* MVVMCreateAccountViewController.swift in Sources */,
 				25261A9B22ADC0C200CCD0E5 /* Contact.swift in Sources */,
 				25261A9222ADABB900CCD0E5 /* ContactTableViewCell.swift in Sources */,
+				50FF62B222B28BBC00CB2645 /* ContactListViewController.swift in Sources */,
+				50FF62B022B28B2600CB2645 /* MenuViewController.swift in Sources */,
 				507E1A1422A989D0007E3F2D /* HomeViewController.swift in Sources */,
 				B9F4BAA822B8372300AD3583 /* MVVMLoginViewController.swift in Sources */,
 				B9F4BAA422B836FF00AD3583 /* MVVMHomeViewController.swift in Sources */,
